@@ -12,7 +12,7 @@ export default function Hero() {
         <h1>Explore the World with Confidence</h1>
         <p>Handpicked travel experiences for real explorers.</p>
         <button
-          className="btn-primary"
+          className="hero-btn"
           onClick={() =>
             document.getElementById("packages")?.scrollIntoView({ behavior: "smooth" })
           }

@@ -1,5 +1,5 @@
 :root {
-  --primary: #e63946;
+  --primary: #005810;
   --dark: #0b0b0b;
   --text: #333333;
   --muted: #777777;
@@ -11,6 +11,10 @@
 
 * {
   font-family: 'Poppins', sans-serif;
+  
+}
+body {
+  overflow-x: hidden;
 }
 
 
@@ -22,7 +26,34 @@
   align-items: center;
   background:
     linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
-    url("HERO_IMAGE_URL") center/cover no-repeat;
+    url(https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzR8fG5hdHVyZXxlbnwwfHwwfHx8MA%3D%3D) center/cover no-repeat;
+}
+.hero-btn {
+  padding: 14px 36px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff;
+  background: linear-gradient(135deg, #7ed957, #5bbf3a);
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+
+  box-shadow: 0 8px 20px rgba(91, 191, 58, 0.35);
+  transition: 
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.hero-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 32px rgba(91, 191, 58, 0.5);
+  background: linear-gradient(135deg, #8fe66b, #63c942);
+}
+
+.hero-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 6px 16px rgba(91, 191, 58, 0.3);
 }
 
 .hero-content {
@@ -33,6 +64,7 @@
   font-size: 56px;
   font-weight: 600;
   line-height: 1.1;
+  color: #f3f4f2;
 }
 
 .hero p {
@@ -151,11 +183,12 @@
   justify-content: space-between;
   align-items: center;
 
-  background: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.12);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 
-  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  z-index: 10;
 }
 
 
@@ -232,4 +265,73 @@
 .footer-copy {
     font-size: 14px;
     color: #aaa;
+}
+/* About Page Styles */
+.about-page {
+  padding: 120px 8%;
+  background: #f9faf8;
+  color: #1e1e1e;
+}
+
+/* Intro */
+.about-hero {
+  max-width: 700px;
+  margin-bottom: 50px;
+}
+
+.about-hero h1 {
+  font-size: 2.8rem;
+  margin-bottom: 16px;
+}
+
+.about-hero p {
+  font-size: 1.05rem;
+  color: #555;
+  line-height: 1.7;
+}
+
+/* Stats Row */
+.about-stats-row {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 70px;
+  flex-wrap: wrap;
+}
+
+.stat {
+  flex: 1;
+  min-width: 180px;
+  height: 150px;
+  padding: 28px;
+  background: white;
+  border-radius: 18px;
+  text-align: center;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+}
+
+.stat h3 {
+  font-size: 2.1rem;
+  color: #7ed957;
+  margin-bottom: 6px;
+}
+
+.stat span {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Text */
+.about-text {
+  max-width: 800px;
+}
+
+.about-text h2 {
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+}
+
+.about-text p {
+  margin-bottom: 30px;
+  line-height: 1.7;
+  color: #444;
 }

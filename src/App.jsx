@@ -3,7 +3,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Hero from "./component/Hero";
 import Navbar from "./component/Navbar";
 import Packages from "./Pages/Package";
+import About from "./Pages/About";
 import Contact from "./Pages/Contact";
+
 
 import DestinationCard from "./component/DestinationCard ";
 import Footer from "./component/Footer";
@@ -18,6 +20,7 @@ function App() {
         <Routes>
           <Route path="/" element={<><Hero /><DestinationCard /><Packages /></>} />
           <Route path="/packages" element={<Packages />} />
+          <Route path="/About" element={<About />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
         <Footer/>

@@ -1,7 +1,7 @@
-export default function Contact() {
+export default function Contact () {
     return (
         <section className="section">
-            <h2 className="section-title">Contact Us</h2>
+            <h2 className="section-title">Contact</h2>
 
             <form className="contact-form">
                 <input type="text" placeholder="Your Name" required />

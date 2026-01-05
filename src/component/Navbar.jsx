@@ -14,6 +14,10 @@ export default function Navbar() {
                     Packages
                 </NavLink>
 
+                <NavLink to="/About">
+                    About us
+                </NavLink>
+
                 <NavLink to="/contact">
                     Contact
                 </NavLink>
