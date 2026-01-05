@@ -364,16 +364,38 @@ body {
 
 
 /* Footer_section */
-.footer-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+.footer {
+    background: #0b0b0b;
+    color: white;
+    padding: 40px 8%;
+    margin-top: 80px;
 }
 
-.footer-right {
-  display: flex;
-  justify-content: flex-end; /* 🔥 pushes right */
-  gap: 80px;
+.footer-content {
+    text-align: center;
 }
+
+.footer-links {
+    margin: 16px 0;
+}
+
+.footer-links a {
+    color: #e63946;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.footer-copy {
+    font-size: 14px;
+    color: #aaa;
+}
+/* About Page Styles */
+.about-page {
+  padding: 120px 8%;
+  background: #f9faf8;
+  color: #1e1e1e;
+}
+
 /* Intro */
 .about-hero {
   max-width: 700px;
