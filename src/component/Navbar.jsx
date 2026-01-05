@@ -21,7 +21,9 @@ export default function Navbar() {
                 <NavLink to="/contact">
                     Contact
                 </NavLink>
+                
             </div>
+            <div className="Nav-left"><button className="Book-now-btn  glow-btn">Book Now</button></div>
         </nav>
     );
 }
