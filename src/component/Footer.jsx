@@ -1,3 +1,6 @@
+
+export default function Footer() {
+  return (
 <footer className="footer">
   <div className="footer-container">
 
@@ -33,4 +36,5 @@
   <div className="footer-bottom">
     © {new Date().getFullYear()} Xplore Xperience. All rights reserved.
   </div>
-</footer>
+</footer>);
+}
