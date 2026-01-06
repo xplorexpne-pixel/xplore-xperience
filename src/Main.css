@@ -27,9 +27,10 @@ body {
   padding: 0 10%;
   display: flex;
   align-items: center;
+  justify-content: center;
   border-radius: 15px;
   background:
-   linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+    /* linear-gradient(rgba(66, 66, 66, 0.55)),  */
    url("/hero.jpg") center / cover no-repeat;
 }
 .hero-btn {
@@ -62,6 +63,8 @@ body {
 
 .hero-content {
   max-width: 520px;
+  padding-top: 3%;
+  padding-right: 7%;
 }
 
 .hero h1 {
@@ -73,20 +76,75 @@ body {
 
 .hero p {
   margin-top: 18px;
+  padding-bottom: 2%;
   font-size: 18px;
+  text-align: left;
+  padding-left: 2%;
   color: #eaeaea;
 }
 
 /*WhyUs_section*/
-.why-us-section {
-  max-width: 400px;
-  padding-left: 20px;
-  text-align: left;
-  margin-top: 50px;
-  margin-bottom: 40px;
-  margin-left: 80px;
-  margin-right: auto;
+.why-us {
+  display: flex;
+  gap: 80px;
+  padding: 65px 10%;
+  background: #f8f9fb;
 }
+.why-left {
+  flex: 1;
+}
+.why-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+.why-left h2 {
+  font-size: 40px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.why-left h2 span {
+  color: #2f7cf6;
+}
+
+.why-left p {
+  max-width: 480px;
+  line-height: 1.7;
+  color: #555;
+}
+.social-icons {
+  display: flex;
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.social-icons .icon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #eaeaea;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.stats {
+  display: flex;
+  gap: 40px;
+  margin-top: 32px;
+}
+
+.stat h3 {
+  font-size: 24px;
+  color: #2f7cf6;
+}
+
+.stat p {
+  font-size: 14px;
+  color: #666;
+}
+
 
   .why-us-cards {
   display: grid;
@@ -96,18 +154,23 @@ body {
 }
 
 .why-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  
   background: white;
+  padding: 28px 32px;
+  border-radius: 10px; /* rectangle, not pill */
+  box-shadow: 0 18px 40px rgba(0,0,0,0.08);
 
-  padding: 32px;
-  border-radius: 16px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
+
 .why-card:hover {
   transform: translateY(-6px);
   box-shadow: 0 30px 60px rgba(0,0,0,0.12);
 }
-.why-card h3 {
+.why-card h4 {
   font-size: 20px;
   margin-bottom: 12px;
   font-weight: 600;
@@ -118,6 +181,24 @@ body {
   line-height: 1.6;
   color: var(--muted);
 }
+.why-icon {
+  font-size: 40px;
+  color: var(--primary);
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+.why-content h4 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+
+.why-content p {
+  font-size: 14.5px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+
 
 
 
@@ -321,6 +402,18 @@ body {
     padding: 70px 6%;
   }
 }
+@media (max-width: 768px) {
+  .why-us {
+    flex-direction: column;
+    padding: 70px 6%;
+  }
+
+  .stats {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
 
 
 

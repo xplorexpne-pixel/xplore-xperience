@@ -1,28 +1,54 @@
+import { whyUsData } from "../data/whyUsData";
+import { motion } from "framer-motion";
+
 export default function WhyUs() {
     return (
+        <section className="why-us">
 
-        <section className="why-us-section">
-            <h2 className="section-title">Why Choose Us</h2>
-            <p>Experience unparalleled travel with our expertly crafted packages and dedicated service.</p>
-            <div className="why-us-cards">
-                <div className="why-card">
-                    <h3>Trusted Experience</h3>
-                    <p>Years of expertise delivering memorable travel experiences.</p>
-                </div>
-
-                <div className="why-card">
-                    <h3>Affordable Pricing</h3>
-                    <p>Best value packages without compromising comfort or safety.</p>
-                </div>
-
-                <div className="why-card">
-                    <h3>24/7 Support</h3>
-                    <p>We’re with you before, during, and after your journey.</p>
+            {/* LEFT SIDE stays same */}
+            <div className="why-left">
+                <h2>
+                    Why Thousands of Travelers Choose <br />
+                    <span>Xplore Xperience</span>
+                </h2>
+                <p>
+                    From curated destinations to seamless planning, we help travelers
+                    explore confidently with expert guidance.
+                </p>
+                <div className="social-icons">
+                    <a className="icon"><i className="ri-instagram-line"></i></a>
+                    <a className="icon"><i className="ri-twitter-x-line"></i></a>
+                    <a className="icon"><i className="ri-facebook-line"></i></a>
                 </div>
             </div>
+
+            {/* RIGHT SIDE */}
+            <div className="why-right">
+                {whyUsData.map((item, index) => {
+                    const Icon = item.icon;
+
+                    return (
+                        <motion.div
+                            key={index}
+                            className="why-card"
+                            initial={{ opacity: 0, x: 60 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            transition={{ duration: 0.6, delay: index * 0.15 }}
+                            viewport={{ once: true }}
+                        >
+                            <div className="why-icon">
+                                <Icon />
+                            </div>
+
+                            <div className="why-content">
+                                <h4>{item.title}</h4>
+                                <p>{item.desc}</p>
+                            </div>
+                        </motion.div>
+                    );
+                })}
+            </div>
+
         </section>
-
-
     );
 }
-

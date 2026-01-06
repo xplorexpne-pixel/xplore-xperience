@@ -9,8 +9,11 @@ export default function Hero() {
       transition={{ duration: 0.8 }}
     >
       <div className="hero-content">
-        <h1>Explore the World with Confidence</h1>
-        <p>Handpicked travel experiences for real explorers.</p>
+        {/* <h1>Explore the World with Confidence</h1> */}
+        <p>Travel isn’t just about places — it’s about moments.
+           Discover thoughtfully designed journeys that stay with you forever.</p>
+
+
         <button
           className="hero-btn"
           onClick={() =>
