@@ -10,7 +10,7 @@ import BikeRentals from "./Pages/BikeRentals";
 
 import Footer from "./component/Footer";
 import WhyUs from "./component/WhyUs";
-import Destinations from "./component/Destination";
+
 import DestinationCard from "./component/DestinationCard ";
 
 
