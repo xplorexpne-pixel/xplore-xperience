@@ -13,8 +13,7 @@ export default function Footer() {
                 {/* RIGHT */}
                 <div className="footer-right">
 
-                    <div className="footer-col">
-                        <h4>About Us</h4>
+                    <div className="footer-col">                        <h4>About Us</h4>
                         <ul>
                             <li>About Us</li>
                             <li>Our Story</li>
@@ -24,17 +23,16 @@ export default function Footer() {
                     <div className="footer-col">
                         <h4>Social Media</h4>
                         <div className="footer-socials">
-                            <a className="icon-btn"><i className="ri-instagram-line"></i></a>
-                            <a className="icon-btn"><i className="ri-twitter-x-line"></i></a>
-                            <a className="icon-btn"><i className="ri-facebook-line"></i></a>
+                            <a className="icon-btn" href="https://www.instagram.com/xplorexp/"><i className="ri-instagram-line"></i></a>
+                            <a className="icon-btn" href="https://www.facebook.com/Xplorexpne"><i className="ri-facebook-line"></i></a>
                         </div>
                     </div>
 
                 </div>
             </div>
 
-  <div className="footer-bottom">
-    © {new Date().getFullYear()} Xplore Xperience. All rights reserved.
+  <div className="footer-bottom" >
+   <a className="footer-link" href="https://www.instagram.com/codemysite_/">© {new Date().getFullYear()} Code My Site. All rights reserved.</a> 
   </div>
 </footer>);
 }

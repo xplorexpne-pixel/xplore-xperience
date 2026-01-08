@@ -17,9 +17,8 @@ export default function WhyUs() {
                     explore confidently with expert guidance.
                 </p>
                 <div className="social-icons">
-                    <a className="icon"><i className="ri-instagram-line"></i></a>
-                    <a className="icon"><i className="ri-twitter-x-line"></i></a>
-                    <a className="icon"><i className="ri-facebook-line"></i></a>
+                    <a className="icon-btn" href="https://www.instagram.com/xplorexp/"><i className="ri-instagram-line"></i></a>
+                    <a className="icon-btn" href="https://www.facebook.com/Xplorexpne"><i className="ri-facebook-line"></i></a>
                 </div>
             </div>
 
