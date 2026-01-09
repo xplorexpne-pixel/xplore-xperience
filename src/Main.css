@@ -993,6 +993,15 @@ body {
 /* =========================
    PACKAGES SECTION
 ========================= */
+#packages {
+  background: #f6f8f7; /* soft travel grey */
+  padding: 80px 6%;
+}
+
+#packages .section-title {
+  color: #1f2933;
+}
+
 
 #packages {
   padding: 60px 8%;
@@ -1032,6 +1041,42 @@ body {
 .packages-search input:focus {
   border-color: #2e7d32;
 }
+#packages .packages-search input {
+  background: #ffffff;
+  border: 1px solid #d1d5db;
+  color: #1f2933;
+}
+
+#packages .packages-search input:focus {
+  border-color: #1f7a63;
+  box-shadow: 0 0 0 3px rgba(31, 122, 99, 0.15);
+}
+
+#packages .packages-search button {
+  background: #1f7a63;
+  color: #ffffff;
+}
+
+#packages .packages-search button:hover {
+  background: #155e4a;
+}
+#packages .search-dropdown {
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+#packages .search-dropdown li {
+  color: #1f2933;
+}
+
+#packages .search-dropdown li:hover {
+  background: #e6f2ef;
+}
+#packages .region-title {
+  color: #1f2933;
+  font-weight: 600;
+}
 
 .packages-search button {
   padding: 12px 30px;
@@ -1064,6 +1109,22 @@ body {
 /* =========================
    REGION BLOCK
 ========================= */
+#packages .region-block,
+#packages .package-card {
+  animation: fadeUp 0.6s ease forwards;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 
 .region-block {
   margin-bottom: 60px;
@@ -1079,6 +1140,27 @@ body {
 /* =========================
    PACKAGE GRID
 ========================= */
+#packages .package-card {
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+#packages .package-card:hover {
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+}
+#packages .package-card h3 {
+  color: #1f2933;
+}
+
+#packages .package-card p {
+  color: #6b7280;
+}
+
+#packages .package-card span {
+  color: #1f7a63;
+  font-weight: 600;
+}
+
 
 .package-grid {
   display: grid;
@@ -1154,6 +1236,16 @@ body {
     flex: 1;
   }
 }
+@media (max-width: 900px) {
+  #packages .package-grid {
+    grid-template-columns: 1fr;
+  }
+
+  #packages .packages-search input {
+    width: 100%;
+  }
+}
+
 
 @media (max-width: 600px) {
   .package-grid {
