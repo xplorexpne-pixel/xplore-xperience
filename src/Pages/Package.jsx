@@ -101,6 +101,12 @@ export default function Packages() {
   const [orderedRegions, setOrderedRegions] = useState(regionsData);
   const [showDropdown, setShowDropdown] = useState(false);
 
+  /* ---------- RESET SEARCH ---------- */
+  function resetSearch() {
+    setOrderedRegions(regionsData);
+    setShowDropdown(false);
+  }
+
   /* ---------- SEARCH HANDLER ---------- */
   function handleSearch(value = searchText) {
     const query = value.trim();
@@ -109,13 +115,11 @@ export default function Packages() {
     let matchedRegion = null;
 
     for (let region of regionsData) {
-      // Match region name
       if (fuzzyMatch(query, region.region)) {
         matchedRegion = region;
         break;
       }
 
-      // Match place name (reorder, not remove)
       const matchedIndex = region.places.findIndex(place =>
         fuzzyMatch(query, place.title)
       );
@@ -164,8 +168,14 @@ export default function Packages() {
             placeholder="Search destination or region"
             value={searchText}
             onChange={(e) => {
-              setSearchText(e.target.value);
+              const value = e.target.value;
+              setSearchText(value);
               setShowDropdown(true);
+
+              // 🔁 RESET WHEN INPUT IS CLEARED
+              if (value.trim() === "") {
+                resetSearch();
+              }
             }}
             onKeyDown={(e) => {
               if (e.key === "Enter") {
