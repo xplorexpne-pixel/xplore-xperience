@@ -197,7 +197,7 @@ export default function Packages () {
             </div>
         </div>
 
-       
+       <div class="coming-soon-container">
         <div class="state-section coming-soon-section">
             <div class="state-header">
                 <h2>Mizoram</h2>
@@ -226,6 +226,7 @@ export default function Packages () {
             <h3>🚀 Exciting Packages Coming Soon!</h3>
             <p>Explore the jewel of India with Loktak Lake and Imphal valley</p>
         </div>
+    </div>
     </div>
 
   );
