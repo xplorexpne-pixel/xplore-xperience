@@ -1,231 +1,232 @@
 import { useState } from "react";
 
-/* ======================
-   REGION + PLACES DATA
-====================== */
-
-const regionsData = [
-  {
-    region: "Assam",
-    places: [
-      {
-        id: 1,
-        title: "Guwahati",
-        duration: "3 Days / 2 Nights",
-        price: "12,000",
-        image: "https://images.unsplash.com/photo-1589187155478-2f5f3c7e3f9b",
-      },
-      {
-        id: 2,
-        title: "Sibsagar",
-        duration: "2 Days / 1 Night",
-        price: "9,000",
-        image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
-      },
-      {
-        id: 3,
-        title: "Kaziranga",
-        duration: "3 Days / 2 Nights",
-        price: "15,000",
-        image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
-      },
-    ],
-  },
-  {
-    region: "Meghalaya",
-    places: [
-      {
-        id: 4,
-        title: "Shillong",
-        duration: "4 Days / 3 Nights",
-        price: "18,000",
-        image: "https://images.unsplash.com/photo-1526772662000-3f88f10405ff",
-      },
-      {
-        id: 5,
-        title: "Cherrapunji",
-        duration: "3 Days / 2 Nights",
-        price: "14,000",
-        image: "https://images.unsplash.com/photo-1526772662000-3f88f10405ff",
-      },
-    ],
-  },
-];
-
-/* ======================
-   FUZZY MATCH
-====================== */
-
-function fuzzyMatch(input, target) {
-  input = input.toLowerCase();
-  target = target.toLowerCase();
-
-  if (target.includes(input)) return true;
-
-  let i = 0;
-  let j = 0;
-  let mismatch = 0;
-
-  while (i < input.length && j < target.length) {
-    if (input[i] === target[j]) {
-      i++;
-      j++;
-    } else {
-      mismatch++;
-      j++;
-      if (mismatch > 2) return false;
-    }
-  }
-  return true;
-}
-
-/* ======================
-   SEARCH SUGGESTIONS
-====================== */
-
-const searchSuggestions = regionsData.flatMap(region => [
-  { type: "region", label: region.region },
-  ...region.places.map(place => ({
-    type: "place",
-    label: place.title,
-    region: region.region,
-  })),
-]);
-
-/* ======================
-   PACKAGES COMPONENT
-====================== */
-
-export default function Packages() {
-  const [searchText, setSearchText] = useState("");
-  const [orderedRegions, setOrderedRegions] = useState(regionsData);
-  const [showDropdown, setShowDropdown] = useState(false);
-
-  /* ---------- RESET SEARCH ---------- */
-  function resetSearch() {
-    setOrderedRegions(regionsData);
-    setShowDropdown(false);
-  }
-
-  /* ---------- SEARCH HANDLER ---------- */
-  function handleSearch(value = searchText) {
-    const query = value.trim();
-    if (!query) return;
-
-    let matchedRegion = null;
-
-    for (let region of regionsData) {
-      if (fuzzyMatch(query, region.region)) {
-        matchedRegion = region;
-        break;
-      }
-
-      const matchedIndex = region.places.findIndex(place =>
-        fuzzyMatch(query, place.title)
-      );
-
-      if (matchedIndex !== -1) {
-        const reorderedPlaces = [
-          region.places[matchedIndex],
-          ...region.places.filter((_, i) => i !== matchedIndex),
-        ];
-
-        matchedRegion = {
-          ...region,
-          places: reorderedPlaces,
-        };
-        break;
-      }
-    }
-
-    if (!matchedRegion) return;
-
-    const restRegions = regionsData.filter(
-      r => r.region !== matchedRegion.region
-    );
-
-    setOrderedRegions([matchedRegion, ...restRegions]);
-    setShowDropdown(false);
-  }
-
-  /* ---------- FILTERED SUGGESTIONS ---------- */
-  const filteredSuggestions =
-    searchText.trim().length > 0
-      ? searchSuggestions
-          .filter(item => fuzzyMatch(searchText, item.label))
-          .slice(0, 6)
-      : [];
-
+      
+export default function Packages () {
   return (
-    <section className="section" id="packages">
-      {/* HEADER */}
-      <div className="packages-header">
-        <h2 className="section-title">Our Travel Packages</h2>
+    <div class="container">
+        <header class="head">
+            <h1>🌄 Xplore Xperiance</h1>
+            <p>Discover the Enchanting Northeast India</p>
+        </header>
 
-        <div className="packages-search">
-          <input
-            type="text"
-            placeholder="Search destination or region"
-            value={searchText}
-            onChange={(e) => {
-              const value = e.target.value;
-              setSearchText(value);
-              setShowDropdown(true);
-
-              // 🔁 RESET WHEN INPUT IS CLEARED
-              if (value.trim() === "") {
-                resetSearch();
-              }
-            }}
-            onKeyDown={(e) => {
-              if (e.key === "Enter") {
-                handleSearch();
-              }
-            }}
-          />
-
-          <button onClick={() => handleSearch()}>Search</button>
-
-          {showDropdown && filteredSuggestions.length > 0 && (
-            <ul className="search-dropdown">
-              {filteredSuggestions.map((item, index) => (
-                <li
-                  key={index}
-                  onClick={() => {
-                    setSearchText(item.label);
-                    handleSearch(item.label);
-                  }}
-                >
-                  {item.label}
-                  {item.type === "place" && (
-                    <span style={{ opacity: 0.6, marginLeft: "6px" }}>
-                      ({item.region})
-                    </span>
-                  )}
-                </li>
-              ))}
-            </ul>
-          )}
+        
+        <div class="state-section">
+            <div class="state-header">
+                <h2>Arunachal Pradesh</h2>
+                <span class="badge">Popular</span>
+            </div>
+            <div class="packages-grid">
+                <div class="package-card">
+                    <div class="package-image">🏔️</div>
+                    <div class="package-content">
+                        <h3>Tawang & Shergaon</h3>
+                        <p>Experience the serene beauty of Tawang Monastery and picturesque Shergaon village nestled in the mountains</p>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <div class="package-image">❄️</div>
+                    <div class="package-content">
+                        <h3>Tawang & Sangti Valley</h3>
+                        <p>Explore the winter paradise and stunning Sangti Valley landscapes with black-necked cranes</p>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <div class="package-image">🦏</div>
+                    <div class="package-content">
+                        <h3>Tawang & Kaziranga</h3>
+                        <p>Combine breathtaking mountain monasteries with thrilling wildlife adventures</p>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <div class="package-image">🕉️</div>
+                    <div class="package-content">
+                        <h3>Tawang</h3>
+                        <p>Classic Tawang experience featuring the monastery, war memorial, and stunning scenic beauty</p>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <div class="package-image">🏞️</div>
+                    <div class="package-content">
+                        <h3>Mechuka (Menchuka)</h3>
+                        <p>Discover the hidden gem of Arunachal Pradesh with pristine valleys and Tibetan culture</p>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <div class="package-image">🌅</div>
+                    <div class="package-content">
+                        <h3>Kibithu & Dong</h3>
+                        <p>Witness India's first sunrise at the easternmost point of the country</p>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
 
-      {/* REGIONS */}
-      {orderedRegions.map((region) => (
-        <div key={region.region} className="region-block">
-          <h3 className="region-title">{region.region}</h3>
-
-          <div className="package-grid">
-            {region.places.map((pkg) => (
-              <div className="package-card" key={pkg.id}>
-                <img src={pkg.image} alt={pkg.title} />
-                <h3>{pkg.title}</h3>
-                <p>{pkg.duration}</p>
-                <span>₹{pkg.price}</span>
-              </div>
-            ))}
-          </div>
+        
+        <div class="state-section">
+            <div class="state-header">
+                <h2>Assam</h2>
+                <span class="badge">Wildlife & Culture</span>
+            </div>
+            <div class="packages-grid">
+                <div class="package-card">
+                    <div class="package-image">🦏</div>
+                    <div class="package-content">
+                        <h3>Kaziranga National Park</h3>
+                        <p>Home to the famous one-horned rhinoceros - UNESCO World Heritage Site with elephant safaris</p>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <div class="package-image">🏛️</div>
+                    <div class="package-content">
+                        <h3>Sivasagar</h3>
+                        <p>Explore the ancient capital of the Ahom Kingdom with historic temples and palaces</p>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <div class="package-image">🏝️</div>
+                    <div class="package-content">
+                        <h3>Majuli</h3>
+                        <p>World's largest river island featuring unique culture, monasteries, and traditional crafts</p>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <div class="package-image">🌊</div>
+                    <div class="package-content">
+                        <h3>Dima Hasao</h3>
+                        <p>The Switzerland of Assam - spectacular hills, valleys, and waterfalls</p>
+                        <div class="note">*Special destination</div>
+                    </div>
+                </div>
+            </div>
         </div>
-      ))}
-    </section>
+
+      
+        <div class="state-section">
+            <div class="state-header">
+                <h2>Meghalaya</h2>
+                <span class="badge">Wettest Place</span>
+            </div>
+            <div class="packages-grid">
+                <div class="package-card">
+                    <div class="package-image">☔</div>
+                    <div class="package-content">
+                        <h3>Quick Meghalaya Escape</h3>
+                        <span class="duration">3D/2N</span>
+                        <p>Perfect weekend getaway covering Shillong and Cherrapunji highlights</p>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <div class="package-image">🌉</div>
+                    <div class="package-content">
+                        <h3>Living Root Bridges Tour</h3>
+                        <span class="duration">5D/4N</span>
+                        <p>Comprehensive tour including famous living root bridges and crystal clear pools</p>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <div class="package-image">🌊</div>
+                    <div class="package-content">
+                        <h3>Caves & Waterfalls Explorer</h3>
+                        <span class="duration">6D/5N</span>
+                        <p>Extended exploration of caves, waterfalls, and traditional Khasi villages</p>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <div class="package-image">🏔️</div>
+                    <div class="package-content">
+                        <h3>Complete Meghalaya Experience</h3>
+                        <span class="duration">7D/6N</span>
+                        <p>Full immersion with offbeat locations, Dawki river, and Mawlynnong village</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="state-section">
+            <div class="state-header">
+                <h2>Sikkim</h2>
+                <span class="badge">Mountain Paradise</span>
+            </div>
+            <div class="packages-grid">
+                <div class="package-card">
+                    <div class="package-image">🏔️</div>
+                    <div class="package-content">
+                        <h3>Classic Sikkim Tour</h3>
+                        <span class="duration">5D/4N</span>
+                        <p>Gangtok, Tsomgo Lake, and Nathula Pass adventure with stunning Himalayan views</p>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <div class="package-image">🗻</div>
+                    <div class="package-content">
+                        <h3>Extended Sikkim Expedition</h3>
+                        <span class="duration">6D/5N</span>
+                        <p>Comprehensive tour covering North Sikkim, Pelling, and Kanchenjunga viewpoints</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="state-section">
+            <div class="state-header">
+                <h2>Nagaland</h2>
+                <span class="badge">Land of Festivals</span>
+            </div>
+            <div class="packages-grid">
+                <div class="package-card">
+                    <div class="package-image">🌸</div>
+                    <div class="package-content">
+                        <h3>Dzukou Valley Trek</h3>
+                        <p>Trek through the spectacular valley of flowers in Northeast India with camping</p>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <div class="package-image">🎭</div>
+                    <div class="package-content">
+                        <h3>Hornbill Festival</h3>
+                        <p>Experience the Festival of Festivals - December special with tribal dances and culture</p>
+                    </div>
+                </div>
+                <div class="package-card">
+                    <div class="package-image">🏘️</div>
+                    <div class="package-content">
+                        <h3>Mon & Longwa</h3>
+                        <p>Visit the land of headhunters and the unique international border village</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       
+        <div class="state-section coming-soon-section">
+            <div class="state-header">
+                <h2>Mizoram</h2>
+                <span class="badge coming-soon">Coming Soon</span>
+            </div>
+            <h3>🚀 Exciting Packages Coming Soon!</h3>
+            <p>Stay tuned for amazing adventures in the Land of Blue Mountains</p>
+        </div>
+
+    
+        <div class="state-section coming-soon-section">
+            <div class="state-header">
+                <h2>Tripura</h2>
+                <span class="badge coming-soon">Coming Soon</span>
+            </div>
+            <h3>🚀 Exciting Packages Coming Soon!</h3>
+            <p>Discover the heritage and natural beauty of Tripura</p>
+        </div>
+
+
+        <div class="state-section coming-soon-section">
+            <div class="state-header">
+                <h2>Manipur</h2>
+                <span class="badge coming-soon">Coming Soon</span>
+            </div>
+            <h3>🚀 Exciting Packages Coming Soon!</h3>
+            <p>Explore the jewel of India with Loktak Lake and Imphal valley</p>
+        </div>
+    </div>
+
   );
 }

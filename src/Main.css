@@ -591,26 +591,7 @@
   }
 }
 
-/* Package_section */
-.package-card {
-  padding: 24px;
-  border-radius: 18px;
-  background: var(--white);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-}
 
-.package-card h3 {
-  margin-top: 16px;
-  font-size: 18px;
-  color: var(--text);
-}
-
-.package-card span {
-  margin-top: 10px;
-  display: inline-block;
-  font-weight: 600;
-  color: var(--primary);
-}
 /* contact_Section */
 
 .contact-form {
@@ -1038,268 +1019,172 @@
   line-height: 1.7;
   color: #444;
 }
-/* =========================
-   PACKAGES SECTION
-========================= */
-#packages {
-  background: var(--light);
-  padding: 60px 8%;
-}
 
-#packages .section-title {
-  color: var(--text);
-}
+/*packages_section*/
 
-/* Header: title left, search right */
-.packages-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 40px;
-}
+        .head {
+            text-align: center;
+            background: white;
+            padding: 60px 20px;
+            margin-bottom: 40px;
+            border-radius: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
 
-.section-title {
-  font-size: 28px;
-  font-weight: 600;
-}
+        .head h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
-/* =========================
-   SEARCH BAR
-========================= */
+        .head p {
+            font-size: 1.3em;
+            color: #666;
+        }
 
-.packages-search {
-  display: flex;
-  gap: 10px;
-}
+        .state-section {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+        }
 
-.packages-search input {
-  padding: 10px 14px;
-  border-radius: 999px;
-  border: 1px solid #d1d5db;
-  outline: none;
-  font-size: 14px;
-  min-width: 220px;
-  background: var(--white);
-  color: var(--text);
-}
+        .state-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+        }
 
-.packages-search input:focus {
-  border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(0, 255, 156, 0.18);
-}
+        .state-header h2 {
+            font-size: 2.2em;
+            color: #333;
+            margin-right: 15px;
+        }
 
-/* Search button */
-.packages-search button {
-  padding: 12px 30px;
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--dark);
-  background: linear-gradient(
-    135deg,
-    var(--primary),
-    var(--secondary)
-  );
-  border: none;
-  border-radius: 999px;
-  cursor: pointer;
+        .badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 0.85em;
+            font-weight: bold;
+        }
 
-  box-shadow: 0 8px 24px rgba(0, 255, 156, 0.35);
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
-}
+        .badge.coming-soon {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
 
-.packages-search button:hover {
-  box-shadow: 0 14px 36px rgba(0, 255, 156, 0.55);
-}
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+        }
 
-.packages-search button:active {
-  box-shadow: 0 6px 16px rgba(0, 255, 156, 0.3);
-}
+        .package-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
 
-/* Dropdown */
-#packages .search-dropdown {
-  background: var(--white);
-  border-radius: 16px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-}
+        .package-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(102, 126, 234, 0.2);
+            border-color: #667eea;
+        }
 
-#packages .search-dropdown li {
-  color: var(--text);
-}
+        .package-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3em;
+        }
 
-#packages .search-dropdown li:hover {
-  background: rgba(0, 255, 156, 0.12);
-}
+        .package-content {
+            padding: 25px;
+        }
 
-/* =========================
-   REGION BLOCK
-========================= */
-#packages .region-block,
-#packages .package-card {
-  animation: fadeUp 0.6s ease forwards;
-}
+        .package-card h3 {
+            color: #333;
+            font-size: 1.4em;
+            margin-bottom: 12px;
+        }
 
-.region-block {
-  margin-bottom: 60px;
-}
+        .package-card p {
+            color: #666;
+            font-size: 0.95em;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
 
-.region-title {
-  font-size: 22px;
-  font-weight: 600;
-  margin-bottom: 20px;
-  color: var(--text);
-}
+        .duration {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-top: 5px;
+        }
 
-/* =========================
-   PACKAGE GRID
-========================= */
-.package-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-}
+        .coming-soon-section {
+            background: linear-gradient(135deg, #fff5e6 0%, #ffe8cc 100%);
+            text-align: center;
+            padding: 50px;
+            border: 2px dashed #ff9933;
+        }
 
-/* =========================
-   PACKAGE CARD
-========================= */
-.package-card {
-  background: var(--white);
-  border-radius: 18px;
-  overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
-  cursor: pointer;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-}
+        .coming-soon-section h3 {
+            color: #d35400;
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
 
-.package-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.18);
-}
+        .coming-soon-section p {
+            color: #856404;
+            font-size: 1.1em;
+        }
 
-.package-card img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-}
+        .note {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 12px 15px;
+            margin-top: 12px;
+            border-radius: 5px;
+            font-size: 0.9em;
+            color: #856404;
+        }
 
-.package-card h3 {
-  font-size: 18px;
-  font-weight: 600;
-  margin: 16px;
-  color: var(--text);
-}
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2em;
+            }
 
-.package-card p {
-  font-size: 14px;
-  color: var(--muted);
-  margin: 0 16px 8px;
-}
+            .packages-grid {
+                grid-template-columns: 1fr;
+            }
 
-.package-card span {
-  display: block;
-  margin: 0 16px 18px;
-  font-weight: 600;
-  color: var(--primary);
-}
-/* =========================
-   RESPONSIVE
-========================= */
+            .state-header h2 {
+                font-size: 1.6em;
+            }
 
-@media (max-width: 1024px) {
-  .package-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 768px) {
-  .packages-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 16px;
-  }
-
-  .packages-search {
-    width: 100%;
-  }
-
-  .packages-search input {
-    flex: 1;
-  }
-}
-@media (max-width: 900px) {
-  #packages .package-grid {
-    grid-template-columns: 1fr;
-  }
-
-  #packages .packages-search input {
-    width: 100%;
-  }
-}
-
-
-@media (max-width: 600px) {
-  .package-grid {
-    grid-template-columns: 1fr;
-  }
-
-  #packages {
-    padding: 50px 6%;
-  }
-}
-
-/* Search wrapper */
-.packages-search {
-  position: relative;
-  /* IMPORTANT for dropdown */
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-/* Search input (you can tweak) */
-.packages-search input {
-  width: 320px;
-  padding: 14px 18px;
-  border-radius: 999px;
-  border: 1px solid #ddd;
-  outline: none;
-  font-size: 15px;
-}
-
-/* Dropdown container */
-.search-dropdown {
-  position: absolute;
-  top: calc(100% + 8px);
-  /* below input */
-  left: 0;
-  width: 320px;
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
-  list-style: none;
-  padding: 8px 0;
-  margin: 0;
-  z-index: 1000;
-  overflow: hidden;
-}
-
-/* Dropdown items */
-.search-dropdown li {
-  padding: 12px 18px;
-  font-size: 14px;
-  cursor: pointer;
-  transition: background 0.2s ease;
-  white-space: nowrap;
-}
-
-/* Hover effect */
-.search-dropdown li:hover {
-  background: #f3f6f9;
-}
-
-/* Region label (inside suggestion) */
-.search-dropdown li span {
-  font-size: 12px;
-  color: #777;
-}
+            .state-section {
+                padding: 25px;
+            }
+        }
+ 
