@@ -11,7 +11,7 @@ export default function Navbar() {
                 </NavLink>
 
                 <NavLink to="/package">
-                    Packages
+                    Package
                 </NavLink>
 
                 <NavLink to="/About">
