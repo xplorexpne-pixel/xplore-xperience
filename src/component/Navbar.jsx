@@ -18,10 +18,10 @@ export default function Navbar() {
                     About us
                 </NavLink>
 
-                {/* <NavLink to="/bike-rentals">
+                { <NavLink to="/bike-rentals">
                     Bike Rentals
-                </NavLink> */}
-                
+                </NavLink> }
+
             </div>
             <div className="Nav-left"><button className="Book-now-btn  glow-btn">Book Now</button></div>
         </nav>
