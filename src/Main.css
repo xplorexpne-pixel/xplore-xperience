@@ -1019,312 +1019,255 @@
   line-height: 1.7;
   color: #444;
 }
-
-/*packages_section*/
-
-        .head {
-            text-align: center;
-            background: white;
-            padding: 60px 20px;
-            margin-bottom: 40px;
-            border-radius: 20px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-
-        .head h1 {
-            font-size: 3.5em;
-            margin-bottom: 10px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .head p {
-            font-size: 1.3em;
-            color: #666;
-        }
-
-        .state-section {
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            margin-bottom: 40px;
-            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
-        }
-
-        .state-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 30px;
-            padding-bottom: 20px;
-            border-bottom: 3px solid #667eea;
-        }
-
-        .state-header h2 {
-            font-size: 2.2em;
-            color: #333;
-            margin-right: 15px;
-        }
-
-        .badge {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 8px 20px;
-            border-radius: 25px;
-            font-size: 0.85em;
-            font-weight: bold;
-        }
-
-        .badge.coming-soon {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-        }
-
-        .packages-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 25px;
-        }
-
-        .package-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            border: 1px solid #e0e0e0;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        }
-
-        .package-card:hover {
-            transform: none; /* Remove the translateY effect */
-            box-shadow: none; /* Remove the shadow effect */
-        }
-
-        .package-image {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 3em;
-        }
-
-        .package-content {
-            padding: 25px;
-        }
-
-        .package-card h3 {
-            color: #333;
-            font-size: 1.4em;
-            margin-bottom: 12px;
-        }
-
-        .package-card p {
-            color: #666;
-            font-size: 0.95em;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
-
-        .duration {
-            display: inline-block;
-            background: #667eea;
-            color: white;
-            padding: 6px 15px;
-            border-radius: 20px;
-            font-size: 0.85em;
-            font-weight: bold;
-            margin-top: 5px;
-        }
-
-        .coming-soon-section {
-            background: linear-gradient(135deg, #fff5e6 0%, #ffe8cc 100%);
-            text-align: center;
-            padding: 50px;
-            border: 2px dashed #ff9933;
-        }
-
-        .coming-soon-section h3 {
-            color: #d35400;
-            font-size: 1.8em;
-            margin-bottom: 10px;
-        }
-
-        .coming-soon-section p {
-            color: #856404;
-            font-size: 1.1em;
-        }
-
-        .note {
-            background: #fff3cd;
-            border-left: 4px solid #ffc107;
-            padding: 12px 15px;
-            margin-top: 12px;
-            border-radius: 5px;
-            font-size: 0.9em;
-            color: #856404;
-        }
-
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 2.2em;
-            }
-
-            .packages-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .state-header h2 {
-                font-size: 1.6em;
-            }
-
-            .state-section {
-                padding: 25px;
-            }
-        }
-.coming-soon-container {
-    margin: 10px;
+/* =====================
+   pakage
+===================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* Tour Packages Section */
-.tour-packages {
-  padding: 60px 20px;
-  background-color: #f5f5f5;
+body {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #f4f6f8;
+  color: #0f172a;
 }
 
-.packages-container {
+/* =====================
+   CONTAINER
+===================== */
+.container {
   max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  gap: 40px;
-  align-items: center;
+  margin: auto;
+  padding: 40px 20px 80px;
 }
 
-.packages-content {
-  flex: 1;
-  background: linear-gradient(135deg, #7a8fa3 0%, #5b6b7d 100%);
-  flex: 1;
-  background: #abbdcd;
-  border-radius: 20px;
-  padding: 40px;
-  color: white;
-  min-height: 280px;
-  display: flex;
-  align-items: stretch;
-  flex-direction: column;
-  justify-content: center;
+/* =====================
+   HEADER
+===================== */
+.head {
+  text-align: center;
+  margin-bottom: 50px;
 }
 
-.packages-content h2 {
-  font-size: 28px;
-  font-weight: bold;
-  margin-bottom: 15px;
+.head h1 {
+  font-size: 42px;
+  font-weight: 800;
+  margin-bottom: 10px;
 }
 
-.packages-content p {
+.head p {
   font-size: 16px;
-  margin-bottom: 25px;
-  line-height: 1.5;
+  color: #64748b;
 }
 
-.browse-btn {
-  background: linear-gradient(135deg, var(--primary), var(--secondary));
-  color: var(--dark);
+/* =====================
+   SEARCH
+===================== */
+.search-box {
+  margin-top: 30px;
+  position: relative;
+  max-width: 520px;
+  margin-inline: auto;
+  display: flex;
+  gap: 10px;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 14px 18px;
+  border-radius: 14px;
+  border: 1px solid #d1d5db;
+  font-size: 15px;
+  outline: none;
+}
+
+.search-box input:focus {
+  border-color: #00ff9c;
+  box-shadow: 0 0 0 3px rgba(0, 255, 156, 0.2);
+}
+
+.search-box button {
+  padding: 14px 26px;
+  border-radius: 14px;
   border: none;
-  margin-top: 40px;
-  padding: 10px 18px;      /* ↓ smaller padding */
-  font-size: 14px;         /* ↓ smaller text */
-  border-radius: 10px;
+  font-weight: 600;
+  font-size: 15px;
+  cursor: pointer;
+  color: #0f172a;
+  background: linear-gradient(135deg, #00ff9c, #00c2ff);
+  box-shadow: 0 8px 20px rgba(0, 255, 156, 0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.search-box button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(0, 255, 156, 0.5);
+}
+
+/* =====================
+   SEARCH SUGGESTIONS
+===================== */
+.suggestions {
+  position: absolute;
+  top: 58px;
+  left: 0;
+  right: 0;
+  background: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+  list-style: none;
+  overflow: hidden;
+  z-index: 20;
+}
+
+.suggestions li {
+  padding: 12px 18px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s ease;
+}
+
+.suggestions li:hover {
+  background: rgba(0, 255, 156, 0.15);
+}
+
+/* =====================
+   STATE SECTION
+===================== */
+.state-section {
+  margin-bottom: 60px;
+}
+
+.state-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.state-header h2 {
+  font-size: 26px;
+  font-weight: 700;
+}
+
+/* =====================
+   BADGES
+===================== */
+.badge {
+  padding: 6px 14px;
   font-size: 12px;
   font-weight: 600;
-  width: fit-content;   /* prevents stretching */
-  cursor: pointer;
-  cursor: pointer;
-  z-index: 1;
-
-  box-shadow: 0 8px 24px rgba(0, 255, 156, 0.35);
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
-  transition: background-color 0.3s ease;
+  border-radius: 999px;
+  background: rgba(0, 255, 156, 0.15);
+  color: #059669;
 }
 
-.browse-btn:hover {
-  background: linear-gradient(135deg, var(--secondary), var(--primary)); /* Reverse gradient */
-  color: var(--white); /* Change text color */
-  transform: scale(1.05); /* Slightly enlarge the button */
-  box-shadow: 0 12px 30px rgba(0, 194, 255, 0.5); /* Add a stronger shadow */
+.badge.coming-soon {
+  background: rgba(255, 183, 3, 0.2);
+  color: #b45309;
 }
 
-.packages-cards {
-  flex: 1.5;
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  justify-content: flex-end;
+/* =====================
+   PACKAGE GRID
+===================== */
+.packages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 26px;
 }
 
+/* =====================
+   PACKAGE CARD
+===================== */
 .package-card {
-  flex: 1;
-  min-width: 280px;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgb(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 26px;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.08);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
   cursor: pointer;
 }
 
 .package-card:hover {
-  transform: translateY(1px);
-  transform: none; /* Remove the translateY effect */
-  box-shadow: none; /* Remove the shadow effect */
+  transform: translateY(-8px);
+  box-shadow: 0 28px 60px rgba(0, 0, 0, 0.16);
 }
 
-.package-card img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  display: block;
+.package-image {
+  font-size: 40px;
+  margin-bottom: 14px;
 }
 
-.package-info {
-  background-color: white;
-  padding: 20px;
-}
-
-.package-info h3 {
+.package-content h3 {
   font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 10px;
-  color: #2c3e50;
+  font-weight: 700;
+  margin-bottom: 8px;
 }
 
-.package-info p {
+.package-content p {
   font-size: 14px;
-  color: #666;
-  line-height: 1.5;
+  line-height: 1.6;
+  color: #64748b;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  .packages-container {
+.duration {
+  display: inline-block;
+  margin-bottom: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #0ea5e9;
+}
+
+/* =====================
+   COMING SOON
+===================== */
+.coming-soon-container {
+  display: grid;
+  gap: 30px;
+  margin-top: 80px;
+}
+
+.coming-soon-section {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 255, 156, 0.08),
+    rgba(0, 194, 255, 0.08)
+  );
+  border-radius: 28px;
+  padding: 36px;
+  text-align: center;
+}
+
+.coming-soon-section h3 {
+  font-size: 22px;
+  margin: 16px 0 8px;
+}
+
+.coming-soon-section p {
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 640px) {
+  .head h1 {
+    font-size: 32px;
+  }
+
+  .search-box {
     flex-direction: column;
-    gap: 30px;
   }
 
-  .packages-cards {
-    justify-content: center;
+  .search-box button {
+    width: 100%;
   }
-
-  .package-card {
-    min-width: 250px;
-  }
-  /* How It Works Section */
 }
+  /* How It Works Section */
+
 .how-it-works {
   padding: 100px 10%;
   background: #ffffff;
