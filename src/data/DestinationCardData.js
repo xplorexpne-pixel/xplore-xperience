@@ -10,7 +10,7 @@ export const destinations = [
     rating: "",
     reviews: "",
     price: "₹8,999",
-    image: "public/image/meghalaya.jpg",
+    image: "/image/meghalaya.jpg",
   },
   {
     id: 2,

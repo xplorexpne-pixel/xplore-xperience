@@ -17,6 +17,7 @@ import TourPackages from "./component/TourPackages";
 import HowItWorks from "./component/HowItWorks";
 import BookNowSec from "./component/CtaBanner";
 import CtaBanner from "./component/CtaBanner";
+import LatestBlogs from "./component/LatestBlog";
 
 
 function App() {
@@ -26,7 +27,7 @@ function App() {
         <Navbar />
 
         <Routes>
-          <Route path="/" element={<><Hero /><Destinations /><WhyUs /><TourPackages /><HowItWorks /><CtaBanner /></>} />
+          <Route path="/" element={<><Hero /><Destinations /><WhyUs /><TourPackages /><HowItWorks /><CtaBanner /><LatestBlogs /></>} />
           <Route path="/packages" element={<Packages />} />
           <Route path="/About" element={<About />} />
           {/* <Route path="/bike-rentals" element={<BikeRentals />} /> */}

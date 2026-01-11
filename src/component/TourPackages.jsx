@@ -7,7 +7,7 @@ const TourPackages = () => {
       id: 1,
       title: 'Island Hopper Adventure',
       description: 'Hop from island to island with boat tours, guided snorkeling and a sunset cruise.',
-      image: 'public/image/image1.jpg',
+      image: '/image/image1.jpg',
     },
     {
       id: 2,
