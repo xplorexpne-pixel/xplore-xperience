@@ -15,11 +15,11 @@ export const destinations = [
     id: 2,
     title: "Baguio City",
     tagline: "Mount Getaway",
-    location: "Benguet, Region",
+    location: "Sikkim, Region",
     rating: "4.6",
     reviews: "950",
     price: "₹3,200",
-    image: "/images/baguio.jpg",
+    image: "/image/shikkim.jpg",
   },
   {
     id: 3,
@@ -29,7 +29,7 @@ export const destinations = [
     rating: "4.7",
     reviews: "780",
     price: "₹4,250",
-    image: "/images/vigan.jpg",
+    image: "/image/darjeeling.jpg",
   },
   {
     id: 4,
@@ -39,7 +39,7 @@ export const destinations = [
     rating: "4.9",
     reviews: "2k",
     price: "₹5,500",
-    image: "/images/siargao.jpg",
+    image: "/image/dzuko.jpg",
   },
   {
     id: 5,

@@ -1,5 +1,5 @@
 import { useNavigate } from 'react-router-dom'; // Import useNavigate
-
+import Packages from '../Pages/Package';
 const TourPackages = () => {
   const navigate = useNavigate(); // Initialize navigate function
   const packages = [
@@ -26,7 +26,7 @@ const TourPackages = () => {
           <p>Explore customizable and unforgettable adventures</p>
           <button
             className="browse-btn"
-            onClick={() => navigate('/packages')} // Add navigation on click
+            onClick={() => navigate('/Packages')} // Add navigation on click
           >
             Browse all packages
           </button>
