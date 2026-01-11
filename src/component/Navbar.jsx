@@ -10,8 +10,8 @@ export default function Navbar() {
                     Home
                 </NavLink>
 
-                <NavLink to="/package">
-                    Package
+                <NavLink to="/packages">
+                    Packages
                 </NavLink>
 
                 <NavLink to="/About">
