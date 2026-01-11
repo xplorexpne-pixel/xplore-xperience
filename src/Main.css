@@ -1020,8 +1020,311 @@
   color: #444;
 }
 
-  /* How It Works Section */
+/*packages_section*/
 
+        .head {
+            text-align: center;
+            background: white;
+            padding: 60px 20px;
+            margin-bottom: 40px;
+            border-radius: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .head h1 {
+            font-size: 3.5em;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .head p {
+            font-size: 1.3em;
+            color: #666;
+        }
+
+        .state-section {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+        }
+
+        .state-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .state-header h2 {
+            font-size: 2.2em;
+            color: #333;
+            margin-right: 15px;
+        }
+
+        .badge {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 8px 20px;
+            border-radius: 25px;
+            font-size: 0.85em;
+            font-weight: bold;
+        }
+
+        .badge.coming-soon {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .package-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .package-card:hover {
+            transform: none; /* Remove the translateY effect */
+            box-shadow: none; /* Remove the shadow effect */
+        }
+
+        .package-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3em;
+        }
+
+        .package-content {
+            padding: 25px;
+        }
+
+        .package-card h3 {
+            color: #333;
+            font-size: 1.4em;
+            margin-bottom: 12px;
+        }
+
+        .package-card p {
+            color: #666;
+            font-size: 0.95em;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .duration {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+
+        .coming-soon-section {
+            background: linear-gradient(135deg, #fff5e6 0%, #ffe8cc 100%);
+            text-align: center;
+            padding: 50px;
+            border: 2px dashed #ff9933;
+        }
+
+        .coming-soon-section h3 {
+            color: #d35400;
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        .coming-soon-section p {
+            color: #856404;
+            font-size: 1.1em;
+        }
+
+        .note {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 12px 15px;
+            margin-top: 12px;
+            border-radius: 5px;
+            font-size: 0.9em;
+            color: #856404;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2.2em;
+            }
+
+            .packages-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .state-header h2 {
+                font-size: 1.6em;
+            }
+
+            .state-section {
+                padding: 25px;
+            }
+        }
+.coming-soon-container {
+    margin: 10px;
+}
+
+/* Tour Packages Section */
+.tour-packages {
+  padding: 60px 20px;
+  background-color: #f5f5f5;
+}
+
+.Tour-packages-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 40px;
+  align-items: center;
+}
+
+.Tour-packages-content {
+  flex: 1;
+  background: linear-gradient(135deg, #7a8fa3 0%, #5b6b7d 100%);
+  flex: 1;
+  background: #abbdcd;
+  border-radius: 20px;
+  padding: 40px;
+  color: white;
+  min-height: 280px;
+  display: flex;
+  align-items: stretch;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.Tour-packages-content h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.Tour-packages-content p {
+  font-size: 16px;
+  margin-bottom: 25px;
+  line-height: 1.5;
+}
+
+.browse-btn {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: var(--dark);
+  border: none;
+  margin-top: 40px;
+  padding: 10px 18px;      /* ↓ smaller padding */
+  font-size: 14px;         /* ↓ smaller text */
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  width: fit-content;   /* prevents stretching */
+  cursor: pointer;
+  cursor: pointer;
+  z-index: 1;
+
+  box-shadow: 0 8px 24px rgba(0, 255, 156, 0.35);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+  transition: background-color 0.3s ease;
+}
+
+.browse-btn:hover {
+  background: linear-gradient(135deg, var(--secondary), var(--primary)); /* Reverse gradient */
+  color: var(--white); /* Change text color */
+  transform: scale(1.05); /* Slightly enlarge the button */
+  box-shadow: 0 12px 30px rgba(0, 194, 255, 0.5); /* Add a stronger shadow */
+}
+
+.Tour-packages-cards {
+  flex: 1.5;
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.Tour-package-card {
+  flex: 1;
+  min-width: 280px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgb(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.Tour-package-card:hover {
+  transform: translateY(1px);
+  transform: none; /* Remove the translateY effect */
+  box-shadow: none; /* Remove the shadow effect */
+}
+
+.Tour-package-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.Tour-package-info {
+  background-color: white;
+  padding: 20px;
+}
+
+.Tour-package-info h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.Tour-package-info p {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .Tour-packages-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .Tour-packages-cards {
+    justify-content: center;
+  }
+
+  .Tour-package-card {
+    min-width: 250px;
+  }
+  /* How It Works Section */
+}
 .how-it-works {
   padding: 100px 10%;
   background: #ffffff;
@@ -1177,275 +1480,5 @@
 
   .cta-right img {
     height: 220px;
-  }
-}
-/* packages */
-/* ===============================
-   PAGE BASE
-================================ */
-
-.packages-page {
-  padding: 80px 8%;
-  background: #f4f7f6;
-  color: #0f172a;
-}
-
-/* ===============================
-   HEADER
-================================ */
-
-.packages-header {
-  text-align: center;
-  margin-bottom: 60px;
-}
-
-.packages-header h1 {
-  font-size: 48px;
-  font-weight: 700;
-  margin-bottom: 10px;
-}
-
-.packages-header p {
-  font-size: 16px;
-  color: #64748b;
-}
-
-/* ===============================
-   SEARCH
-================================ */
-
-.search-box {
-  margin-top: 30px;
-  display: flex;
-  justify-content: center;
-  gap: 12px;
-}
-
-.search-box input {
-  width: 320px;
-  padding: 14px 18px;
-  border-radius: 999px;
-  border: 1px solid #d1d5db;
-  font-size: 14px;
-  outline: none;
-}
-
-.search-box input:focus {
-  border-color: #00ff9c;
-  box-shadow: 0 0 0 3px rgba(0,255,156,0.2);
-}
-
-.search-box button {
-  padding: 14px 26px;
-  border-radius: 999px;
-  border: none;
-  cursor: pointer;
-  font-weight: 600;
-  background: linear-gradient(135deg, #00ff9c, #00c2ff);
-  color: #0b0b0b;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.search-box button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 26px rgba(0,255,156,0.45);
-}
-
-/* ===============================
-   STATE SECTION
-================================ */
-
-.state-section {
-  margin-bottom: 80px;
-}
-
-.state-header {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-bottom: 28px;
-}
-
-.state-header h2 {
-  font-size: 26px;
-  font-weight: 600;
-}
-
-.badge {
-  padding: 6px 14px;
-  font-size: 12px;
-  font-weight: 600;
-  border-radius: 999px;
-  background: #e0fdf4;
-  color: #047857;
-}
-
-/* ===============================
-   GRID
-================================ */
-
-.packages-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 36px;
-}
-
-/* ===============================
-   CARD
-================================ */
-
-.package-card {
-  background: #ffffff;
-  border-radius: 22px;
-  overflow: hidden;
-  height: 400px;
-  display: flex;
-  flex-direction: column;
-  box-shadow: 0 18px 40px rgba(0,0,0,0.12);
-  transition: transform 0.45s ease, box-shadow 0.45s ease;
-}
-
-.package-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 34px 70px rgba(0,0,0,0.22);
-}
-/* ===============================
-   IMAGE
-================================ */
-
-.package-image {
-  position: relative;
-  height: 290px;
-  width: 100%;
-  overflow: hidden;
-}
-
-.package-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.6s ease;
-}
-
-.package-card:hover img {
-  transform: scale(1.08);
-}
-
-/* ===============================
-   CARD BADGES
-================================ */
-
-.card-badges {
-  position: absolute;
-  top: 14px;
-  left: 14px;
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.card-badge {
-  padding: 5px 10px;
-  font-size: 11px;
-  font-weight: 600;
-  border-radius: 999px;
-  background: linear-gradient(135deg, #00ff9c, #00c2ff);
-  color: #0b0b0b;
-}
-
-/* ===============================
-   CONTENT
-================================ */
-
-.package-content {
-  padding: 22px 24px;
-  display: flex;
-  flex-direction: column;
-  height: calc(440px - 210px);
-}
-
-.package-content h3 {
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.package-content p {
-  font-size: 14px;
-  line-height: 1.6;
-  color: #475569;
-  flex-grow: 1;
-}
-
-/* ===============================
-   BUTTON
-================================ */
-
-.package-btn {
-  margin-top: 16px;
-  padding: 14px 18px;
-  border-radius: 14px;
-  border: none;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-  background: linear-gradient(135deg, #00ff9c, #00c2ff);
-  color: #0b0b0b;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
-  pointer-events: auto;
-  cursor: pointer;
-}
-
-.package-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 12px 28px rgba(0,255,156,0.45);
-}
-
-/* ===============================
-   COMING SOON
-================================ */
-
-.coming-soon-wrapper {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 28px;
-  margin-top: 80px;
-}
-
-.coming-soon-card {
-  background: #0f172a;
-  color: #ffffff;
-  border-radius: 22px;
-  padding: 40px 26px;
-  text-align: center;
-}
-
-.coming-soon-card h2 {
-  font-size: 22px;
-  margin-bottom: 8px;
-}
-
-.badge.coming-soon {
-  background: #1e293b;
-  color: #94a3b8;
-  margin-bottom: 10px;
-  display: inline-block;
-}
-
-/* ===============================
-   RESPONSIVE
-================================ */
-
-@media (max-width: 768px) {
-  .packages-header h1 {
-    font-size: 36px;
-  }
-
-  .package-card {
-    height: 400px;
-  }
-
-  .package-image {
-    height: 190px;
   }
 }

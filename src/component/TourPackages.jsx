@@ -19,9 +19,9 @@ const TourPackages = () => {
 
   return (
     <section className="tour-packages">
-      <div className="packages-container">
+      <div className="Tour-packages-container">
         {/* Left Section */}
-        <div className="packages-content">
+        <div className="Tour-packages-content">
           <h2>Tour Packages</h2>
           <p>Explore customizable and unforgettable adventures</p>
           <button
@@ -33,11 +33,11 @@ const TourPackages = () => {
         </div>
 
         {/* Right Section - Cards */}
-        <div className="packages-cards">
+        <div className="Tour-packages-cards">
           {packages.map((pkg) => (
-            <div key={pkg.id} className="package-card">
+            <div key={pkg.id} className="Tour-package-card">
               <img src={pkg.image} alt={pkg.title} />
-              <div className="package-info">
+              <div className="Tour-package-info">
                 <h3>{pkg.title}</h3>
                 <p>{pkg.description}</p>
               </div>
