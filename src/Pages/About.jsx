@@ -7,19 +7,20 @@ export default function About() {
       <div className="about-hero">
         <h1>About Xplore Xperience</h1>
         <p>
-          We design handpicked travel experiences for explorers who want to
-          travel with confidence, comfort, and authenticity.
-        </p>
+          At Xplore Xperience (Xplore Xp), we believe exceptional travel begins with trust. Every journey we design is guided by an uncompromising commitment to safety, comfort, and seamless experiences—allowing you to travel with complete peace of mind.</p>
+        <p>Our strength lies in our experienced team and deep local expertise. Through dedicated local language support, we break communication barriers and ensure smooth, stress-free interactions at every stage, making each trip more relaxed, informed, and enriching—regardless of destination or travel style.</p>
+        <p>Our professional Tour Leaders stay ahead of every journey. By continuously monitoring road conditions, weather updates, and local developments, they make informed, real-time decisions that enhance safety while maintaining the natural flow of the experience. </p>
+         <p> Whether it’s a leisure escape, cultural exploration, group tour, or a custom-designed itinerary, we manage every detail with precision and care. The result is travel that feels refined, secure, and thoughtfully curated—so you can focus on enjoying the journey</p>
       </div>
 
       {/* Stats Row (NOW FIRST) */}
       <div className="about-stats-row">
         <div className="stat">
-          <h3>500+</h3>
+          <h3>100+</h3>
           <span>Happy Travelers</span>
         </div>
         <div className="stat">
-          <h3>50+</h3>
+          <h3>30+</h3>
           <span>Curated Destinations</span>
         </div>
         <div className="stat">

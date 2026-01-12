@@ -838,7 +838,7 @@
 }
 
 /* Column headings */
-.footer-col h4 {
+.footer-col h4, .terms h4 {
   font-size: 0.75rem;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -847,13 +847,13 @@
 }
 
 /* Footer links */
-.footer-col ul {
+.footer-col ul, .terms ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.footer-col ul li {
+.footer-col ul li, .terms ul li {
   font-size: 0.9rem;
   color: var(--muted);
   margin-bottom: 10px;
@@ -861,7 +861,7 @@
   transition: color 0.25s ease;
 }
 
-.footer-col ul li:hover {
+.footer-col ul li:hover, .terms ul li:hover {
   color: var(--primary);
 }
 
@@ -1663,3 +1663,14 @@
     padding: 70px 6%;
   }
 }
+.tc-mini{
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 8px;
+  text-align: center;
+  
+};
+.tnc{
+  color: var(--muted);
+  text-decoration: none;
+};
