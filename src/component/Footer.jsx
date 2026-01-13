@@ -13,12 +13,27 @@ export default function Footer() {
                 {/* RIGHT */}
                 <div className="footer-right">
 
+                    <div className="terms">                        <h4>Terms & Conditions</h4>
+                        <ul>
+                            <li>T&C</li>
+                            <li>Things to Carry</li>
+                        </ul>
+                    </div>
+                    
+                    
+                    
+                    
                     <div className="footer-col">                        <h4>About Us</h4>
                         <ul>
                             <li>About Us</li>
                             <li>Our Story</li>
                         </ul>
                     </div>
+
+                    
+
+                    
+
 
                     <div className="footer-col">
                         <h4>Social Media</h4>
@@ -34,5 +49,6 @@ export default function Footer() {
   <div className="footer-bottom" >
    <a className="footer-link" href="https://www.instagram.com/codemysite_/">© {new Date().getFullYear()} Code My Site. All rights reserved.</a> 
   </div>
+  
 </footer>);
 }

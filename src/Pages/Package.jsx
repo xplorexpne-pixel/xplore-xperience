@@ -229,6 +229,7 @@ Please share itinerary, pricing and available dates.
           </div>
         ))}
       </section>
+        <div className="tc-mini"><a href="" className="tnc" >*terms and conditions apply*</a></div>
     </div>
   );
 }
