@@ -15,6 +15,7 @@ import TourPackages from "./component/TourPackages";
 import HowItWorks from "./component/HowItWorks";
 import CtaBanner from "./component/CtaBanner";
 import LatestBlogs from "./component/LatestBlog";
+import FAQ from "./component/FAQ";
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
         <TourPackages />
         <HowItWorks />
         <CtaBanner />
+        <FAQ />
         <LatestBlogs />
       </>
     }
