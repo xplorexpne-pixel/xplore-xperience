@@ -1,0 +1,15 @@
+.home-parallax-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 120vh;
+
+  background-image: url("/image/ParallaxHome.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  z-index: -1;
+  will-change: transform;
+}

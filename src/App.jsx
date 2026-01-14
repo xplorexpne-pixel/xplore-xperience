@@ -16,6 +16,8 @@ import HowItWorks from "./component/HowItWorks";
 import CtaBanner from "./component/CtaBanner";
 import LatestBlogs from "./component/LatestBlog";
 import FAQ from "./component/FAQ";
+import HeroParallax from "./component/HeroParallax";
+
 
 
 function App() {
@@ -29,7 +31,8 @@ function App() {
     path="/"
     element={
       <>
-        <Hero />
+        {/* <Hero /> */}
+        <HeroParallax/>
         <Destinations />
         <WhyUs />
         <TourPackages />
@@ -37,6 +40,7 @@ function App() {
         <CtaBanner />
         <FAQ />
         <LatestBlogs />
+        
       </>
     }
   />
