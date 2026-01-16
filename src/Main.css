@@ -798,6 +798,107 @@
 .nav-links a:hover {
   color: var(--primary);
 }
+.hamburger-menu {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--text);
+}
+
+.close-menu {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: var(--text);
+}
+
+/* =========================
+   RESPONSIVE NAVBAR
+========================= */
+
+/* Mobile styles */
+@media (max-width: 768px) {
+
+  .navbar {
+    padding: 10px 5%;
+  }
+
+  /* Hide desktop nav links */
+  .nav-links {
+    display: none;
+  }
+
+  /* Show hamburger */
+  .hamburger-menu {
+    display: block;
+    cursor: pointer;
+    font-size: 28px;
+    color: var(--text);
+  }
+
+  /* Hide Book Now on mobile */
+  .Book-now-btn {
+    display: none;
+  }
+
+  /* Mobile menu panel */
+  .mobile-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(20px);
+
+    padding: 80px 30px;
+    transition: right 0.35s ease;
+
+    z-index: 2000;
+  }
+
+  /* When menu is open */
+  .mobile-menu.open {
+    right: 0;
+  }
+
+  /* Mobile links */
+  .mobile-menu a {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--text);
+    text-decoration: none;
+  }
+
+  .close-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+
+    font-size: 30px;
+    cursor: pointer;
+    color: var(--text);
+  }
+}
+
+/* Large screens restore desktop layout */
+@media (min-width: 769px) {
+  .hamburger-menu {
+    display: none;
+  }
+  .mobile-menu {
+    display: none;
+  }
+}
 
 /* =========================
    FOOTER
