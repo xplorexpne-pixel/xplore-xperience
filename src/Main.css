@@ -884,6 +884,9 @@ body {
 @media (max-width: 768px) {
 
   /* Reset broken desktop spacing */
+  .navbar {
+    padding: 10px 16px;
+  }
   .nav-links {
     margin-left: 0 !important;
   }
@@ -892,11 +895,17 @@ body {
   .Nav-left {
     display: none !important;
   }
+  .menu-overlay {position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.25);
+    z-index: 900;
+   backdrop-filter: blur(2px);
+  }
 
   /* HAMBURGER */
   .hamburger-menu {
     display: block;
-    font-size: 30px;
+    font-size: 20px;
     background: none;
     border: none;
     color: var(--text);
@@ -915,11 +924,11 @@ body {
     gap: 14px;
 
     position: fixed;
-    top: 70px;
+    top: 50px;
     right: 16px;
 
-    width: 240px;
-    height: 100vh;
+    width: 120px;
+    height: 20vh;
     border-radius: 10px;
 
     padding: 18px;

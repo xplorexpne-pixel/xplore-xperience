@@ -2,48 +2,52 @@ import { NavLink } from "react-router-dom";
 import { useState } from "react";
 
 export default function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
 
-  return (
-    <nav className="navbar">
+    const [menuOpen, setMenuOpen] = useState(false);
 
-      <h2 className="logo">Xplore Xperience</h2>
+    return (
+        <>
+        <nav className="navbar">
 
-      {/* NAV LINKS + CLOSE BUTTON INSIDE */}
-      <div className={`nav-links ${menuOpen ? "open" : ""}`}>
+            <h2 className="logo">Xplore Xperience</h2>
 
+            {/* NAV LINKS */}
+            <div className={`nav-links ${menuOpen ? "open" : ""}`}>
 
-        <NavLink to="/" end onClick={() => setMenuOpen(false)}>
-          Home
-        </NavLink>
+                <NavLink to="/" end onClick={() => setMenuOpen(false)}>
+                    Home
+                </NavLink>
 
-        <NavLink to="/packages" onClick={() => setMenuOpen(false)}>
-          Packages
-        </NavLink>
+                <NavLink to="/packages" onClick={() => setMenuOpen(false)}>
+                    Packages
+                </NavLink>
 
-        <NavLink to="/About" onClick={() => setMenuOpen(false)}>
-          About us
-        </NavLink>
+                <NavLink to="/About" onClick={() => setMenuOpen(false)}>
+                    About us
+                </NavLink>
+            </div>
 
-        {/* Close Button */}
-        <button className="close-menu" onClick={() => setMenuOpen(false)}>
-          <i className="ri-close-line"></i>
-        </button>
-      </div>
+            {/* BOOK NOW (Desktop Only) */}
+            <div className="Nav-left">
+                <button className="Book-now-btn glow-btn">Book Now</button>
+            </div>
 
-      {/* BOOK NOW (DESKTOP ONLY) */}
-      <div className="Nav-left">
-        <button className="Book-now-btn glow-btn">Book Now</button>
-      </div>
+            {/* HAMBURGER MENU */}
+            <button
+                className="hamburger-menu"
+                onClick={() => setMenuOpen(true)}
+            >
+                <i className="ri-menu-line"></i>
+            </button>
+        </nav>
 
-      {/* HAMBURGER BUTTON */}
-      <button
-        className="hamburger-menu"
-        onClick={() => setMenuOpen(true)}
-      >
-        <i className="ri-menu-line"></i>
-      </button>
-
-    </nav>
-  );
+        {/* OVERLAY (close menu on click outside) */}
+        {menuOpen && (
+            <div
+                className="menu-overlay"
+                onClick={() => setMenuOpen(false)}
+            ></div>
+        )}
+        </>
+    );
 }
