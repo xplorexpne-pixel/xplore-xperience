@@ -817,86 +817,86 @@
 }
 
 /* =========================
-   RESPONSIVE NAVBAR
+   RESPONSIVE NAVIGATION FIXED
 ========================= */
 
-/* Mobile styles */
+/* MOBILE */
 @media (max-width: 768px) {
 
-  .navbar {
-    padding: 10px 5%;
+  /* Reset broken desktop spacing */
+  .nav-links {
+    margin-left: 0 !important;
   }
 
-  /* Hide desktop nav links */
+  /* Hide Book Now */
+  .Nav-left {
+    display: none !important;
+  }
+
+  /* HAMBURGER */
+  .hamburger-menu {
+    display: block;
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: var(--text);
+    cursor: pointer;
+    z-index: 1100;
+  }
+
+  /* MOBILE MENU PANEL */
   .nav-links {
     display: none;
   }
 
-  /* Show hamburger */
-  .hamburger-menu {
-    display: block;
-    cursor: pointer;
-    font-size: 28px;
-    color: var(--text);
-  }
-
-  /* Hide Book Now on mobile */
-  .Book-now-btn {
-    display: none;
-  }
-
-  /* Mobile menu panel */
-  .mobile-menu {
+  .nav-links.open {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 14px;
 
     position: fixed;
-    top: 0;
-    right: -100%;
-    width: 70%;
+    top: 70px;
+    right: 16px;
+
+    width: 240px;
     height: 100vh;
+    border-radius: 10px;
 
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(20px);
+    padding: 18px;
 
-    padding: 80px 30px;
-    transition: right 0.35s ease;
+    background: white;
+    box-shadow: -4px 0 12px rgba(0, 0, 0, 0.1);
+    
 
     z-index: 2000;
+    animation: slideIn 0.35s ease-out;
   }
 
-  /* When menu is open */
-  .mobile-menu.open {
-    right: 0;
+  @keyframes slideIn {
+    from { transform: translateX(100%); }
+    to   { transform: translateX(0%); }
   }
 
-  /* Mobile links */
-  .mobile-menu a {
-    font-size: 18px;
-    font-weight: 600;
-    color: var(--text);
-    text-decoration: none;
+
+}
+
+/* DESKTOP */
+@media (min-width: 769px) {
+
+  .hamburger-menu {
+    display: none;
   }
 
   .close-menu {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-
-    font-size: 30px;
-    cursor: pointer;
-    color: var(--text);
-  }
-}
-
-/* Large screens restore desktop layout */
-@media (min-width: 769px) {
-  .hamburger-menu {
     display: none;
   }
-  .mobile-menu {
-    display: none;
+
+  .nav-links {
+    display: flex !important;
+  }
+
+  .Nav-left {
+    display: flex;
   }
 }
 
