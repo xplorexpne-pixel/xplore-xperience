@@ -1,5 +1,5 @@
 import { useState } from "react";
-import PackageModal from "../component/PackageModal";
+import PackageModal from "../component/PackageInfoModal";
 import "./FeaturedPackage.css";
 
 const packages = [
