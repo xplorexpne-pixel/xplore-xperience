@@ -19,6 +19,7 @@ import FAQ from "./component/FAQ";
 import HeroParallax from "./component/HeroParallax";
 import FeaturedPackage from "./Pages/FeaturedPackage";
 import Testimonials from "./component/Testimonial";
+import Hero2 from "./component/AnimatedText";
 
 
 

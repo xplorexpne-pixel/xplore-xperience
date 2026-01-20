@@ -2,7 +2,8 @@
   position: relative;
   height: 670px;
   overflow: hidden;
-  /* border-radius: 15px; */
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
 }
 
 .parallax-bg {
@@ -16,6 +17,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  
 
   will-change: transform;
 }
@@ -31,6 +33,20 @@
   padding: 0 10%;
   color: white;
 }
+.parallax-content h1 {
+  font-size: 48px;
+  line-height: 1.2;
+  margin: 0;
+  position: center;
+  /* margin-bottom: 20%;
+  margin-left: 40%; */
+  max-width: 800px;
+}
+.parallax-content p {
+  font-size: 18px;
+  max-width: 600px;
+}
+
 /* ===== MOBILE RESPONSIVE ===== */
 @media (max-width: 768px) {
 

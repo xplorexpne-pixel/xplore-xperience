@@ -1076,17 +1076,20 @@
   padding: 0;
 }
 
-.footer-col ul li {
+.footer-col ul a {
   list-style: none;
   margin-bottom: 8px;
   cursor: pointer;
-  color: #cfcfcf;
   font-size: 13px;
-  transition: 0.25s;
+   color: #ffffff;
+  text-decoration: underline;
+  text-decoration-color: rgba(255,255,255,0.4);
+  transition: color 0.2s ease, text-decoration-color 0.2s ease;
 }
 
-.footer-col ul li:hover {
-  color: white;
+.footer-col ul a:hover {
+   color: #ffffff;
+  text-decoration-color: #ffffff;
 }
 
 /* BOTTOM LINE */
