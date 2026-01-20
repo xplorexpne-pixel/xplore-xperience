@@ -686,28 +686,30 @@
    NAVBAR
 ========================= */
 .navbar {
- position: fixed;        /* Sticks the navbar to the screen */
-    top: 0;
-    left: 0;
-    width: 100%;            /* Spans the full width */
-    height: 55px;           /* Set a fixed height */
-    display: flex;
-    padding: 0 50px;
+  /* --- Positioning & Centering --- */
+  position: fixed;
+  top: 16px;                     /* Replaces margin-top */
+  left: 50%;                     /* Move left edge to center of screen */
+  transform: translateX(-50%);   /* Pull element back by 50% of its own width */
   z-index: 1000;
-  padding: 10px 16px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 40px;
-  border-radius: 999px;
-  margin: 16px auto;
- 
-  max-width: 1200px;
+
+  /* --- Sizing --- */
+  width: 90%;                    /* Use 90% or calc(100% - 32px) to prevent touching edges on mobile */
+  max-width: 1200px;             /* Stops it from getting too big on huge screens */
+  height: 55px;
+
+  /* --- Styling --- */
   background: transparent;
   backdrop-filter: blur(12px);
   border-bottom: 1px solid rgba(255, 255, 255, 0.18);
-  width: 100%;
-  /* Added to fix the navbar width */
+  border-radius: 999px;
+
+  /* --- Inner Layout (Flexbox) --- */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;               /* Cleaned up padding */
+  gap: 40px;
 }
 
 
