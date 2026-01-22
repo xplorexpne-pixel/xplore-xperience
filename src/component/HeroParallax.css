@@ -33,8 +33,8 @@
   color: white;
 }
 .parallax-content h1 {
-  font-size: 48px;
-  line-height: 1.2;
+  font-size: clamp(1.8rem, 6vw, 3.5rem);
+  line-height: 1.15;
   margin: 0;
   position: center;
   /* margin-bottom: 20%;
@@ -50,7 +50,7 @@
 @media (max-width: 768px) {
 
   .parallax-section {
-    height: 70vh;            /* smaller hero */
+    min-height: 70%;            /* smaller hero */
   }
 
   .parallax-bg {
@@ -75,7 +75,7 @@
 /* Additional responsive styles for smaller screens */
 @media (max-width: 480px) {
   .parallax-section {
-    height: 60vh; /* Adjust height for very small screens */
+    height: 60%; /* Adjust height for very small screens */
   }
 
   .parallax-content {

@@ -47,8 +47,8 @@
 ========================= */
 .hero {
   margin: 20px;
-  min-height: 80vh;
-  padding: 0 10%;
+  /* min-height: 80vh;
+  padding: 0 10%; */
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -127,7 +127,7 @@
 
 @media (min-width: 768px) {
   .hero {
-    min-height: 100vh;
+    min-height: 100%;
   }
   .hero-content {
     padding: 0 40px;
@@ -831,7 +831,7 @@
 .nav-links {
   position: absolute;
   display: flex;
-  margin-left: 38%;
+ 
   transform: translateX(-50%);
   gap: 30px;
 }
@@ -937,7 +937,10 @@
 
 
   .nav-links {
-    margin-left: 0 !important;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-left: 0;
   }
 
   /* Hide Book Now */
