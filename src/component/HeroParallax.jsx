@@ -20,11 +20,18 @@ export default function HeroParallax() {
     <section className="parallax-section">
       <div className="parallax-bg" ref={bgRef}></div>
 
+      <div className="parallax-overlay"></div>
+
       <div className="parallax-content">
+        <span className="Parahero-badge">
+          ⭐ Voted best peaceful place in the world
+        </span>
+
         <AnimatedText as="h1">
           Journeys That Stay With You.
         </AnimatedText>
-         <AnimatedText as="p">
+
+        <AnimatedText as="p">
           Handpicked travel experiences crafted with local expertise,
           transparent pricing, and full journey support.
         </AnimatedText>
