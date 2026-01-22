@@ -23,14 +23,13 @@
 }
 
 .parallax-content {
-  margin-top: 8%;
-  position: relative;
-  z-index: 2;
-  border-radius: 10px;
-  height: 90%;
+   position: absolute;
+  inset: 0;                /* top right bottom left = 0 */
   display: flex;
-  align-items: center;
-  padding: 0 10%;
+  align-items: center;     /* vertical center */
+  justify-content: center; /* horizontal center */
+  padding: 0 20px;
+  text-align: center;
   color: white;
 }
 .parallax-content h1 {
@@ -43,8 +42,8 @@
   max-width: 800px;
 }
 .parallax-content p {
-  font-size: 18px;
-  max-width: 600px;
+   margin-top: 1rem;
+  font-size: clamp(0.95rem, 3vw, 1.1rem);
 }
 
 /* ===== MOBILE RESPONSIVE ===== */

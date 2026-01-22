@@ -13,3 +13,13 @@
   z-index: -1;
   will-change: transform;
 }
+.parallax-content {
+ position: absolute;
+  inset: 0;                /* top right bottom left = 0 */
+  display: flex;
+  align-items: center;     /* vertical center */
+  justify-content: center; /* horizontal center */
+  padding: 0 20px;
+  text-align: center;
+  color: white;
+}

@@ -6,50 +6,53 @@ export default function Navbar() {
 
     const [menuOpen, setMenuOpen] = useState(false);
 
+    const toggleMenu = () => setMenuOpen(prev => !prev);
+    const closeMenu = () => setMenuOpen(false);
+
+
     return (
         <>
-        <nav className="navbar">
-    
-            <h2 className="logo">Xplore Xperience</h2>
+            <nav className="navbar">
 
-            {/* NAV LINKS */}
-            <div className={`nav-links ${menuOpen ? "open" : ""}`}>
+                <h2 className="logo">Xplore Xperience</h2>
 
-                <NavLink to="/" end onClick={() => setMenuOpen(false)}>
-                    Home
-                </NavLink>
+                {/* NAV LINKS */}
+                <div className={`nav-links ${menuOpen ? "open" : ""}`}>
 
-                <NavLink to="/packages" onClick={() => setMenuOpen(false)}>
-                    Packages
-                </NavLink>
+                    <NavLink to="/" end onClick={() => setMenuOpen(false)}>
+                        Home
+                    </NavLink>
 
-                <NavLink to="/About" onClick={() => setMenuOpen(false)}>
-                    About us
-                </NavLink>
-            </div>
+                    <NavLink to="/packages" onClick={() => setMenuOpen(false)}>
+                        Packages
+                    </NavLink>
 
-            {/* BOOK NOW (Desktop Only) */}
-            <div className="Nav-left">
-                <MotionButton className="Book-now-btn glow-btn">Book Now</MotionButton>
-            </div>
+                    <NavLink to="/About" onClick={() => setMenuOpen(false)}>
+                        About us
+                    </NavLink>
+                </div>
 
-            {/* HAMBURGER MENU */}
-            <button
-                className="hamburger-menu"
-                onClick={() => setMenuOpen(true)}
-            >
-                <i className="ri-menu-line"></i>
-            </button>
-           
-        </nav>
+                {/* BOOK NOW (Desktop Only) */}
+                <div className="Nav-left">
+                    <MotionButton className="Book-now-btn glow-btn">Book Now</MotionButton>
+                </div>
 
-        {/* OVERLAY (close menu on click outside) */}
-        {menuOpen && (
-            <div
-                className="menu-overlay"
-                onClick={() => setMenuOpen(false)}
-            ></div>
-        )}
+                {/* HAMBURGER (open + close) */}
+                <button
+                    className={`hamburger-menu ${menuOpen ? "active" : ""}`}
+                    onClick={toggleMenu}
+                    aria-label="Toggle menu"
+                >
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+
+            {/* OVERLAY */}
+            {menuOpen && (
+                <div className="menu-overlay" onClick={closeMenu}></div>
+            )}
         </>
     );
 }
