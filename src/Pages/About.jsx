@@ -102,7 +102,7 @@ export default function About() {
         </div>
 
         <div className="who-right">
-          <img src="/hero.jpg" alt="Travel" />
+          <img src="/image/about.jpg" alt="Travel" />
         </div>
       </div>
 

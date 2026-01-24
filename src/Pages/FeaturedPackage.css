@@ -453,7 +453,7 @@
   width: 100%;
   border: none;
   border-radius: 12px;
-  background: #1fae39;
+  background: #F63049;
   color: #fff;
   font-weight: 600;
   font-size: 15px;
@@ -468,7 +468,7 @@
 
 .explore-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
 
@@ -494,7 +494,7 @@
   padding: 6px 14px;
   border-radius: 999px;
 
-  background: #1fae39;
+  background: #F63049;
   color: #fff;
 
   font-size: 12px;
@@ -515,7 +515,7 @@
   width: 100%;
   padding: 12px 0;
 
-  background: #1fae39;
+  background: #F63049;
   color: white;
   border: none;
   border-radius: 12px;
@@ -528,7 +528,7 @@
 }
 
 .explore-book-btn:hover {
-  background: #158c30;
+  background: #D02752;
   transform: translateY(-2px);
 }
 

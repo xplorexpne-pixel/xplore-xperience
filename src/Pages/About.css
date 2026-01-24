@@ -144,11 +144,13 @@
 
 .who-left p {
   margin-bottom: 16px;
+  width: 100%;
   line-height: 1.7;
 }
 
 .who-right img {
-  width: 100%;
+  width: 60%;
+  margin-left: 40%;
   border-radius: 16px;
   box-shadow: 0 10px 26px rgba(0,0,0,0.18);
 }
@@ -299,4 +301,90 @@
 .cta-btn:hover {
   background: #c9152e;
   transform: translateY(-3px);
+}
+@media (max-width: 1024px) {
+
+  .hero-card {
+    left: 40px;
+    width: 420px;
+  }
+
+  .stats-section {
+    gap: 24px;
+  }
+
+  .why-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .who-right img {
+    width: 80%;
+    margin-left: 0;
+  }
+}
+@media (max-width: 768px) {
+
+  /* PAGE */
+  .about-page {
+    padding: 90px 5% 60px;
+  }
+
+  /* HERO */
+  .hero-container {
+    height: auto;
+    padding: 40px 20px;
+  }
+
+  .hero-card {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+    width: 100%;
+  }
+
+  /* STATS */
+  .stats-section {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  /* WHO WE ARE */
+  .who-section {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .who-right img {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  /* WHY US */
+  .why-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 480px) {
+
+  .hero-card {
+    padding: 24px;
+  }
+
+  .hero-card h2 {
+    font-size: 22px;
+  }
+
+  .stat-number {
+    font-size: 34px;
+  }
+
+  h2 {
+    font-size: 24px !important;
+  }
+
+  .cta-btn {
+    width: 100%;
+    padding: 14px;
+  }
 }

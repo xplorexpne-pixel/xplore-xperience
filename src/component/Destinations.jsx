@@ -13,9 +13,9 @@ if (!item) return null;
         className="card-image"
       />
 
-      <div className="price-badge">
+      {/* <div className="price-badge">
         starts at {item.price}
-      </div>
+      </div> */}
 
       <div className="card-overlay">
         <h3>{item.title}</h3>
