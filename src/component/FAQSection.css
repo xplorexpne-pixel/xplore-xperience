@@ -1,0 +1,297 @@
+/* Variables */
+:root {
+  --primary-blue: #2563EB;
+  --bg-gray:#F4F4EC;
+  --text-dark: #111827;
+  --text-muted: #6B7280;
+  --border-color: #E5E7EB;
+}
+
+.faq-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  background-color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Header Styling */
+.faq-header {
+  text-align: center;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.badge {
+  background-color: #EFF6FF;
+  color: var(--primary-blue);
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: inline-block;
+  margin-bottom: 16px;
+}
+
+.faq-header h1 {
+  font-size: 2.5rem;
+  color: var(--text-dark);
+  margin: 0 0 16px 0;
+}
+
+.subtitle {
+  color: var(--text-muted);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.icon-float {
+  position: absolute;
+  color: var(--text-dark);
+  opacity: 0.8;
+}
+
+.icon-top-left { top: 0; left: 15%; transform: rotate(-10deg); }
+.icon-top-right { top: -10px; right: 15%; transform: rotate(15deg); }
+
+/* Layout Grid */
+.faq-container {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 60px;
+}
+
+/* Sidebar Styling */
+.faq-sidebar h3 {
+  color: var(--primary-blue);
+  font-size: 1rem;
+  margin-bottom: 20px;
+  padding-left: 15px;
+}
+
+.category-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.category-list li {
+  padding: 12px 15px;
+  cursor: pointer;
+  color: var(--text-muted);
+  font-weight: 500;
+  transition: all 0.2s;
+  border-left: 3px solid transparent;
+}
+
+.category-list li:hover {
+  color: var(--text-dark);
+}
+
+.category-list li.active {
+  color: var(--text-dark);
+  font-weight: 700;
+  border-left-color: var(--primary-blue);
+}
+
+/* Accordion Styling */
+.questions-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.question-item {
+  background-color: #F9FAFB;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.question-item.open {
+  background-color: #fff;
+  border-color: var(--primary-blue);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.question-header {
+  width: 100%;
+  padding: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.answer-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out;
+  padding: 0 24px;
+}
+
+.question-item.open .answer-body {
+  max-height: 500px; /* Arbitrary large number for animation */
+  padding-bottom: 24px;
+}
+
+.answer-body p {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+/* Footer Box Styling */
+.faq-footer {
+  margin-top: 40px;
+  background-color: #F3F4F6;
+  border-radius: 12px;
+  padding: 24px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-text h4 {
+  margin: 0 0 4px 0;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-text p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.contact-btn {
+  background-color: white;
+  border: 1px solid #D1D5DB;
+  padding: 10px 24px;
+  border-radius: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  z-index: 2;
+  transition: background 0.2s;
+}
+
+.contact-btn:hover {
+  background-color: #F9FAFB;
+}
+
+.footer-deco {
+  position: absolute;
+  right: 80px;
+  bottom: -10px;
+  color: var(--text-muted);
+  opacity: 0.1;
+  transform: rotate(-15deg) scale(2);
+  pointer-events: none;
+}
+
+/* ... Keep all your Desktop CSS above this line ... */
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  
+  /* 1. Reset the grid to a single column stack */
+  .faq-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* 2. Adjust main wrapper padding for smaller screens */
+  .faq-wrapper {
+    padding: 20px 15px;
+  }
+  
+  .faq-header {
+    margin-bottom: 30px;
+    text-align: left; /* Optional: Align header text left on mobile if preferred */
+  }
+
+  /* 3. Transform Sidebar into Horizontal Tabs */
+  .faq-sidebar {
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 10;
+    padding-top: 10px; /* Breathing room if sticky */
+  }
+
+  /* Hide the "Categories" title on mobile to save space */
+  .faq-sidebar h3 {
+    display: none;
+  }
+
+  .category-list {
+    display: flex;
+    overflow-x: auto; /* Enables horizontal scrolling */
+    white-space: nowrap; /* Prevents text from wrapping */
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0;
+    
+    /* Hide scrollbar for cleaner look (Chrome/Safari/Opera) */
+    -webkit-overflow-scrolling: touch; 
+    scrollbar-width: none; /* Firefox */
+  }
+  
+  .category-list::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome/Safari */
+  }
+
+  /* 4. Tab Styling (Matches your screenshot) */
+  .category-list li {
+    padding: 12px 16px;
+    border-left: none; /* Remove desktop left-border */
+    border-bottom: 3px solid transparent; /* Prepare for active underline */
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: -1px; /* Overlap border for clean look */
+  }
+
+  .category-list li.active {
+    color: var(--text-dark);
+    font-weight: 600;
+    border-left: none;
+    border-bottom-color: var(--primary-blue); /* The Blue Underline */
+  }
+
+  /* 5. Adjust Content Spacing */
+  .questions-list {
+    gap: 12px;
+  }
+  
+  .question-header {
+    padding: 16px;
+    font-size: 1rem;
+  }
+
+  /* 6. Mobile Footer Adjustments */
+  .faq-footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .footer-deco {
+    display: none; /* Hide decorative icon on small screens */
+  }
+  .icon-top-left, .icon-top-right {
+    display: none; /* Hide decorative icons on small screens */
+  }
+}

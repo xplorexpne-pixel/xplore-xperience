@@ -44,8 +44,8 @@ export default function HeroParallax() {
           </button>
 
           <p className="hero-parallax-desc">
-            Discover breathtaking destinations, exclusive deals, and seamless
-            bookings. Your dream adventure awaits.
+          Handpicked destinations, transparent pricing, and stress-free trips —
+          whether you’re traveling solo, with family, or as a couple.
           </p>
         </div>
 

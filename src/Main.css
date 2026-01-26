@@ -142,7 +142,7 @@
 .why-us {
   display: flex;
   gap: 80px;
-  padding: 65px 10%;
+  padding: 40px 10%;
   background:#F4F4EC;
 }
 
@@ -1431,7 +1431,7 @@
 }
 
 .how-it-works {
-  padding: 100px 10%;
+  padding: 50px 10%;
   background: #F4F4EC;
 }
 

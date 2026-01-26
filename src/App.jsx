@@ -19,7 +19,8 @@ import FAQ from "./component/FAQ";
 import HeroParallax from "./component/HeroParallax";
 import FeaturedPackage from "./Pages/FeaturedPackage";
 import Testimonials from "./component/Testimonial";
-import Hero2 from "./component/AnimatedText";
+import GallerySection from "./component/GallerySection";
+
 
 
 
@@ -30,29 +31,30 @@ function App() {
         <Navbar />
 
         <Routes>
-  <Route
-    path="/"
-    element={
-      <>
-        {/* <Hero /> */}
-        <HeroParallax/>
-        <Destinations />
-        <WhyUs />
-        <TourPackages />
-        <HowItWorks />
-        <CtaBanner />
-        <FAQ />
-        <LatestBlogs />
-        <Testimonials/>
-        
-      </>
-    }
-  />
+          <Route
+            path="/"
+            element={
+              <>
+                {/* <Hero /> */}
+                <HeroParallax />
+                <Destinations />
+                <WhyUs />
+                <TourPackages />
+                <HowItWorks />
+                <CtaBanner />
+                <FAQ />
+                <GallerySection />
 
-  <Route path="/packages" element={<FeaturedPackage />} />
-  <Route path="/about" element={<About />} />
-  {/* <Route path="/bike-rentals" element={<BikeRentals />} /> */}
-</Routes>
+                <Testimonials />
+
+              </>
+            }
+          />
+
+          <Route path="/packages" element={<FeaturedPackage />} />
+          <Route path="/about" element={<About />} />
+          {/* <Route path="/bike-rentals" element={<BikeRentals />} /> */}
+        </Routes>
 
         <Footer />
       </BrowserRouter>

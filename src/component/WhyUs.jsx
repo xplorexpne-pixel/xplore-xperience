@@ -9,7 +9,7 @@ export default function WhyUs() {
             {/* LEFT SIDE stays same */}
             <div className="why-left">
                 <h2>
-                    Why Thousands of Travelers Choose <br />
+                    Why Travelers Choose <br />
                     <span>Xplore Xperience</span>
                 </h2>
                 <p>
