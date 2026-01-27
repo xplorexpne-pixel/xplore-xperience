@@ -9,7 +9,7 @@ const packages = [
     title: "Tawang",
     days: "6D / 5N",
     popular: true,
-    image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
+    image: "/Northeast/Tawang.jpg",
     description:
       "Discover the enchanting beauty of Northeast India with hand-crafted travel experiences.",
     big: true,
@@ -44,7 +44,7 @@ const explorePackages = [
     region: "Arunachal",
     duration: "6D / 5N",
     desc: "A serene journey through Shergaon’s tribal valleys and Tawang’s iconic monasteries. Perfect blend of culture, scenery and high-altitude charm.",
-    image: "https://images.unsplash.com/photo-1603262110263-fb0112e7cc33",
+    image: "/Northeast/Shergaon.webp",
   },
   {
     id: 2,
@@ -52,7 +52,7 @@ const explorePackages = [
     region: "Arunachal",
     duration: "7D / 6N",
     desc: "Explore Tawang’s heritage and Sangti’s peaceful riverside landscapes. Snow peaks, quiet villages and panoramic drives await.",
-    image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+    image: "/Northeast/Tawang.jpg",
   },
   {
     id: 3,
@@ -60,7 +60,7 @@ const explorePackages = [
     region: "Arunachal",
     duration: "4D / 3N",
     desc: "A unique blend of Tawang’s spiritual beauty and Kaziranga’s wildlife thrills. Experience monasteries, mountains and wild one-horned rhinos.",
-    image: "https://images.unsplash.com/photo-1602620502220-1796e0e0a6f3",
+    image: "/Northeast/Kaziranga.jpg",
   },
   {
     id: 4,
@@ -68,7 +68,7 @@ const explorePackages = [
     region: "Arunachal",
     duration: "6D / 5N",
     desc: "Discover Tawang’s ancient monasteries, high passes and alpine lakes. A peaceful escape into Arunachal’s Buddhist heartland.",
-    image: "https://images.unsplash.com/photo-1574781330856-5d3a3d93f740",
+    image: "/Northeast/Tawang.jpg",
   },
   {
     id: 5,
@@ -76,7 +76,7 @@ const explorePackages = [
     region: "Arunachal",
     duration: "6D / 5N",
     desc: "A hidden valley of wooden houses, rivers and untouched landscapes. Mechuka offers raw beauty and a quiet Himalayan experience.",
-    image: "https://images.unsplash.com/photo-1500534623283-312aade485b7",
+    image: "/Northeast/Mechuka.jpg",
   },
   {
     id: 6,
@@ -84,7 +84,7 @@ const explorePackages = [
     region: "Arunachal",
     duration: "6D / 5N",
     desc: "Visit India’s easternmost points known for sunrise views and remote mountain life. A rare offbeat journey into untouched Arunachal.",
-    image: "https://images.unsplash.com/photo-1519681393784-d120267933ba",
+    image: "/Northeast/Kibithu.jpg",
   },
   {
     id: 7,
@@ -92,7 +92,7 @@ const explorePackages = [
     region: "Assam",
     duration: "6D / 5N",
     desc: "Home to the world-famous one-horned rhinos and lush floodplains. Perfect for jeep safaris, wildlife spotting and nature lovers.",
-    image: "https://images.unsplash.com/photo-1602620502220-1796e0e0a6f3",
+    image: "/Northeast/Kaziranga.jpg",
   },
   {
     id: 8,
@@ -100,7 +100,7 @@ const explorePackages = [
     region: "Assam",
     duration: "6D / 5N",
     desc: "Experience the best of Assam—wildlife, culture and heritage. From Kaziranga’s jungles to Majuli’s traditions, it’s the perfect mix.",
-    image: "https://images.unsplash.com/photo-1496042399019-ab14cb5616d6",
+    image: "/Northeast/Assam.jpg",
   },
   {
     id: 9,
@@ -108,7 +108,7 @@ const explorePackages = [
     region: "Assam",
     duration: "6D / 5N",
     desc: "A scenic hill district known for pine forests, waterfalls and peaceful villages. Ideal for slow travel and nature escapes.",
-    image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
+    image: "/Northeast/dimahasao.jpg",
   },
   {
     id: 10,
@@ -116,7 +116,7 @@ const explorePackages = [
     region: "Meghalaya",
     duration: "7D / 6N",
     desc: "Land of waterfalls, living root bridges and crystal-clear rivers. A refreshing getaway into nature’s most dramatic landscapes.",
-    image: "https://images.unsplash.com/photo-1600607687644-aac4c3eac7f5",
+    image: "/Northeast/Meghalaya.jpg",
   },
   {
     id: 11,
@@ -124,7 +124,7 @@ const explorePackages = [
     region: "Meghalaya",
     duration: "5D / 4N",
     desc: "Land of waterfalls, living root bridges and crystal-clear rivers. A refreshing getaway into nature’s most dramatic landscapes.",
-    image: "https://images.unsplash.com/photo-1600607687644-aac4c3eac7f5",
+    image: "/Northeast/Meghalaya.jpg",
   },
   {
     id: 12,
@@ -132,7 +132,7 @@ const explorePackages = [
     region: "Meghalaya",
     duration: "6D / 5N",
     desc: "Land of waterfalls, living root bridges and crystal-clear rivers. A refreshing getaway into nature’s most dramatic landscapes.",
-    image: "https://images.unsplash.com/photo-1600607687644-aac4c3eac7f5",
+    image: "/Northeast/Meghalaya.jpg",
   },
   {
     id: 13,
@@ -140,7 +140,7 @@ const explorePackages = [
     region: "Sikkim",
     duration: "5D / 4N",
     desc: "Snow peaks, monasteries and pristine lakes define Sikkim’s charm. A perfect blend of adventure, calm and Himalayan beauty.",
-    image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+    image: "/Northeast/Sikkim.jpg",
   },
   {
     id: 14,
@@ -148,7 +148,7 @@ const explorePackages = [
     region: "Sikkim",
     duration: "6D / 5N",
     desc: "Snow peaks, monasteries and pristine lakes define Sikkim’s charm. A perfect blend of adventure, calm and Himalayan beauty.",
-    image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
+    image: "/Northeast/Sikkim.jpg",
   },
   {
     id: 15,
@@ -156,7 +156,7 @@ const explorePackages = [
     region: "Nagaland",
     duration: "6D / 5N",
     desc: "Experience tribal culture, heritage villages and scenic hills. Kohima blends history, festivals and natural beauty.",
-    image: "https://images.unsplash.com/photo-1500534623283-312aade485b7",
+    image: "/Northeast/Kohima.jpg",
   },
   {
     id: 16,
@@ -164,7 +164,7 @@ const explorePackages = [
     region: "Nagaland",
     duration: "6D / 5N",
     desc: "Famous for its flower-filled valley, rolling green hills and misty trails. A paradise for hikers and nature lovers.",
-    image: "https://images.unsplash.com/photo-1500534623283-312aade485b7",
+    image: "/Northeast/Dzuku.jpg",
   },
   {
     id: 17,
@@ -172,7 +172,7 @@ const explorePackages = [
     region: "Nagaland",
     duration: "6D / 5N",
     desc: "Nagaland’s grand cultural festival showcasing dances, tribes and traditions. A vibrant celebration of identity and community.",
-    image: "https://images.unsplash.com/photo-1496042399019-ab14cb5616d6",
+    image: "/Northeast/Hornbill.webp",
   },
   {
     id: 18,
@@ -180,7 +180,7 @@ const explorePackages = [
     region: "Nagaland",
     duration: "6D / 5N",
     desc: "Explore the land of the Konyak tribe, tattooed warriors and unique border villages. A rare cultural and rural experience.",
-    image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
+    image: "/Northeast/Mon-Nagaland.jpg",
   },
   {
     id: 19,
@@ -188,7 +188,7 @@ const explorePackages = [
     region: "Arunachal",
     duration: "5D / 4N",
     desc: "A hidden valley of wooden houses, rivers and untouched landscapes. Mechuka offers raw beauty and a quiet Himalayan experience.",
-    image: "https://images.unsplash.com/photo-1500534623283-312aade485b7",
+    image: "/Northeast/Mechuka.jpg",
   },
   {
     id: 20,
@@ -196,7 +196,7 @@ const explorePackages = [
     region: "Arunachal",
     duration: "6D / 5N",
     desc: "A charming valley of rice fields, Apatani culture and cool pine forests. Ziro offers calm landscapes and authentic village life.",
-    image: "https://images.unsplash.com/photo-1501785888041-af3ef285b470",
+    image: "/Northeast/Meghalaya.jpg", // You don't have a Ziro.jpg
   },
   {
     id: 21,
@@ -204,7 +204,7 @@ const explorePackages = [
     region: "Arunachal",
     duration: "6D / 5N",
     desc: "Known for oranges, music festivals and rugged off-road terrain. Dambuk blends adventure and rural charm.",
-    image: "https://images.unsplash.com/photo-1519681393784-d120267933ba",
+    image: "/Northeast/dambuk.webp",
   },
   {
     id: 22,
@@ -212,7 +212,7 @@ const explorePackages = [
     region: "Arunachal",
     duration: "6D / 5N",
     desc: "A unique festival mixing music, motorsports and local culture in the orange-filled Dambuk valley.",
-    image: "https://images.unsplash.com/photo-1496042399019-ab14cb5616d6",
+    image: "/Northeast/orange.jpg",
   },
   {
     id: 23,
@@ -220,7 +220,7 @@ const explorePackages = [
     region: "Arunachal",
     duration: "6D / 5N",
     desc: "A circuit covering Parshuramkund, Namsai, Roing and Dambuk. A blend of monasteries, riverside beauty and jungle landscapes.",
-    image: "https://images.unsplash.com/photo-1500534623283-312aade485b7",
+    image: "/Northeast/Mechuka.jpg",
   },
   {
     id: 24,
@@ -228,7 +228,7 @@ const explorePackages = [
     region: "Arunachal",
     duration: "6D / 5N",
     desc: "A sacred riverside pilgrimage spot surrounded by hills and forests. Ideal for spiritual seekers and scenic travellers.",
-    image: "https://images.unsplash.com/photo-1519681393784-d120267933ba",
+    image: "/Northeast/Kibithu.jpg",
   },
   {
     id: 25,
@@ -236,8 +236,9 @@ const explorePackages = [
     region: "Meghalaya",
     duration: "8D / 7N",
     desc: "Land of waterfalls, living root bridges and crystal-clear rivers. A refreshing getaway into nature’s most dramatic landscapes.",
-    image: "https://images.unsplash.com/photo-1600607687644-aac4c3eac7f5",
+    image: "/Northeast/Meghalaya.jpg",
   },
+
 ];
 
 const exploreRegions = [

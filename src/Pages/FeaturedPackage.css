@@ -323,13 +323,14 @@
   .featured-grid { display: none; }
   .featured-card-overlay { display: none; }
 }
-
 /* ================= EXPLORE SECTION ================= */
 .explore-section {
   width: 100%;
   margin: 40px auto;
+  padding: 0;
 }
 
+/* FILTER BUTTONS */
 .explore-filter {
   display: flex;
   justify-content: center;
@@ -345,7 +346,9 @@
     flex-wrap: nowrap;
     overflow-x: auto;
   }
-  .explore-filter::-webkit-scrollbar { display: none; }
+  .explore-filter::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .explore-pill {
@@ -364,27 +367,37 @@
   font-weight: 600;
 }
 
-/* GRID SYSTEM */
+/* ================= GRID SYSTEM — FIXED ================= */
 .explore-grid {
+  width: 92%;                 /* ❗ Visually matches featured section */
+  margin: 0 auto;             /* Centers the grid */
+  
   display: grid;
-  gap: 24px;
-  padding: 0 16px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;                  /* Nice spacing */
+  box-sizing: border-box;     /* Prevents horizontal scroll */
 }
 
-@media (min-width: 1024px) {
-  .explore-grid { grid-template-columns: repeat(3, 1fr); }
+/* TABLET */
+@media (max-width: 1023px) {
+  .explore-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 94%;
+  }
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
-  .explore-grid { grid-template-columns: repeat(2, 1fr); }
-}
-
+/* PHONE */
 @media (max-width: 768px) {
-  .explore-grid { grid-template-columns: 1fr; }
-  .featured-grid { display: none; }
+  .explore-grid {
+    grid-template-columns: 1fr;
+    width: 92%;
+  }
+  .featured-grid {
+    display: none;
+  }
 }
 
-/* CARD */
+/* ================= CARD ================= */
 .explore-card {
   position: relative;
   height: 450px;
@@ -392,7 +405,7 @@
   overflow: hidden;
   background: #e5e5e5;
   box-shadow: 0 10px 28px rgba(0,0,0,0.12);
-  transition: 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .explore-card:hover {
@@ -400,6 +413,7 @@
   box-shadow: 0 18px 40px rgba(0,0,0,0.18);
 }
 
+/* IMAGE */
 .explore-card-img {
   position: absolute;
   inset: 0;
@@ -408,6 +422,7 @@
   z-index: 1;
 }
 
+/* OVERLAY GRADIENT */
 .explore-card::after {
   content: "";
   position: absolute;
@@ -420,6 +435,7 @@
   z-index: 2;
 }
 
+/* BADGE */
 .explore-duration-badge {
   position: absolute;
   top: 18px;
@@ -434,6 +450,7 @@
   z-index: 4;
 }
 
+/* CARD INFO */
 .explore-card-info {
   position: absolute;
   bottom: 18px;
