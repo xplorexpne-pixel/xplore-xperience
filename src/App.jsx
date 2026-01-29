@@ -21,6 +21,7 @@ import FeaturedPackage from "./Pages/FeaturedPackage";
 import Testimonials from "./component/Testimonial";
 import GallerySection from "./component/GallerySection";
 import BikeRentalSection from "./component/BikeRentalSection";
+import PopularLocations from "./component/PopularLocations";
 
 
 
@@ -38,7 +39,8 @@ function App() {
               <>
                 {/* <Hero /> */}
                 <HeroParallax />
-                <Destinations />
+                <PopularLocations />
+                {/* <Destinations /> */}
                 <WhyUs />
                 <BikeRentalSection />
                 {/* <TourPackages /> */}

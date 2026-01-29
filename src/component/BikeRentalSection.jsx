@@ -42,7 +42,7 @@ const BikeRentalSection = () => {
   // --- WhatsApp Redirect Function ---
   const handleRentClick = () => {
     // REPLACE with your actual business phone number
-    const phoneNumber = "8811992494"; 
+    const phoneNumber = "9181317151"; 
     
     // Dynamic message including the current bike name
     const message = `Hi, I am interested in renting the ${currentBike.name}. Is it available?`;

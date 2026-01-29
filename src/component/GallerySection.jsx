@@ -14,7 +14,7 @@ const galleryImages = [
   {
     id: 1,
     url: img1, // Use the imported variable name (no quotes)
-    alt: "Tropical Beach"
+    alt: ""
   },
   {
     id: 2,
