@@ -32,17 +32,8 @@ if (!item) return null;
 
 
 export default function Destinations() {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [currentIndex] = useState(0);
   const cardsPerView = 4;
-  const maxIndex = Math.max(0, destinations.length - cardsPerView);
-
-  const handlePrev = () => {
-    setCurrentIndex((prev) => Math.max(0, prev - 1));
-  };
-
-  const handleNext = () => {
-    setCurrentIndex((prev) => Math.min(maxIndex, prev + 1));
-  };
 
   const visibleCards = destinations.slice(currentIndex, currentIndex + cardsPerView);
 

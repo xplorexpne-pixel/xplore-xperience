@@ -411,8 +411,8 @@ export default function FeaturedPackage() {
                     const msg = `Hey! 
 I am interested in this package :-
 
-• Package: ${pkg.title}_
-• Duration: ${pkg.days}
+• Package: ${packages[0].title}_
+• Duration: ${packages[0].days}
 
 Please share more details.`;                  
 
