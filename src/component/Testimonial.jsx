@@ -3,13 +3,13 @@ import "./Testimonial.css";
 const testimonials = [
   {
     id: 1,
-    name: "Sarah Jenkins",
-    country: "United Kingdom",
+    name: "Motiwani R",
+    country: "",
     image: "https://randomuser.me/api/portraits/women/44.jpg",
     rating: 5,
     text:
-      "The Kyoto experience was absolutely serene and life-changing. Every detail, from the hidden shrines to the tea ceremonies, was perfectly curated.",
-    visited: "Kyoto, Japan",
+      "The Kyoto experience was absolutely serene and life-changing. Every detail, from the hidden shrines to the tea ceremonies, was Meghalaya was fun! Navin bhai was always proactive and planned very amazing stays. My trip was very relaxing (without tension) and was planned according to whatever things we wanted.",
+    visited: "Megahalya, Shillong",
   },
   {
     id: 2,
@@ -51,7 +51,7 @@ export default function Testimonials() {
         {testimonials.map((item) => (
           <div key={item.id} className="testimonial-card">
             <div className="profile">
-              <img src={item.image} alt={item.name} />
+              {/* <img src={item.image} alt={item.name} /> */}
               <div>
                 <h4>{item.name}</h4>
                 <span>{item.country}</span>

@@ -20,6 +20,7 @@ import HeroParallax from "./component/HeroParallax";
 import FeaturedPackage from "./Pages/FeaturedPackage";
 import Testimonials from "./component/Testimonial";
 import GallerySection from "./component/GallerySection";
+import BikeRentalSection from "./component/BikeRentalSection";
 
 
 
@@ -39,7 +40,8 @@ function App() {
                 <HeroParallax />
                 <Destinations />
                 <WhyUs />
-                <TourPackages />
+                <BikeRentalSection />
+                {/* <TourPackages /> */}
                 <HowItWorks />
                 {/* <CtaBanner /> */}
                 <FAQ />
