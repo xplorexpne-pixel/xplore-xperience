@@ -6,3 +6,7 @@
 **Vulnerability:** CI failed due to Node version mismatch and potential missing env vars.
 **Learning:** React 19 and Rolldown require Node 18+. Cloudflare defaults may be older.
 **Prevention:** Added `engines` field to `package.json`. Made Firebase config robust against missing env vars.
+## 2025-02-19 - CI Failure Sync
+**Vulnerability:** CI failed due to `package.json` and `package-lock.json` sync issue after adding `engines`.
+**Learning:** Avoid modifying `package.json` without updating lockfile in CI environments that use strict installation (`npm ci`).
+**Prevention:** Reverted `engines` change.
