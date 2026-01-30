@@ -1,7 +1,7 @@
 
+
 import { useState, useRef, useEffect } from "react";
 import "./FeaturedPackage.css";
-
 
 /* ====================== EXPLORE DATA ====================== */
 const explorePackages = [
@@ -224,49 +224,43 @@ export default function FeaturedPackage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [suggestions, setSuggestions] = useState([]);
   const [activeRegion, setActiveRegion] = useState("All Packages");
-
   const [sortOpen, setSortOpen] = useState(false);
   const [sortType, setSortType] = useState("");
 
   const searchRef = useRef(null);
   const sortRef = useRef(null);
-  /* ====================== POPULAR SLIDER LOGIC ====================== */
-  /* ================= POPULAR SLIDER DATA + LOGIC ================= */
-  const popularPlaces = [
+
+  /* ====================== POPULAR SLIDER DATA ====================== */
+  const popularCards = [
     {
       title: "Meghalaya",
-      desc: "Land of waterfalls, living root bridges and crystal-clear rivers. A refreshing getaway into nature’s dramatic landscapes.",
-      big: "/Northeast/Meghalaya.jpg",
-      small: "/Northeast/Tawang.jpg",
+      desc: "Land of waterfalls, living root bridges and crystal-clear rivers.",
+      img: "/Northeast/Meghalaya.jpg",
     },
-        {
+    {
       title: "Tawang",
-      desc: "Rolling green hills and a valley famous for seasonal flowers. A paradise for hikers.",
-      big: "/Northeast/Tawang.jpg",
-      small: "/Northeast/Sikkim.jpg",
+      desc: "Monasteries, lakes and peaceful mountain landscapes.",
+      img: "/Northeast/Tawang.jpg",
     },
     {
       title: "Sikkim",
-      desc: "Snow peaks, monasteries and pristine lakes. A perfect blend of calm and Himalayan beauty.",
-      big: "/Northeast/Sikkim.jpg",
-      small: "/Northeast/Dzuku.jpg",
+      desc: "Snow peaks, monasteries and pristine lakes.",
+      img: "/Northeast/Sikkim.jpg",
     },
     {
       title: "Dzukou",
-      desc: "Rolling green hills and a valley famous for seasonal flowers. A paradise for hikers.",
-      big: "/Northeast/Dzuku.jpg",
-      small: "/Northeast/Meghalaya.jpg",
+      desc: "Rolling green hills and a valley of seasonal flowers.",
+      img: "/Northeast/Dzuku.jpg",
     },
-   
-    
   ];
 
-  const [popIndex, setPopIndex] = useState(0);
+  const [index, setIndex] = useState(0);
+  const total = popularCards.length;
 
-  const nextPopular = () => setPopIndex((popIndex + 1) % popularPlaces.length);
-  const prevPopular = () =>
-    setPopIndex((popIndex - 1 + popularPlaces.length) % popularPlaces.length);
-  /* CLOSE SEARCH SUGGESTIONS WHEN CLICKED OUTSIDE */
+  const nextSlide = () => setIndex((i) => (i + 1) % total);
+  const prevSlide = () => setIndex((i) => (i - 1 + total) % total);
+
+  /* ================= SEARCH CLOSE WHEN CLICKED OUTSIDE ================= */
   useEffect(() => {
     function handleClickOutside(e) {
       if (searchRef.current && !searchRef.current.contains(e.target)) {
@@ -278,7 +272,7 @@ export default function FeaturedPackage() {
       document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  /* CLOSE SORT DROPDOWN WHEN CLICKED OUTSIDE */
+  /* ================= SORT CLOSE WHEN CLICKED OUTSIDE ================= */
   useEffect(() => {
     function handleClickSort(e) {
       if (sortRef.current && !sortRef.current.contains(e.target)) {
@@ -290,7 +284,7 @@ export default function FeaturedPackage() {
       document.removeEventListener("mousedown", handleClickSort);
   }, []);
 
-  /* SEARCH HANDLER */
+  /* ================= SEARCH HANDLER ================= */
   function handleSearch(e) {
     const value = e.target.value;
     setSearchQuery(value);
@@ -302,24 +296,15 @@ export default function FeaturedPackage() {
           p.region.toLowerCase().includes(value.toLowerCase())
       );
       setSuggestions(match.slice(0, 5));
-    } else {
-      setSuggestions([]);
-    }
+    } else setSuggestions([]);
   }
 
-  /* PICK FROM SUGGESTION */
-  function pickSuggestion(item) {
-    setSearchQuery(item.title);
-    setSuggestions([]);
-  }
-
-  /* SORT HANDLER */
+  /* ================= SORT LOGIC ================= */
   function apply(type) {
     setSortType(type);
     setSortOpen(false);
   }
 
-  /* SORTING LOGIC */
   function applySort(list) {
     return [...list].sort((a, b) => {
       if (sortType === "az") return a.title.localeCompare(b.title);
@@ -340,11 +325,8 @@ export default function FeaturedPackage() {
         <h1 className="brand-title">Xplore Xperience</h1>
         <p className="brand-sub">Discover the Enchanting Northeast India</p>
 
-        {/* ================= SEARCH WRAPPER ================= */}
         <div className="search-bar">
           <div className="search-wrapper" ref={searchRef}>
-
-            {/* INPUT */}
             <input
               type="text"
               className="search-input"
@@ -352,11 +334,8 @@ export default function FeaturedPackage() {
               value={searchQuery}
               onChange={handleSearch}
             />
-
-
-            {/* SEARCH BUTTON */}
             <button className="search-btn">Search</button>
-            {/* SORT BUTTON */}
+
             <div className="sort-box" ref={sortRef}>
               <button
                 className="sort-btn"
@@ -375,14 +354,13 @@ export default function FeaturedPackage() {
               )}
             </div>
 
-            {/* SUGGESTIONS */}
             {suggestions.length > 0 && (
               <div className="search-suggestions">
                 {suggestions.map((item) => (
                   <div
                     key={item.id}
                     className="suggestion-item"
-                    onClick={() => pickSuggestion(item)}
+                    onClick={() => setSearchQuery(item.title)}
                   >
                     <span className="suggestion-title">{item.title}</span>
                     <span className="suggestion-region">{item.region}</span>
@@ -395,31 +373,32 @@ export default function FeaturedPackage() {
       </div>
 
       {/* ====================== POPULAR SECTION ====================== */}
-
-      {/* ===================== POPULAR SECTION ===================== */}
       <div className="popular-wrapper">
         <div className="popular-hero">
-
-          {/* LEFT CONTENT */}
+          {/* LEFT TEXT / DOTS */}
           <div className="popular-left">
             <div className="pop-line"></div>
 
             <div className="pop-dots">
-              {popularPlaces.map((p, i) => (
-                <div className={`pop-dot ${i === popIndex ? "active" : ""}`} key={i}>
+              {popularCards.map((p, i) => (
+                <div
+                  key={i}
+                  className={`pop-dot ${i === index ? "active" : ""}`}
+                >
                   <span className="pop-label">{p.title}</span>
                 </div>
               ))}
             </div>
+
             <div className="pop-texts">
-              <h1 className="pop-title">{popularPlaces[popIndex].title}</h1>
-              <p className="pop-desc">{popularPlaces[popIndex].desc}</p>
+              <h1 className="pop-title">{popularCards[index].title}</h1>
+              <p className="pop-desc">{popularCards[index].desc}</p>
 
               <button
                 className="pop-btn"
                 onClick={() =>
                   window.open(
-                    `https://wa.me/919181317151?text=I want to inquire about the popular destination: ${popularPlaces[popIndex].title}`,
+                    `https://wa.me/919181317151?text=I want to inquire about the popular destination: ${popularCards[index].title}`,
                     "_blank"
                   )
                 }
@@ -430,32 +409,36 @@ export default function FeaturedPackage() {
           </div>
 
           {/* RIGHT CARDS */}
-          <div className="popular-right">
+          <div className="popular-right fade">
             <div className="pop-card big fade">
-              <img src={popularPlaces[popIndex].big} />
+              <img src={popularCards[index].img} alt="" />
+              <div className="card-title">{popularCards[index].title}</div>
             </div>
 
             <div className="pop-card small fade">
-              <img src={popularPlaces[popIndex].small} />
+              <img src={popularCards[(index + 1) % total].img} alt="" />
+              <div className="card-title small-title">
+                {popularCards[(index + 1) % total].title}
+              </div>
             </div>
 
-            {/* ARROWS */}
             <div className="pop-arrows">
-              <button onClick={prevPopular} className="pop-arrow-btn">‹</button>
-              <button onClick={nextPopular} className="pop-arrow-btn">›</button>
+              <button className="pop-arrow-btn" onClick={prevSlide}>‹</button>
+              <button className="pop-arrow-btn" onClick={nextSlide}>›</button>
             </div>
           </div>
-
         </div>
       </div>
+
       {/* ================= EXPLORE SECTION ================= */}
       <section className="explore-section">
         <div className="explore-filter">
           {exploreRegions.map((region) => (
             <button
               key={region}
-              className={`explore-pill ${activeRegion === region ? "active" : ""
-                }`}
+              className={`explore-pill ${
+                activeRegion === region ? "active" : ""
+              }`}
               onClick={() => setActiveRegion(region)}
             >
               {region}
