@@ -1,0 +1,192 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+:root {
+  --primary-orange: #FF6B4A;
+  --text-white: #FFFFFF;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* --- Main Container & Background --- */
+.hero-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  
+  /* UPDATED BACKGROUND IMAGE: Mountain Nature Scene */
+  background-image: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=2070&auto=format&fit=crop'); 
+  
+  background-size: cover;
+  background-position: center;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: var(--text-white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 60px;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+/* Dark overlay for contrast */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Slightly darker gradient to ensure text pops against the mountains */
+  background: linear-gradient(to right, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.4) 50%, rgba(0,0,0,0.2) 100%);
+  z-index: 1;
+}
+
+/* --- Hero Content --- */
+.hero-content {
+  position: relative;
+  z-index: 5;
+  max-width: 700px;
+}
+
+.hero-badge {
+  display: inline-block;
+  background-color: var(--primary-orange);
+  color: var(--text-white);
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin-bottom: 24px;
+  font-style: italic;
+}
+
+.hero-title {
+  font-size: 4rem;
+  line-height: 1.1;
+  font-weight: 700;
+  margin: 0 0 24px 0;
+}
+
+.hero-description {
+  font-size: 1rem;
+  line-height: 1.6;
+  opacity: 0.9;
+  margin-bottom: 50px;
+  max-width: 550px;
+}
+
+/* --- Search Bar Widget --- */
+.search-bar {
+  background: var(--text-white);
+  border-radius: 60px;
+  padding: 8px 8px 8px 30px; 
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+  max-width: 500px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.search-input-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 140px;
+}
+
+.border-right {
+  border-right: 1px solid #E5E7EB;
+  padding-right: 20px;
+  margin-right: 10px;
+}
+
+.input-label {
+  color: #111;
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 2px;
+}
+
+.input-field {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.input-icon {
+  color: var(--primary-orange);
+}
+
+.input-field input {
+  border: none;
+  background: none;
+  outline: none;
+  font-size: 0.85rem;
+  color: #6B7280;
+  width: 100%;
+}
+
+.search-btn-circle {
+  background: var(--primary-orange);
+  border: none;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-left: auto;
+}
+
+.search-btn-circle:hover {
+  background: #e05e41;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 1024px) {
+  .hero-container {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  
+  .hero-title {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .search-bar {
+    flex-direction: column;
+    align-items: stretch;
+    border-radius: 20px;
+    padding: 20px;
+    gap: 15px;
+    width: 100%;
+  }
+
+  .border-right {
+    border-right: none;
+    border-bottom: 1px solid #E5E7EB;
+    padding-bottom: 15px;
+    margin-right: 0;
+    margin-bottom: 5px;
+  }
+
+  .search-btn-circle {
+    width: 100%;
+    border-radius: 12px;
+  }
+}

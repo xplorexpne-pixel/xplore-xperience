@@ -32,7 +32,7 @@
 }
 
 /* ===== HERO SECTION ===== */
-.hero-container {
+.hero-containers {
   height: 550px;
   border-radius: 26px;
   background: url("/about.jpeg") center/cover no-repeat;

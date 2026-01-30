@@ -42,7 +42,7 @@ export default function About() {
     <section className="about-page">
 
       {/* ================= HERO ================= */}
-      <div className="hero-container">
+      <div className="hero-containers">
         <div className="hero-overlay"></div>
 
         <div className="hero-card animate-fade-up">

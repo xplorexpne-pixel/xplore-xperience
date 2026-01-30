@@ -22,6 +22,7 @@ import Testimonials from "./component/Testimonial";
 import GallerySection from "./component/GallerySection";
 import BikeRentalSection from "./component/BikeRentalSection";
 import PopularLocations from "./component/PopularLocations";
+import HeroSection from "./component/HeroSection";
 
 
 
@@ -38,7 +39,8 @@ function App() {
             element={
               <>
                 {/* <Hero /> */}
-                <HeroParallax />
+                {/* <HeroParallax /> */}
+                <HeroSection />
                 <PopularLocations />
                 {/* <Destinations /> */}
                 <WhyUs />
