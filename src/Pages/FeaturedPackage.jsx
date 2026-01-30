@@ -2,39 +2,6 @@
 import { useState, useRef, useEffect } from "react";
 import "./FeaturedPackage.css";
 
-/* ====================== ORIGINAL DATA ====================== */
-const packages = [
-  {
-    id: 1,
-    title: "Tawang",
-    days: "6D / 5N",
-    popular: true,
-    image: "/Northeast/Tawang.jpg",
-    description:
-      "Discover the enchanting beauty of Northeast India with hand-crafted travel experiences.",
-    big: true,
-  },
-  {
-    id: 2,
-    title: "Majuli River Cruise",
-    days: "6D / 5N",
-    popular: true,
-    image: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e",
-    description:
-      "Majuli island adventures, riverside serenity and rich Assamese culture.",
-    big: false,
-  },
-  {
-    id: 3,
-    title: "Dzukou Valley Trek",
-    days: "4D / 3N",
-    popular: true,
-    image: "https://images.unsplash.com/photo-1500530855697-b586d89ba3ee",
-    description:
-      "Cloud-covered green valleys and unforgettable mountain landscapes.",
-    big: false,
-  },
-];
 
 /* ====================== EXPLORE DATA ====================== */
 const explorePackages = [
@@ -263,7 +230,42 @@ export default function FeaturedPackage() {
 
   const searchRef = useRef(null);
   const sortRef = useRef(null);
+  /* ====================== POPULAR SLIDER LOGIC ====================== */
+  /* ================= POPULAR SLIDER DATA + LOGIC ================= */
+  const popularPlaces = [
+    {
+      title: "Meghalaya",
+      desc: "Land of waterfalls, living root bridges and crystal-clear rivers. A refreshing getaway into nature’s dramatic landscapes.",
+      big: "/Northeast/Meghalaya.jpg",
+      small: "/Northeast/Tawang.jpg",
+    },
+        {
+      title: "Tawang",
+      desc: "Rolling green hills and a valley famous for seasonal flowers. A paradise for hikers.",
+      big: "/Northeast/Tawang.jpg",
+      small: "/Northeast/Sikkim.jpg",
+    },
+    {
+      title: "Sikkim",
+      desc: "Snow peaks, monasteries and pristine lakes. A perfect blend of calm and Himalayan beauty.",
+      big: "/Northeast/Sikkim.jpg",
+      small: "/Northeast/Dzuku.jpg",
+    },
+    {
+      title: "Dzukou",
+      desc: "Rolling green hills and a valley famous for seasonal flowers. A paradise for hikers.",
+      big: "/Northeast/Dzuku.jpg",
+      small: "/Northeast/Meghalaya.jpg",
+    },
+   
+    
+  ];
 
+  const [popIndex, setPopIndex] = useState(0);
+
+  const nextPopular = () => setPopIndex((popIndex + 1) % popularPlaces.length);
+  const prevPopular = () =>
+    setPopIndex((popIndex - 1 + popularPlaces.length) % popularPlaces.length);
   /* CLOSE SEARCH SUGGESTIONS WHEN CLICKED OUTSIDE */
   useEffect(() => {
     function handleClickOutside(e) {
@@ -392,63 +394,60 @@ export default function FeaturedPackage() {
         </div>
       </div>
 
-      {/* ================= FEATURED SECTION ================= */}
-      <section className="featured-section">
-        <div className="featured-grid">
-          <article
-            className="featured-package-card big"
-            style={{ backgroundImage: `url(${packages[0].image})` }}
-          >
-            <div className="featured-card-tags">
-              <span className="tag days">{packages[0].days}</span>
-              <span className="tag popular">Popular</span>
+      {/* ====================== POPULAR SECTION ====================== */}
+
+      {/* ===================== POPULAR SECTION ===================== */}
+      <div className="popular-wrapper">
+        <div className="popular-hero">
+
+          {/* LEFT CONTENT */}
+          <div className="popular-left">
+            <div className="pop-line"></div>
+
+            <div className="pop-dots">
+              {popularPlaces.map((p, i) => (
+                <div className={`pop-dot ${i === popIndex ? "active" : ""}`} key={i}>
+                  <span className="pop-label">{p.title}</span>
+                </div>
+              ))}
             </div>
-            <h2 className="featured-card-title">{packages[0].title}</h2>
-            <div className="featured-card-overlay">
-              <p>{packages[0].description}</p>
+            <div className="pop-texts">
+              <h1 className="pop-title">{popularPlaces[popIndex].title}</h1>
+              <p className="pop-desc">{popularPlaces[popIndex].desc}</p>
+
               <button
-              onClick={() => {
-                    const msg = `Hey! 
-I am interested in this package :-
-
-• Package: ${pkg.title}_
-• Duration: ${pkg.days}
-
-Please share more details.`;                  
-
-                    window.open(
-                      `https://wa.me/919181317151?text=${encodeURIComponent(
-                        msg
-                      )}`,
-                      "_blank"
-                    );
-                  }}
-                >Book Now</button>
-            </div>
-          </article>
-
-          <div className="small-card-wrap">
-            {packages.slice(1).map((item) => (
-              <article
-                key={item.id}
-                className="featured-package-card small"
-                style={{ backgroundImage: `url(${item.image})` }}
+                className="pop-btn"
+                onClick={() =>
+                  window.open(
+                    `https://wa.me/919181317151?text=I want to inquire about the popular destination: ${popularPlaces[popIndex].title}`,
+                    "_blank"
+                  )
+                }
               >
-                <div className="featured-card-tags">
-                  <span className="tag days">{item.days}</span>
-                  <span className="tag popular">Popular</span>
-                </div>
-                <h2 className="featured-card-title">{item.title}</h2>
-                <div className="featured-card-overlay">
-                  <p>{item.description}</p>
-                  <button>Book Now</button>
-                </div>
-              </article>
-            ))}
+                Explore
+              </button>
+            </div>
           </div>
-        </div>
-      </section>
 
+          {/* RIGHT CARDS */}
+          <div className="popular-right">
+            <div className="pop-card big fade">
+              <img src={popularPlaces[popIndex].big} />
+            </div>
+
+            <div className="pop-card small fade">
+              <img src={popularPlaces[popIndex].small} />
+            </div>
+
+            {/* ARROWS */}
+            <div className="pop-arrows">
+              <button onClick={prevPopular} className="pop-arrow-btn">‹</button>
+              <button onClick={nextPopular} className="pop-arrow-btn">›</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
       {/* ================= EXPLORE SECTION ================= */}
       <section className="explore-section">
         <div className="explore-filter">
@@ -494,7 +493,7 @@ Please share more details.`;
 
                 <button
                   className="explore-book-btn"
-onClick={() => {
+                  onClick={() => {
                     const msg = `Hey! 
 I am interested in this package :-
 
@@ -502,7 +501,7 @@ I am interested in this package :-
 • Region: ${pkg.region}
 • Duration: ${pkg.duration}
 
-Please share more details.`;                  
+Please share more details.`;
 
                     window.open(
                       `https://wa.me/919181317151?text=${encodeURIComponent(

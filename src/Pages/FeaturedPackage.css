@@ -488,3 +488,205 @@
   background: #D02752;
   transform: translateY(-2px);
 }
+/* ===================== POPULAR WRAPPER ===================== */
+.popular-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 40px 0;
+}
+
+/* MAIN HERO CARD */
+.popular-hero {
+  width: calc(100% - 80px); /* 40px left + 40px right */
+  height: 520px;
+  border-radius: 32px;
+  position: relative;
+  overflow: hidden;
+  padding: 40px;
+  background: #000;
+  margin: 40px;
+}
+
+/* BACKGROUND IMAGE */
+.popular-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("/image/hero3.jpg") center/cover no-repeat;
+  filter: brightness(0.78);
+  z-index: 1;
+  border-radius: 32px;
+}
+
+/* ================= LEFT CONTENT ================= */
+.popular-left {
+  position: absolute;
+  left: 40px;
+  top: 40px;
+  width: 45%;
+  color: white;
+  z-index: 5;
+  padding-left: 30px;
+}
+
+/* VERTICAL LINE */
+.pop-line {
+  position: absolute;
+  left: -2px;
+  top: 0;
+  width: 2px;
+  height: 390px;
+  background: rgba(255,255,255,0.75);
+}
+
+/* DOTS */
+.pop-dots {
+  position: absolute;
+  left: -10px;
+  top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 70px;
+}
+
+.pop-dot {
+  width: 16px;
+  height: 16px;
+  background: rgba(255,255,255,0.75);
+  border-radius: 50%;
+  position: relative;
+  transition: 0.2s ease;
+}
+
+.pop-dot.active {
+  background: #fff;
+  transform: scale(1.25);
+}
+
+.pop-label {
+  position: absolute;
+  left: 28px;
+  top: -2px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* LEFT HEADING */
+.pop-texts {
+ margin-left: 200px ;
+
+}
+
+.pop-title {
+  margin-top: 170px;
+  font-size: 64px;
+  font-weight: 800;
+  line-height: 1.05;
+  color: #fff;
+}
+
+.pop-desc {
+  margin-top: 16px;
+  font-size: 18px;
+  width: 70%;
+  line-height: 1.35;
+  opacity: 0.95;
+}
+
+/* EXPLORE BUTTON */
+.pop-btn {
+  margin-top: 24px;
+  background: #fff;
+  color: #000;
+  padding: 12px 34px;
+  border-radius: 40px;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  transition: 0.2s ease;
+}
+
+.pop-btn:hover {
+  transform: translateY(-2px);
+}
+
+/* ================= RIGHT CARDS ================= */
+.popular-right {
+  position: absolute;
+  right: 40px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  gap: 22px;
+  z-index: 4;
+}
+
+/* BIG CARD */
+.pop-card.big {
+  width: 260px;
+  height: 400px;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+}
+
+/* SMALL CARD */
+.pop-card.small {
+  width: 180px;
+  height: 300px;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 10px 22px rgba(0,0,0,0.35);
+}
+
+/* CARD IMAGES */
+.pop-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* FADE ANIMATION */
+.fade {
+  animation: fadeIn 0.35s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ================= ARROWS ================= */
+.pop-arrows {
+  position: absolute;
+  bottom: -50px;
+  right: 40px;
+  display: flex;
+  gap: 12px;
+  z-index: 10;
+}
+
+.pop-arrow-btn {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.7);
+  border: none;
+  backdrop-filter: blur(5px);
+  cursor: pointer;
+  font-size: 24px;
+  color: #444;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.25s ease;
+}
+
+.pop-arrow-btn:hover {
+  background: #fff;
+  transform: translateY(-2px);
+}
