@@ -19,8 +19,7 @@
 /* SEARCH + SORT WRAPPER FIX */
 /* ========================= */
 
-.search-bar {
-  width: 100%;
+.searchbar {
   display: flex;
   justify-content: center;
   margin-top: 40px;
@@ -30,7 +29,6 @@
   position: relative;
   display: flex;
   align-items: center;
-
   gap: 10px;
   padding: 10px 16px;
 
@@ -51,7 +49,7 @@
   border-radius: 50px;
   font-size: 15px;
   outline: none;
-  min-width: 140px;
+  min-width: 170px;
 }
 
 /* SEARCH BUTTON */
@@ -168,30 +166,51 @@
 .suggestion-title { font-weight: 600; color: #fff; font-size: 14px; }
 .suggestion-region { color: #ccc; font-size: 12px; }
 
-/* ========================= */
-/* RESPONSIVE DESIGN         */
-/* ========================= */
 
+/* ======================= FIX MOBILE SEARCH LAYOUT ======================= */
 @media (max-width: 750px) {
+
+  /* Align everything properly */
   .search-wrapper {
-    flex-direction: column;
-    width: 90%;
-    border-radius: 22px;
-    padding: 16px;
-    gap: 12px;
+    width: 92%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0;
+    background: transparent !important;
+    box-shadow: none !important;
   }
 
+  /* Make input + search button sit in the same row */
   .search-input {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+
+  .search-btn {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    padding: 12px 18px;
+    border-radius: 12px;
+  }
+
+  /* Sort button below in full width */
+  .sort-box {
     width: 100%;
   }
 
-  .search-btn, .sort-btn {
+  .sort-btn {
     width: 100%;
+    padding: 12px;
+    border-radius: 12px;
   }
 
+  /* Fix dropdown width */
   .sort-dropdown-airbnb {
-    right: 50%;
-    transform: translateX(50%);
+    width: 100% !important;
+    right: 0 !important;
+    transform: none !important;
   }
 
   .search-suggestions {
@@ -199,9 +218,7 @@
     left: 0;
   }
 }
-/* -------------------------------------------------------------
-   FROM HERE — FEATURED + EXPLORE SECTIONS UNTOUCHED
-   ------------------------------------------------------------- */
+
 
 /* ================= FEATURED SECTION ================= */
 .featured-section {
@@ -533,7 +550,7 @@
 /* Line */
 .pop-line {
   position: absolute;
-  left: -2.5px;
+  left: -5.5px;
   top: 0;
   width: 2px;
   height: 390px;
@@ -551,8 +568,8 @@
 }
 
 .pop-dot {
-  width: 16px;
-  height: 16px;
+  width: 10px;
+  height: 10px;
   background: rgba(255,255,255);
   border-radius: 50%;
   transition: 0.25s ease;
@@ -706,3 +723,140 @@ background-color: #000;
   color: #fff;
 }
 
+/* ============================================================
+   📱 RESPONSIVE (PHONE < 768px) — EXACT FIGMA STYLE
+   ============================================================ */
+/* ====================== MOBILE HERO OVERLAY ====================== */
+@media (max-width: 768px) {
+
+  .popular-wrapper,
+  .popular-hero {
+    display: none !important; /* hide desktop hero */
+  }
+
+  .popular-mobile-hero {
+    width: 100%;
+    height: 480px;              /* FIXED HEIGHT YOU REQUESTED */
+    position: relative;
+    overflow: hidden;
+    border-radius: 0;
+    margin-top: 20px;
+  }
+
+  /* Background */
+  .popular-mobile-bg {
+    position: absolute;
+    inset: 0;
+    background: url("/image/hero3.jpg") center/cover no-repeat;
+    filter: brightness(0.78);
+    z-index: 1;
+
+    border-radius: 0;
+  }
+
+  /* LEFT LINE + DOTS */
+  .mobile-left {
+    position: absolute;
+    left: 20px;
+    top: 0px;
+    z-index: 10;
+  }
+
+  .mobile-line {
+
+  
+    width: 2px;
+    height: 500px;
+    background: rgba(255,255,255,0.7);
+    margin-left: 2px;
+  }
+
+  .mobile-dots {
+    position: absolute;
+    top: 70px;
+    left: -2px;
+    display: flex;
+    flex-direction: column;
+    gap: 65px;
+  }
+
+  .mobile-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.5);
+  }
+
+  .mobile-dot.active {
+    background: #fff;
+    transform: scale(1.4);
+  }
+
+  /* MAIN CARD */
+  .mobile-card {
+    position: absolute;
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width:50%;
+    height: 300px;
+    border-radius: 18px;
+    overflow: hidden;
+    z-index: 20;
+    box-shadow: 0 12px 25px rgba(0,0,0,0.35);
+  }
+
+  .mobile-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* TITLE */
+  .mobile-title {
+    position: absolute;
+    top: 340px;
+    width: 100%;
+    text-align: center;
+    z-index: 20;
+    color: #fff;
+    font-size: 26px;
+    font-weight: 700;
+    text-shadow: 0 4px 18px rgba(0,0,0,0.8);
+  }
+
+  /* DESCRIPTION */
+  .mobile-desc {
+    position: absolute;
+    top: 375px;
+    width: 85%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    font-size: 14px;
+    color: #fff;
+    opacity: 0.9;
+    z-index: 20;
+  }
+
+  /* BUTTON */
+  .mobile-btn {
+    position: absolute;
+    top: 420px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #fff;
+    color: #000;
+    padding: 10px 26px;
+    border-radius: 26px;
+    font-size: 15px;
+    font-weight: 600;
+    border: none;
+    z-index: 20;
+    box-shadow: 0 5px 12px rgba(0,0,0,0.3);
+  }
+
+  .mobile-btn:active {
+    transform: translateX(-50%) scale(0.96);
+  }
+}

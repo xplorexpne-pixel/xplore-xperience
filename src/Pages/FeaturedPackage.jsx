@@ -226,6 +226,27 @@ export default function FeaturedPackage() {
   const [activeRegion, setActiveRegion] = useState("All Packages");
   const [sortOpen, setSortOpen] = useState(false);
   const [sortType, setSortType] = useState("");
+  /* ================= MOBILE SWIPE LOGIC ================= */
+  const touchStartX = useRef(0);
+  const touchEndX = useRef(0);
+
+  function handleTouchStart(e) {
+    touchStartX.current = e.touches[0].clientX;
+  }
+
+  function handleTouchMove(e) {
+    touchEndX.current = e.touches[0].clientX;
+  }
+
+  function handleTouchEnd() {
+    const diff = touchStartX.current - touchEndX.current;
+
+    if (diff > 50) {
+      setIndex((prev) => (prev + 1) % popularCards.length);
+    } else if (diff < -50) {
+      setIndex((prev) => (prev - 1 + popularCards.length) % popularCards.length);
+    }
+  }
 
   const searchRef = useRef(null);
   const sortRef = useRef(null);
@@ -259,6 +280,7 @@ export default function FeaturedPackage() {
 
   const nextSlide = () => setIndex((i) => (i + 1) % total);
   const prevSlide = () => setIndex((i) => (i - 1 + total) % total);
+
 
   /* ================= SEARCH CLOSE WHEN CLICKED OUTSIDE ================= */
   useEffect(() => {
@@ -324,8 +346,7 @@ export default function FeaturedPackage() {
       <div className="brand-header">
         <h1 className="brand-title">Xplore Xperience</h1>
         <p className="brand-sub">Discover the Enchanting Northeast India</p>
-
-        <div className="search-bar">
+        <div className="searchbar">
           <div className="search-wrapper" ref={searchRef}>
             <input
               type="text"
@@ -371,6 +392,7 @@ export default function FeaturedPackage() {
           </div>
         </div>
       </div>
+      
 
       {/* ====================== POPULAR SECTION ====================== */}
       <div className="popular-wrapper">
@@ -429,6 +451,54 @@ export default function FeaturedPackage() {
           </div>
         </div>
       </div>
+      {/* ===================== MOBILE POPULAR HERO (ONLY < 768px) ===================== */}
+      <div
+        className="popular-mobile-hero"
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
+        {/* Background */}
+        <div className="popular-mobile-bg"></div>
+
+        {/* LEFT LINE + DOTS */}
+        <div className="mobile-left">
+          <div className="mobile-line"></div>
+
+          <div className="mobile-dots">
+            {popularCards.map((p, i) => (
+              <div
+                key={i}
+                className={`mobile-dot ${i === index ? "active" : ""}`}
+              />
+            ))}
+          </div>
+        </div>
+
+        {/* MAIN CARD */}
+        <div className="mobile-card fade">
+          <img src={popularCards[index].img} alt="" />
+        </div>
+
+        {/* TITLE */}
+        <h2 className="mobile-title">{popularCards[index].title}</h2>
+
+        {/* DESCRIPTION */}
+        <p className="mobile-desc">{popularCards[index].desc}</p>
+
+        {/* BUTTON */}
+        <button
+          className="mobile-btn"
+          onClick={() =>
+            window.open(
+              `https://wa.me/919181317151?text=I want to inquire about ${popularCards[index].title}`,
+              "_blank"
+            )
+          }
+        >
+          Explore
+        </button>
+      </div>
 
       {/* ================= EXPLORE SECTION ================= */}
       <section className="explore-section">
@@ -436,9 +506,8 @@ export default function FeaturedPackage() {
           {exploreRegions.map((region) => (
             <button
               key={region}
-              className={`explore-pill ${
-                activeRegion === region ? "active" : ""
-              }`}
+              className={`explore-pill ${activeRegion === region ? "active" : ""
+                }`}
               onClick={() => setActiveRegion(region)}
             >
               {region}
