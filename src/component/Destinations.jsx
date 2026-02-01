@@ -1,5 +1,5 @@
 
-// import DestinationCard from "./DestinationCard ";
+/* eslint-disable no-unused-vars */
 import { destinations } from "../data/DestinationCardData";
 import { useState } from "react";
 export function DestinationCard({ item }) {
