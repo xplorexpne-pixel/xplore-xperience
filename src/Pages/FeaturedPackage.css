@@ -860,3 +860,6 @@ background-color: #000;
     transform: translateX(-50%) scale(0.96);
   }
 }
+.popular-mobile-hero {
+  display: none;
+}
