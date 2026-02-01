@@ -25,7 +25,7 @@ const HeroSection = () => {
       <div className="hero-overlay"></div>
 
       <div className="hero-content">
-        <div className="hero-badge">Explore Beyond the Expected</div>
+        {/* <div className="hero-badge">Explore Beyond the Expected</div> */}
         
         <h1 className="hero-title">
           Journeys Designed <br />
@@ -47,7 +47,7 @@ const HeroSection = () => {
               <MapPin size={14} className="input-icon" />
               <input 
                 type="text" 
-                placeholder="Sydney, Australia" 
+                placeholder="Enter destination" 
                 value={destination}
                 onChange={(e) => setDestination(e.target.value)}
               />
