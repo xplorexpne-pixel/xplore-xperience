@@ -12,7 +12,8 @@
 .about-page {
   padding: 110px 7% 80px;
   font-family: "Inter", sans-serif;
-  background: var(--white)               !important; /* Fix white background issue */
+  background: var(--white) !important;
+  /* Fix white background issue */
   color: var(--text);
   min-height: 100vh;
 }
@@ -35,27 +36,41 @@
 .hero-containers {
   height: 550px;
   border-radius: 26px;
-  background: url("/about.jpeg") center/cover no-repeat;
+  /* background removed -> moved to ::before for brightness control */
   position: relative;
   overflow: hidden;
-  box-shadow: 0 12px 32px rgba(0,0,0,0.25);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+}
+
+.hero-containers::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("/about.jpg") center/cover no-repeat;
+  filter: brightness(1.4);
+  /* Significantly brighter background image */
+  z-index: 0;
+}
+
+.hero-containers>* {
+  position: relative;
+  /* Ensure text/overlay sits above the background */
+  z-index: 1;
 }
 
 .hero-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    to bottom right,
-    rgba(0,0,0,0.75),
-    rgba(0,0,0,0.55),
-    rgba(0,0,0,0.35)
-  );
+  background: none;
+  /* Remove dark gradient completely */
+  pointer-events: none;
 }
 
 /* FIXED HERO CARD */
 .hero-card {
   position: absolute;
-  top: 25%;                   /* ← moved upward */
+  top: 25%;
+  /* ← moved upward */
   left: 80px;
   transform: translateY(-50%);
   width: 480px;
@@ -66,8 +81,8 @@
   /* DO NOT TOUCH — User wants this unchanged */
   background: rgba(255, 255, 255, 0.20);
   backdrop-filter: blur(14px);
-  border: 1px solid rgba(255,255,255,0.25);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
   color: var(--white);
 }
 
@@ -104,10 +119,10 @@
   border-radius: 18px;
 
   /* NEW card color (premium soft glass) */
-  background: rgba(255,255,255,0.35);
+  background: rgba(255, 255, 255, 0.35);
   backdrop-filter: blur(6px);
-  border: 1px solid rgba(255,255,255,0.28);
-  box-shadow: 0 10px 24px rgba(0,0,0,0.10);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.10);
   text-align: center;
 }
 
@@ -118,11 +133,19 @@
 }
 
 /* ===== WHO WE ARE ===== */
+/* ===== WHO WE ARE ===== */
 .who-section {
   margin-top: 100px;
   display: flex;
-  gap: 50px;
+  gap: 30px;
+  /* Reduced gap for compactness */
   align-items: center;
+}
+
+.who-left,
+.who-right {
+  flex: 1;
+  /* Balanced 50/50 Layout */
 }
 
 .who-left h2 {
@@ -148,10 +171,15 @@
 }
 
 .who-right img {
-  width: 60%;
-  margin-left: 40%;
+  width: 100%;
+  /* Full width in its column */
+  margin-left: 0;
+  /* Remove offset */
   border-radius: 16px;
-  box-shadow: 0 10px 26px rgba(0,0,0,0.18);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.18);
+  object-fit: cover;
+  height: 400px;
+  /* Consistent height */
 }
 
 /* ===== JOURNEY TIMELINE ===== */
@@ -223,17 +251,17 @@
   border-radius: 16px;
 
   /* same updated card color */
-  background: rgba(255,255,255,0.35);
+  background: rgba(255, 255, 255, 0.35);
   backdrop-filter: blur(6px);
-  border: 1px solid rgba(255,255,255,0.28);
-  box-shadow: 0 10px 24px rgba(0,0,0,0.10);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.10);
 
   transition: 0.25s ease;
 }
 
 .why-card-box:hover {
   transform: translateY(-6px);
-  box-shadow: 0 16px 32px rgba(0,0,0,0.12);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
 }
 
 .why-card-box h3 {
@@ -253,7 +281,8 @@
 /* ===== MISSION ===== */
 .mission-section {
   margin-top: 100px;
-  background: transparent !important; /* remove white box */
+  background: transparent !important;
+  /* remove white box */
   padding: 10px 0;
 }
 
@@ -301,6 +330,7 @@
   background: var(--secondary);
   transform: translateY(-3px);
 }
+
 @media (max-width: 1024px) {
 
   .hero-card {
@@ -321,6 +351,7 @@
     margin-left: 0;
   }
 }
+
 @media (max-width: 768px) {
 
   /* PAGE */
@@ -329,17 +360,36 @@
   }
 
   /* HERO */
-  .hero-container {
-    height: auto;
-    padding: 40px 20px;
+  /* HERO */
+  .hero-containers {
+    height: 500px;
+    /* Ensure height for background */
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .hero-card {
     position: relative;
-    top: 0;
-    left: 0;
+    top: auto;
+    left: auto;
     transform: none;
-    width: 100%;
+    width: 90%;
+    max-width: 400px;
+
+    /* Reverted to Dark Glass */
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #ffffff;
+    /* White text */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  }
+
+  .hero-card h2 {
+    color: #ffffff;
   }
 
   /* STATS */
@@ -364,6 +414,7 @@
     grid-template-columns: 1fr;
   }
 }
+
 @media (max-width: 480px) {
 
   .hero-card {
@@ -382,8 +433,14 @@
     font-size: 24px !important;
   }
 
+  .hero-card p {
+    font-size: 13px;
+    line-height: 1.6;
+  }
+
   .cta-btn {
-    width: 100%;
-    padding: 14px;
+    width: auto;
+    /* make button less wide */
+    padding: 12px 24px;
   }
 }
