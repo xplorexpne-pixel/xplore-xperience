@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import MotionButton from "./MotionButton";
 import logo from "/image/logo.png"; // adjust path if needed
+import "./Navbar.css";
 
 export default function Navbar() {
 

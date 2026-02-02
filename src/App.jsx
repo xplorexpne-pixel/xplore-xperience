@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import ScrollToTop from "./component/ScrollToTop";
 
 import Hero from "./component/Hero";
 import Navbar from "./component/Navbar";
@@ -31,6 +32,7 @@ function App() {
   return (
     <div>
       <BrowserRouter>
+        <ScrollToTop />
         <Navbar />
 
         <Routes>

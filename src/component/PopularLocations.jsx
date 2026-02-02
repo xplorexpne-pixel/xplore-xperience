@@ -26,7 +26,7 @@ const PopularLocations = () => {
   return (
     <section className="popular-section">
       <div className="popular-container">
-        
+
         {/* Header Text */}
         <div className="popular-header">
           <span className="subtitle">TRAVELER'S FAVOURITE</span>
@@ -41,7 +41,7 @@ const PopularLocations = () => {
           {locations.map((loc) => (
             <div key={loc.id} className={loc.className}>
               <img src={loc.image} alt={loc.name} className="bg-image" />
-              <div className="card-overlay">
+              <div className="popular-card-overlay">
                 <h3>{loc.name}</h3>
               </div>
             </div>

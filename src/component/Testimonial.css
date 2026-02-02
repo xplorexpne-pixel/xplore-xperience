@@ -41,7 +41,7 @@
   background: #fff;
   border-radius: 18px;
   padding: 32px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
   transition: transform 0.3s ease;
 }
 
@@ -126,6 +126,8 @@ blockquote {
   border: none;
   font-weight: 600;
   cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .outline-btn {
@@ -136,6 +138,8 @@ blockquote {
   border: 2px solid var(--primary);
   font-weight: 600;
   cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
 }
 
 /* Responsive */

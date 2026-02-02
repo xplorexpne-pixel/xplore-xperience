@@ -1,4 +1,5 @@
 import "./Testimonial.css";
+import { Link } from "react-router-dom";
 
 const testimonials = [
   {
@@ -8,28 +9,28 @@ const testimonials = [
     image: "https://randomuser.me/api/portraits/women/44.jpg",
     rating: 5,
     text:
-      "The Kyoto experience was absolutely serene and life-changing. Every detail, from the hidden shrines to the tea ceremonies, was Meghalaya was fun! Navin bhai was always proactive and planned very amazing stays. My trip was very relaxing (without tension) and was planned according to whatever things we wanted.",
+      "Meghalaya was fun! Navin bhai was always proactive and planned very amazing stays. My trip was very relaxing (without tension) and was planned according to whatever things we wanted.",
     visited: "Megahalya, Shillong",
   },
   {
     id: 2,
-    name: "Marco Rossi",
-    country: "Italy",
+    name: "Kanishk B",
+    country: "",
     image: "https://randomuser.me/api/portraits/men/46.jpg",
     rating: 5,
     text:
-      "An unforgettable adventure in Tanzania. The safari was perfectly organized, and our guide had an incredible eye for wildlife.",
-    visited: "Serengeti, Tanzania",
+      "It was an amazing trip. The stay was very comfortable and the food was delicious. I would definitely recommend this trip to my friends and family.",
+    visited: "Megahalya, Shillong",
   },
   {
     id: 3,
-    name: "Elena Rodriguez",
-    country: "Spain",
+    name: "Pawar H",
+    country: "",
     image: "https://randomuser.me/api/portraits/women/65.jpg",
     rating: 5,
     text:
-      "The coastal retreat in Greece was pure luxury. Waking up to the Aegean Sea felt unreal. I’m already planning my next trip.",
-    visited: "Santorini, Greece",
+      "It was an amazing trip. The stay was very comfortable and the food was delicious. I would definitely recommend this trip to my friends and family.",
+    visited: "Tawang, Arunachal Pradesh",
   },
 ];
 
@@ -80,8 +81,8 @@ export default function Testimonials() {
         </p>
 
         <div className="cta-buttons">
-          <button className="primary-btn">View All Packages</button>
-          <button className="outline-btn">Contact an Expert</button>
+          <Link to="/packages" className="primary-btn">View All Packages</Link>
+          <a href="https://wa.me/9181317152?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20your%20packages." target="_blank" rel="noopener noreferrer" className="outline-btn">Contact an Expert</a>
         </div>
       </div>
     </section>

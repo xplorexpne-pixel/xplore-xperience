@@ -80,6 +80,7 @@ html {
 
 .why-left h2 span {
   background: linear-gradient(120deg, #2563EB 0%, #9333ea 100%);
+  background-clip: text;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -589,6 +590,7 @@ html {
 }
 
 
+<<<<<<< HEAD
 /* =========================
    NAVBAR
 ========================= */
@@ -942,6 +944,8 @@ html {
   }
 }
 
+=======
+>>>>>>> 92d8b92757d51fbba2e008912b7b8f27463e6ae4
 /* ============================
    GLOBAL RESET FOR FOOTER
 ============================ */

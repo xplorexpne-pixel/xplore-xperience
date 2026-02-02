@@ -23,7 +23,7 @@
 
 /* --- Left Side: Text --- */
 .gallery-content {
-  max-width: 500px;
+  max-width: 400px;
 }
 
 .gallery-title {
@@ -37,6 +37,7 @@
 
 .text-highlight {
   background: linear-gradient(120deg, #2563EB 0%, #9333ea 100%);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
@@ -107,20 +108,6 @@
   z-index: 2;
 }
 
-/* Small label on image */
-/* .image-overlay {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(4px);
-  padding: 8px 16px;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--primary-dark);
-  z-index: 3;
-} */
 
 /* Thumbnails Strip */
 .thumbnail-strip {
@@ -219,5 +206,62 @@
   .thumbnail-btn {
     width: 70px; /* Slightly smaller thumbnails */
     height: 50px;
+  }
+}
+@media (max-width: 480px) {
+
+  .gallery-section {
+    padding: 30px 16px;
+  }
+
+  .gallery-container {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    text-align: center;
+  }
+
+  .gallery-content {
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .gallery-title {
+    font-size: 1.8rem; /* Smaller for phone */
+    margin-bottom: 12px;
+  }
+
+  .gallery-description {
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+    line-height: 1.5;
+  }
+
+  /* Image */
+  .main-image-wrapper {
+    width: 100%;
+    aspect-ratio: 3 / 2; /* More suitable for phones */
+    border-radius: 16px;
+  }
+
+  .image-overlay {
+    bottom: 10px;
+    left: 10px;
+    font-size: 0.7rem;
+  }
+
+  /* Thumbnail strip */
+  .thumbnail-strip {
+    justify-content: flex-start;
+    padding-bottom: 8px;
+    gap: 8px;
+  }
+
+  .thumbnail-btn {
+    width: 60px;    /* Smaller thumbnails for phone */
+    height: 40px;
+    border-radius: 8px;
   }
 }
