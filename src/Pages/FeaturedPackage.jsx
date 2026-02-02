@@ -171,7 +171,7 @@ const explorePackages = [
     region: "Arunachal",
     duration: "6D / 5N",
     desc: "A charming valley of rice fields, Apatani culture and cool pine forests. Ziro offers calm landscapes and authentic village life.",
-    image: "/image/ziro2.jpg", // You don't have a Ziro.jpg
+    image: "/image/zfm.jpg", // You don't have a Ziro.jpg
   },
   {
     id: 22,
