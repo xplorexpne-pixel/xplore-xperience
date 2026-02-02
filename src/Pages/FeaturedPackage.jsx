@@ -47,7 +47,7 @@ const explorePackages = [
   },
   {
     id: 6,
-    title: "Kibithu & Dong",
+    title: "Kibithu (Kibithoo) & Dong",
     region: "Arunachal",
     duration: "6D / 5N",
     desc: "Visit India’s easternmost points known for sunrise views and remote mountain life. A rare offbeat journey into untouched Arunachal.",
@@ -159,14 +159,22 @@ const explorePackages = [
   },
   {
     id: 20,
-    title: "Zero",
+    title: "Ziro",
     region: "Arunachal",
     duration: "6D / 5N",
     desc: "A charming valley of rice fields, Apatani culture and cool pine forests. Ziro offers calm landscapes and authentic village life.",
-    image: "/Northeast/Meghalaya.jpg", // You don't have a Ziro.jpg
+    image: "/image/ziro2.jpg", // You don't have a Ziro.jpg
   },
   {
     id: 21,
+    title: "Ziro Festival of Music",
+    region: "Arunachal",
+    duration: "6D / 5N",
+    desc: "A charming valley of rice fields, Apatani culture and cool pine forests. Ziro offers calm landscapes and authentic village life.",
+    image: "/image/ziro2.jpg", // You don't have a Ziro.jpg
+  },
+  {
+    id: 22,
     title: "Dambuk",
     region: "Arunachal",
     duration: "6D / 5N",
@@ -174,7 +182,7 @@ const explorePackages = [
     image: "/Northeast/dambuk.webp",
   },
   {
-    id: 22,
+    id: 23,
     title: "Orange Festival",
     region: "Arunachal",
     duration: "6D / 5N",
@@ -182,7 +190,7 @@ const explorePackages = [
     image: "/Northeast/orange.jpg",
   },
   {
-    id: 23,
+    id: 24,
     title: "Eastern Arunachal",
     region: "Arunachal",
     duration: "6D / 5N",
@@ -190,7 +198,7 @@ const explorePackages = [
     image: "/Northeast/Mechuka.jpg",
   },
   {
-    id: 24,
+    id: 25,
     title: "Parshuramkund",
     region: "Arunachal",
     duration: "6D / 5N",
@@ -198,12 +206,44 @@ const explorePackages = [
     image: "/Northeast/Kibithu.jpg",
   },
   {
-    id: 25,
+    id: 26,
     title: "Meghalaya",
     region: "Meghalaya",
     duration: "8D / 7N",
     desc: "Land of waterfalls, living root bridges and crystal-clear rivers. A refreshing getaway into nature’s most dramatic landscapes.",
     image: "/Northeast/Meghalaya.jpg",
+  },
+  {
+    id: 27,
+    duration: "Customizable",
+    title: "All Girls Trip",
+    region: "Northeast",
+    desc: "A trip for all the girls out there to explore the beauty of Northeast, with all the safety and comfort.",
+    image: "/image/girls.jpg",
+  },
+  {
+    id: 28,
+    title: "Senior citizen trip",
+    duration: "Customizable",
+    region: "Northeast",
+    desc: "A trip for all the senior citizens out there to explore the beauty of Northeast, with all the safety and comfort.",
+    image: "/image/senior.jpg",
+  },
+  {
+    id: 29,
+    title: "Trips Coming Soon",
+    region: "Manipur",
+    duration: "TBD",
+    desc: "We are curating the best experiences for Manipur. Stay tuned for updates!",
+    image: "/image/coming-soon.svg",
+  },
+  {
+    id: 30,
+    title: "Trips Coming Soon",
+    region: "Tripura",
+    duration: "TBD",
+    desc: "We are curating the best experiences for Tripura. Stay tuned for updates!",
+    image: "/image/coming-soon.svg",
   },
 
 ];
@@ -392,7 +432,7 @@ export default function FeaturedPackage() {
           </div>
         </div>
       </div>
-      
+
 
       {/* ====================== POPULAR SECTION ====================== */}
       <div className="popular-wrapper">
@@ -520,7 +560,9 @@ export default function FeaturedPackage() {
             explorePackages.filter((pkg) => {
               const matchRegion =
                 activeRegion === "All Packages" ||
-                pkg.region === activeRegion;
+                pkg.region === activeRegion ||
+                pkg.id === 27 ||
+                pkg.id === 28;
 
               const matchSearch =
                 searchQuery.trim() === "" ||

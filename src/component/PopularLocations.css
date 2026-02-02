@@ -48,9 +48,9 @@
 .locations-grid {
   display: grid;
   /* Two columns: First one (Singapore) is slightly wider or equal */
-  grid-template-columns: 1fr 1fr; 
+  grid-template-columns: 1fr 1fr;
   /* Two rows for the right side items */
-  grid-template-rows: 300px 300px; 
+  grid-template-rows: 300px 300px;
   gap: 24px;
 }
 
@@ -65,18 +65,18 @@
 
 .location-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
 /* Specific Card Sizes */
 .large {
   /* Spans 2 rows (makes it tall) */
-  grid-row: span 2; 
+  grid-row: span 2;
 }
 
 .wide {
   /* Standard single cell */
-  grid-column: span 1; 
+  grid-column: span 1;
 }
 
 /* Image Styling */
@@ -88,24 +88,26 @@
 }
 
 .location-card:hover .bg-image {
-  transform: scale(1.05); /* Zoom effect on hover */
+  transform: scale(1.05);
+  /* Zoom effect on hover */
 }
 
 /* Text Overlay with Gradient */
-.card-overlay {
+.popular-card-overlay {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 40%; /* Gradient covers bottom half */
-  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  height: 40%;
+  /* Gradient covers bottom half */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
   display: flex;
   align-items: flex-end;
   padding: 30px;
   box-sizing: border-box;
 }
 
-.card-overlay h3 {
+.popular-card-overlay h3 {
   color: white;
   font-size: 2.1rem;
   font-weight: 700;
@@ -131,7 +133,7 @@
 
   /* Force all cards to have a consistent height on mobile */
   .location-card {
-    height: 300px; 
+    height: 300px;
     width: 100%;
   }
 

@@ -42,10 +42,10 @@ const faqData = {
 };
 const handleContactClick = () => {
   // REPLACE THIS with your actual phone number (e.g., 15550001234)
-  const phoneNumber = "8811992494";
+  const phoneNumber = "919181317151";
 
   // The pre-filled message
-  const message = "What can I help you?";
+  const message = "Hi, I would like to know more about your travel packages.";
 
   // Create the WhatsApp URL
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
