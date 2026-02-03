@@ -1,9 +1,59 @@
 /* ========================= 
-   SMOOTH SCROLL BEHAVIOR
+   LENIS & PREMIUM UI
 ========================= */
-html {
-  scroll-behavior: smooth;
+
+/* Lenis Recommended */
+html.lenis,
+body.lenis {
+  height: auto;
 }
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+/* Premium Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--light);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* Text Selection */
+::selection {
+  background: var(--primary);
+  color: white;
+}
+
+/* Font Smoothing */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 
 :root {
   /* BRAND */

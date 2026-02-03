@@ -76,18 +76,48 @@ async function optimizeImages() {
                 pipeline = pipeline.webp({ quality: QUALITY });
             }
 
+            const tempPath = filePath + '.tmp';
+            const backupPath = filePath + '.bak';
+
             const buffer = await pipeline.toBuffer();
 
             const newSize = buffer.length;
             const savings = stats.size - newSize;
 
             if (savings > 0) {
-                fs.writeFileSync(filePath, buffer);
-                console.log(`  -> New size: ${(newSize / 1024 / 1024).toFixed(2)} MB (Saved ${(savings / 1024 / 1024).toFixed(2)} MB)`);
-                savedBytes += savings;
-                processedCount++;
+                // Write to temp file first
+                fs.writeFileSync(tempPath, buffer);
+
+                // Backup original
+                try {
+                    if (fs.existsSync(filePath)) {
+                        fs.renameSync(filePath, backupPath);
+                    }
+                } catch (e) {
+                    console.error(`  -> Failed to backup ${relativePath}, skipping replacement.`);
+                    try { fs.unlinkSync(tempPath); } catch (e) { }
+                    continue;
+                }
+
+                // Rename temp to original
+                try {
+                    fs.renameSync(tempPath, filePath);
+                    console.log(`  -> Optimized! New size: ${(newSize / 1024 / 1024).toFixed(2)} MB`);
+
+                    // Clean up backup
+                    try { fs.unlinkSync(backupPath); } catch (e) { }
+                    savedBytes += savings;
+                    processedCount++;
+                } catch (e) {
+                    console.error(`  -> Failed to replace ${relativePath}: ${e.message}`);
+                    // Try to restore backup
+                    if (fs.existsSync(backupPath)) {
+                        try { fs.renameSync(backupPath, filePath); } catch (e) { }
+                    }
+                }
             } else {
-                console.log(`  -> optimization didn't reduce size much, skipping overwrite.`);
+                console.log(`  -> optimization didn't reduce size much.`);
+                try { fs.unlinkSync(tempPath); } catch (e) { }
             }
 
         } catch (err) {

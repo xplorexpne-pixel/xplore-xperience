@@ -6,19 +6,25 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const fileToProcess = path.join(__dirname, 'public/image/hero5.jpg');
-const logFile = path.join(__dirname, 'error_log.txt');
+const file = path.join(__dirname, 'public/image/hero5.jpg');
 
-async function testOptimize() {
+async function run() {
+    console.log(`Checking ${file}`);
+    const stats = fs.statSync(file);
+    console.log(`Size: ${stats.size}`);
+
     try {
-        const buffer = await sharp(fileToProcess)
+        const buffer = await sharp(file, { failOnError: false })
             .resize({ width: 1920 })
-            .jpeg({ quality: 80 })
+            .jpeg({ quality: 80, mozjpeg: true })
             .toBuffer();
-        fs.writeFileSync(logFile, "Success!", 'utf8');
-    } catch (error) {
-        fs.writeFileSync(logFile, `Error Stack: ${error.stack}\nError Message: ${error.message}`, 'utf8');
+
+        console.log(`New size: ${buffer.length}`);
+        fs.writeFileSync(path.join(__dirname, 'public/image/hero5_optimized.jpg'), buffer);
+        console.log("Success!");
+    } catch (e) {
+        console.error("Error details:", e);
     }
 }
 
-testOptimize();
+run();

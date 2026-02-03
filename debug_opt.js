@@ -6,35 +6,29 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const fileToProcess = path.join(__dirname, 'public/image/hero5.jpg');
+const file = path.join(__dirname, 'public/image/hero5.jpg');
 
-async function testOptimize() {
-    console.log(`Processing ${fileToProcess}`);
+async function run() {
+    console.log(`Checking ${file}`);
+    if (!fs.existsSync(file)) {
+        console.error("File not found!");
+        return;
+    }
+    const stats = fs.statSync(file);
+    console.log(`Size: ${stats.size}`);
+
     try {
-        if (!fs.existsSync(fileToProcess)) {
-            console.error("File does not exist!");
-            return;
-        }
-
-        const buffer = await sharp(fileToProcess)
+        const buffer = await sharp(file)
             .resize({ width: 1920 })
             .jpeg({ quality: 80, mozjpeg: true })
             .toBuffer();
 
-        console.log(`Optimized size: ${buffer.length}`);
-
-        // Try writing to a new file first
-        const newPath = path.join(__dirname, 'public/image/hero5_opt.jpg');
-        fs.writeFileSync(newPath, buffer);
-        console.log("Written to hero5_opt.jpg");
-
-        // Now try overwriting
-        fs.writeFileSync(fileToProcess, buffer);
-        console.log("Overwritten hero5.jpg");
-
-    } catch (error) {
-        console.error("Error:", error);
+        console.log(`New size: ${buffer.length}`);
+        fs.writeFileSync(file, buffer);
+        console.log("Success!");
+    } catch (e) {
+        console.error("Error:", e);
     }
 }
 
-testOptimize();
+run();

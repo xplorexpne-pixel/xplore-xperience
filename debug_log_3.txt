@@ -1,2 +1,4 @@
 ﻿Checking C:\akash\xplore-xperience\public\image\hero5.jpg
 Size: 17667320
+New size: 290211
+Success!

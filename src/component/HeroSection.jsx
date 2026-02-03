@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './HeroSection.css';
 import { MapPin, Calendar, Search } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const HeroSection = () => {
   const [destination, setDestination] = useState('');
@@ -28,17 +29,27 @@ const HeroSection = () => {
       <div className="hero-content">
         {/* <div className="hero-badge">Explore Beyond the Expected</div> */}
 
-        <h1 className="hero-title">
+        <motion.h1
+          className="hero-title"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
           Journeys Designed <br />
           to Match the Way <br />
           You Travel
-        </h1>
+        </motion.h1>
 
-        <p className="hero-description">
+        <motion.p
+          className="hero-description"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+        >
           From iconic destinations to hidden escapes, Averra curates meaningful travel
           experiences tailored to your interests, pace, and comfort — so every journey feels
           effortless and unforgettable.
-        </p>
+        </motion.p>
 
         {/* --- Search Bar --- */}
         <div className="search-bar">

@@ -1,5 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ScrollToTop from "./component/ScrollToTop";
+import SmoothScroll from "./component/SmoothScroll";
+import Reveal from "./component/Reveal";
 
 import Hero from "./component/Hero";
 import Navbar from "./component/Navbar";
@@ -32,41 +34,65 @@ function App() {
   return (
     <div>
       <BrowserRouter>
-        <ScrollToTop />
-        <Navbar />
+        <SmoothScroll>
+          <Navbar />
 
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                {/* <Hero /> */}
-                {/* <HeroParallax /> */}
-                <HeroSection />
-                <PopularLocations />
-                {/* <Destinations /> */}
-                <WhyUs />
-                <BikeRentalSection />
-                {/* <TourPackages /> */}
-                <HowItWorks />
-                {/* <CtaBanner /> */}
-                <FAQ />
-                <GallerySection />
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  {/* <Hero /> */}
+                  {/* <HeroParallax /> */}
+                  <HeroSection />
 
-                <Testimonials />
+                  <Reveal>
+                    <PopularLocations />
+                  </Reveal>
 
-              </>
-            }
-          />
+                  {/* <Destinations /> */}
 
-          <Route path="/packages" element={<FeaturedPackage />} />
-          <Route path="/about" element={<About />} />
-          {/* <Route path="/bike-rentals" element={<BikeRentals />} /> */}
-        </Routes>
+                  <Reveal>
+                    <WhyUs />
+                  </Reveal>
 
-        <Footer />
+                  <Reveal>
+                    <BikeRentalSection />
+                  </Reveal>
+
+                  {/* <TourPackages /> */}
+
+                  <Reveal>
+                    <HowItWorks />
+                  </Reveal>
+
+                  {/* <CtaBanner /> */}
+
+                  <Reveal>
+                    <FAQ />
+                  </Reveal>
+
+                  <Reveal>
+                    <GallerySection />
+                  </Reveal>
+
+                  <Reveal>
+                    <Testimonials />
+                  </Reveal>
+
+                </>
+              }
+            />
+
+            <Route path="/packages" element={<FeaturedPackage />} />
+            <Route path="/about" element={<About />} />
+            {/* <Route path="/bike-rentals" element={<BikeRentals />} /> */}
+          </Routes>
+
+          <Footer />
+        </SmoothScroll>
       </BrowserRouter>
-    </div>
+    </div >
   );
 }
 
