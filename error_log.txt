@@ -1,0 +1,8 @@
+Error Stack: Error: VipsJpeg: Invalid SOS parameters for sequential JPEG
+    at Sharp.toBuffer (C:\akash\xplore-xperience\node_modules\sharp\lib\output.js:163:17)
+    at testOptimize (file:///C:/akash/xplore-xperience/debug_opt_2.js:17:14)
+    at file:///C:/akash/xplore-xperience/debug_opt_2.js:24:1
+    at ModuleJob.run (node:internal/modules/esm/module_job:345:25)
+    at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26)
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5)
+Error Message: VipsJpeg: Invalid SOS parameters for sequential JPEG

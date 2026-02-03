@@ -121,6 +121,7 @@ const BikeRentalSection = () => {
               src={currentBike.image}
               alt={currentBike.name}
               className="main-bike-img"
+              loading="lazy"
             />
           </div>
 
@@ -166,7 +167,7 @@ const BikeRentalSection = () => {
                 className={`logo-item ${index === currentIndex ? 'active' : ''}`}
                 onClick={() => setCurrentIndex(index)}
               >
-                <img src={bike.logo} alt="Brand Logo" />
+                <img src={bike.logo} alt="Brand Logo" loading="lazy" />
               </div>
             ))}
             {/* Duplicating items just to fill the visual strip like the screenshot */}

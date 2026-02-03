@@ -62,7 +62,7 @@ const PopularLocations = () => {
         <div className="locations-grid">
           {locations.map((loc) => (
             <div key={loc.id} className={loc.className}>
-              <img src={loc.image} alt={loc.name} className="bg-image" />
+              <img src={loc.image} alt={loc.name} className="bg-image" loading="lazy" />
               <div className="popular-card-overlay">
                 <h3>{loc.name}</h3>
                 <button

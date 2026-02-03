@@ -576,10 +576,14 @@ export default function FeaturedPackage() {
             <div className="explore-card" key={pkg.id}>
               <span className="explore-duration-badge">{pkg.duration}</span>
 
-              <div
-                className="explore-card-img"
-                style={{ backgroundImage: `url(${pkg.image})` }}
-              ></div>
+              <div className="explore-card-img">
+                <img
+                  src={pkg.image}
+                  alt={pkg.title}
+                  loading="lazy"
+                  style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                />
+              </div>
 
               <div className="explore-card-info">
                 <h3>{pkg.title}</h3>
