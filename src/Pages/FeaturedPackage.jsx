@@ -268,11 +268,12 @@ export default function FeaturedPackage() {
   const [sortOpen, setSortOpen] = useState(false);
   const [sortType, setSortType] = useState("");
   /* ================= MOBILE SWIPE LOGIC ================= */
-  const touchStartX = useRef(0);
-  const touchEndX = useRef(0);
+  const touchStartX = useRef(null);
+  const touchEndX = useRef(null);
 
   function handleTouchStart(e) {
     touchStartX.current = e.touches[0].clientX;
+    touchEndX.current = null; // Reset to avoid stale values
   }
 
   function handleTouchMove(e) {
@@ -280,12 +281,17 @@ export default function FeaturedPackage() {
   }
 
   function handleTouchEnd() {
+    if (touchStartX.current === null || touchEndX.current === null) return;
+
     const diff = touchStartX.current - touchEndX.current;
 
+    // Swipe Left -> Next (positive diff)
     if (diff > 50) {
       setIndex((prev) => (prev + 1) % popularCards.length);
-    } else if (diff < -50) {
-      setIndex((prev) => (prev - 1 + popularCards.length) % popularCards.length);
+    }
+    // Swipe Right -> Prev (negative diff)
+    else if (diff < -50) {
+      setIndex((prev) => (prev === 0 ? popularCards.length - 1 : prev - 1));
     }
   }
 

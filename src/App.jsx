@@ -34,6 +34,7 @@ function App() {
   return (
     <div>
       <BrowserRouter>
+        <ScrollToTop />
         <SmoothScroll>
           <Navbar />
 

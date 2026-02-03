@@ -8,11 +8,11 @@ const __dirname = path.dirname(__filename);
 
 const PUBLIC_DIR = path.join(__dirname, 'public');
 const MAX_WIDTH = 1920;
-const QUALITY = 80;
-const SIZE_THRESHOLD_BYTES = 500 * 1024; // 500KB
+const QUALITY = 85; // Slightly higher quality to prevent artifacting on re-save
 
 // Helper to get all files recursively
 function getAllFiles(dirPath, arrayOfFiles) {
+    if (!fs.existsSync(dirPath)) return arrayOfFiles || [];
     const files = fs.readdirSync(dirPath);
 
     arrayOfFiles = arrayOfFiles || [];
@@ -28,8 +28,8 @@ function getAllFiles(dirPath, arrayOfFiles) {
     return arrayOfFiles;
 }
 
-async function optimizeImages() {
-    console.log('Starting image optimization...');
+async function fixImages() {
+    console.log('Starting image repair and rotation fix...');
     const allFiles = getAllFiles(PUBLIC_DIR);
 
     const imageFiles = allFiles.filter(file => {
@@ -38,36 +38,26 @@ async function optimizeImages() {
     });
 
     let processedCount = 0;
-    let savedBytes = 0;
 
     for (const filePath of imageFiles) {
         try {
-            const stats = fs.statSync(filePath);
-            if (stats.size < SIZE_THRESHOLD_BYTES) {
-                continue; // Skip small images
-            }
-
             const relativePath = path.relative(PUBLIC_DIR, filePath);
-            console.log(`Optimizing: ${relativePath} (${(stats.size / 1024 / 1024).toFixed(2)} MB)`);
+            console.log(`Processing: ${relativePath}`);
 
-            // Use failOnError: false to handle slightly corrupt images or bad metadata
+            // Use failOnError: true this time to ensure we don't write bad output
             const image = sharp(filePath, { failOnError: false });
-            let metadata;
-            try {
-                metadata = await image.metadata();
-            } catch (e) {
-                console.error(`  -> Failed to read metadata for ${relativePath}: ${e.message}`);
-                continue;
-            }
 
-            let pipeline = image;
+            // Auto-rotate based on EXIF
+            let pipeline = image.rotate();
 
-            // Resize if too large
+            const metadata = await image.metadata();
+
+            // Resize if too large, otherwise keep original dimensions
             if (metadata.width > MAX_WIDTH) {
                 pipeline = pipeline.resize({ width: MAX_WIDTH });
             }
 
-            // Compress
+            // Define output options
             if (filePath.endsWith('.png')) {
                 pipeline = pipeline.png({ quality: QUALITY, compressionLevel: 8 });
             } else if (filePath.endsWith('.jpg') || filePath.endsWith('.jpeg')) {
@@ -76,49 +66,15 @@ async function optimizeImages() {
                 pipeline = pipeline.webp({ quality: QUALITY });
             }
 
-            const tempPath = filePath + '.tmp';
-            const backupPath = filePath + '.bak';
-
             const buffer = await pipeline.toBuffer();
 
-            const newSize = buffer.length;
-            const savings = stats.size - newSize;
+            // Atomic write
+            const tempPath = filePath + '.tmp';
+            fs.writeFileSync(tempPath, buffer);
+            fs.renameSync(tempPath, filePath);
 
-            if (savings > 0) {
-                // Write to temp file first
-                fs.writeFileSync(tempPath, buffer);
-
-                // Backup original
-                try {
-                    if (fs.existsSync(filePath)) {
-                        fs.renameSync(filePath, backupPath);
-                    }
-                } catch (e) {
-                    console.error(`  -> Failed to backup ${relativePath}, skipping replacement.`);
-                    try { fs.unlinkSync(tempPath); } catch (e) { }
-                    continue;
-                }
-
-                // Rename temp to original
-                try {
-                    fs.renameSync(tempPath, filePath);
-                    console.log(`  -> Optimized! New size: ${(newSize / 1024 / 1024).toFixed(2)} MB`);
-
-                    // Clean up backup
-                    try { fs.unlinkSync(backupPath); } catch (e) { }
-                    savedBytes += savings;
-                    processedCount++;
-                } catch (e) {
-                    console.error(`  -> Failed to replace ${relativePath}: ${e.message}`);
-                    // Try to restore backup
-                    if (fs.existsSync(backupPath)) {
-                        try { fs.renameSync(backupPath, filePath); } catch (e) { }
-                    }
-                }
-            } else {
-                console.log(`  -> optimization didn't reduce size much.`);
-                try { fs.unlinkSync(tempPath); } catch (e) { }
-            }
+            console.log(`  -> Fixed & Saved (${(buffer.length / 1024).toFixed(2)} KB)`);
+            processedCount++;
 
         } catch (err) {
             console.error(`Error processing ${filePath}:`, err.message);
@@ -126,9 +82,7 @@ async function optimizeImages() {
     }
 
     console.log('-----------------------------------');
-    console.log(`Optimization complete.`);
-    console.log(`Processed ${processedCount} images.`);
-    console.log(`Total space saved: ${(savedBytes / 1024 / 1024).toFixed(2)} MB`);
+    console.log(`Repair complete. Processed ${processedCount} images.`);
 }
 
-optimizeImages();
+fixImages();
