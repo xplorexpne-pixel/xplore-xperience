@@ -1,7 +1,7 @@
 import { image } from "framer-motion/m";
 
 export const destinations = [
-  
+
   {
     id: 1,
     title: "Meghalaya",
@@ -14,13 +14,13 @@ export const destinations = [
   },
   {
     id: 2,
-    title: "Shikkim",
+    title: "Sikkim",
     tagline: "Mount Getaway",
     location: "Sikkim, Region",
     rating: "4.6",
     reviews: "950",
     price: "₹3,200",
-    image: "/image/shikkim.jpg",
+    image: "/image/sikkim.jpg",
   },
   {
     id: 3,
@@ -42,5 +42,5 @@ export const destinations = [
     price: "₹5,500",
     image: "/image/dzuko.jpg",
   },
- 
+
 ];

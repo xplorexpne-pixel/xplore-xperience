@@ -5,7 +5,7 @@ import './PopularLocations.css';
 const locations = [
   {
     id: 1,
-    name: "Megahalaya",
+    name: "Meghalaya",
     image: "/image/meghalaya.jpg",
     className: "location-card large" // This one takes up the full height on the left
   },
@@ -17,8 +17,8 @@ const locations = [
   },
   {
     id: 3,
-    name: "Shikkim",
-    image: "/image/shikkim.jpg",
+    name: "Sikkim",
+    image: "/image/sikkim.jpg",
     className: "location-card wide"
   }
 ];

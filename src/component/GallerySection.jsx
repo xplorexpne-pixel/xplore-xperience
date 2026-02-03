@@ -8,7 +8,7 @@ import img1 from '/image/meghalaya.jpg';
 import img2 from '/image/image1.jpg';
 import img3 from '/image/image2.jpg';
 import img4 from '/image/dzuko.jpg';
-import img5 from '/image/shikkim.jpg';
+import img5 from '/image/sikkim.jpg';
 
 const galleryImages = [
   {

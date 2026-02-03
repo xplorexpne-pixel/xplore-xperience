@@ -22,7 +22,7 @@ export default function LatestBlogs() {
         </div>
 
         <div className="blog-card">
-          <img src="/image/shikkim.jpg" alt="Blog 3" loading="lazy" />
+          <img src="/image/sikkim.jpg" alt="Blog 3" loading="lazy" />
         </div>
 
         <div className="blog-card">
