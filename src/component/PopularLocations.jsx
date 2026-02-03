@@ -6,19 +6,19 @@ const locations = [
   {
     id: 1,
     name: "Megahalaya",
-    image: "./image/meghalaya.jpg",
+    image: "/image/meghalaya.jpg",
     className: "location-card large" // This one takes up the full height on the left
   },
   {
     id: 2,
     name: "Tawang ",
-    image: "./image/tawang.jpg",
+    image: "/image/tawang.jpg",
     className: "location-card wide"
   },
   {
     id: 3,
     name: "Shikkim",
-    image: "./image/shikkim.jpg",
+    image: "/image/shikkim.jpg",
     className: "location-card wide"
   }
 ];

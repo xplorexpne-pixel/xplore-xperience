@@ -8,10 +8,10 @@ const HeroSection = () => {
 
   const handleSearch = () => {
     // REPLACE with your actual business phone number
-    const phoneNumber = "1234567890"; 
+    const phoneNumber = "1234567890";
 
     let message = "Hi, I am interested in booking a trip with Averra.";
-    
+
     if (destination || date) {
       message = `Hi, I am interested in a trip to ${destination || 'a destination'} on ${date || 'a specific date'}.`;
     }
@@ -22,20 +22,21 @@ const HeroSection = () => {
 
   return (
     <div className="hero-container">
+      <img src="/image/hero5.jpg" alt="Hero Background" className="hero-bg-img" />
       <div className="hero-overlay"></div>
 
       <div className="hero-content">
         {/* <div className="hero-badge">Explore Beyond the Expected</div> */}
-        
+
         <h1 className="hero-title">
           Journeys Designed <br />
           to Match the Way <br />
           You Travel
         </h1>
-        
+
         <p className="hero-description">
-          From iconic destinations to hidden escapes, Averra curates meaningful travel 
-          experiences tailored to your interests, pace, and comfort — so every journey feels 
+          From iconic destinations to hidden escapes, Averra curates meaningful travel
+          experiences tailored to your interests, pace, and comfort — so every journey feels
           effortless and unforgettable.
         </p>
 
@@ -45,9 +46,9 @@ const HeroSection = () => {
             <div className="input-label">Where</div>
             <div className="input-field">
               <MapPin size={14} className="input-icon" />
-              <input 
-                type="text" 
-                placeholder="Enter destination" 
+              <input
+                type="text"
+                placeholder="Enter destination"
                 value={destination}
                 onChange={(e) => setDestination(e.target.value)}
               />
@@ -58,11 +59,11 @@ const HeroSection = () => {
             <div className="input-label">Date</div>
             <div className="input-field">
               <Calendar size={14} className="input-icon" />
-              
+
               {/* UPDATED INPUT: Pop-up Calendar on click */}
-              <input 
-                type="text" 
-                placeholder="12th March, 2025" 
+              <input
+                type="text"
+                placeholder="12th March, 2025"
                 value={date}
                 onChange={(e) => setDate(e.target.value)}
                 onFocus={(e) => (e.target.type = "date")}
@@ -70,7 +71,7 @@ const HeroSection = () => {
                   if (!e.target.value) e.target.type = "text";
                 }}
               />
-              
+
             </div>
           </div>
 
