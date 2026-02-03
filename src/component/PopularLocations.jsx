@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './PopularLocations.css';
 
@@ -24,6 +24,27 @@ const locations = [
 ];
 
 const PopularLocations = () => {
+  const [selectedLocation, setSelectedLocation] = useState(null);
+  const [customName, setCustomName] = useState("");
+  const [customDays, setCustomDays] = useState("");
+
+  const openModal = (loc) => {
+    setSelectedLocation(loc);
+    setCustomName(loc.name);
+    setCustomDays("");
+  };
+
+  const closeModal = () => {
+    setSelectedLocation(null);
+  };
+
+  const handleGetInTouch = () => {
+    const message = `Hi, I want a customized trip to ${customName} and for duration ${customDays} days.`;
+    const whatsappUrl = `https://wa.me/919181317151?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, "_blank");
+    closeModal();
+  };
+
   return (
     <section className="popular-section">
       <div className="popular-container">
@@ -44,6 +65,15 @@ const PopularLocations = () => {
               <img src={loc.image} alt={loc.name} className="bg-image" />
               <div className="popular-card-overlay">
                 <h3>{loc.name}</h3>
+                <button
+                  className="customize-btn"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    openModal(loc);
+                  }}
+                >
+                  Customize Trip
+                </button>
               </div>
             </div>
           ))}
@@ -57,6 +87,38 @@ const PopularLocations = () => {
         </div>
 
       </div>
+      {/* Customize Trip Modal */}
+      {selectedLocation && (
+        <div className="modal-overlay" onClick={closeModal}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="modal-close-btn" onClick={closeModal}>×</button>
+            <h3>Customize Your Trip</h3>
+
+            <div className="modal-form-group">
+              <label>Destination</label>
+              <input
+                type="text"
+                value={customName}
+                onChange={(e) => setCustomName(e.target.value)}
+              />
+            </div>
+
+            <div className="modal-form-group">
+              <label>Duration (Days)</label>
+              <input
+                type="number"
+                value={customDays}
+                onChange={(e) => setCustomDays(e.target.value)}
+                placeholder="Ex: 5"
+              />
+            </div>
+
+            <button className="modal-submit-btn" onClick={handleGetInTouch}>
+              Get in Touch
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 };

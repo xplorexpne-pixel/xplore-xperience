@@ -10,6 +10,11 @@
   background-color: var(--bg-white);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   overflow: hidden;
+  touch-action: pan-y;
+  /* Allow vertical scroll, handle horizontal in JS */
+  user-select: none;
+  /* Prevent text selection during swipe */
+  -webkit-user-select: none;
 }
 
 .rental-container {
@@ -88,7 +93,7 @@
   height: auto;
   object-fit: contain;
   z-index: 1;
-  filter: drop-shadow(0 20px 30px rgba(0,0,0,0.15));
+  filter: drop-shadow(0 20px 30px rgba(0, 0, 0, 0.15));
   transition: transform 0.4s ease, opacity 0.4s ease;
 }
 
@@ -186,7 +191,10 @@
   padding: 10px;
   scrollbar-width: none;
 }
-.logo-track::-webkit-scrollbar { display: none; }
+
+.logo-track::-webkit-scrollbar {
+  display: none;
+}
 
 .logo-item {
   width: 60px;
@@ -201,7 +209,8 @@
   transition: all 0.3s ease;
   filter: grayscale(100%);
   opacity: 0.6;
-  flex-shrink: 0; /* Prevents squishing on mobile */
+  flex-shrink: 0;
+  /* Prevents squishing on mobile */
 }
 
 .logo-item img {
@@ -214,7 +223,7 @@
   filter: grayscale(0%);
   opacity: 1;
   transform: scale(1.1);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .logo-item.grayscale {
@@ -224,29 +233,39 @@
 /* --- MOBILE RESPONSIVENESS --- */
 @media (max-width: 900px) {
   .bike-rental-section {
-    padding: 60px 20px;
+    padding: 30px 15px;
+    /* Reduced vertical padding */
+  }
+
+  .section-header {
+    margin-bottom: 30px;
+    /* Reduced margin */
   }
 
   .main-heading {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    /* Smaller heading */
   }
 
   /* Stack Grid Vertically */
   .rental-main {
     grid-template-columns: 1fr;
     text-align: center;
-    gap: 40px;
+    gap: 20px;
+    /* Reduced gap */
+    margin-bottom: 30px;
   }
 
   /* Adjust Visual Area */
   .bike-visual {
-    height: 300px;
+    height: 220px;
+    /* Much shorter height */
     width: 100%;
   }
 
   .main-bike-img {
     max-width: 100%;
-    width: 90%; /* Leaves a little breathing room */
+    width: 85%;
   }
 
   /* Center Details on Mobile */
@@ -257,29 +276,49 @@
   }
 
   .bike-title {
-    font-size: 2rem;
-    margin-bottom: 16px;
+    font-size: 1.5rem;
+    /* Smaller title */
+    margin-bottom: 10px;
   }
 
-  /* Keep specs left-aligned or center them */
+  /* Specs row instead of column to save space */
   .specs-list {
-    text-align: left;
-    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 15px;
+    text-align: center;
   }
 
-  /* Ensure text doesn't span too wide */
+  .spec-item {
+    font-size: 0.9rem;
+    margin-bottom: 0;
+  }
+
+  /* Compact description */
   .bike-description {
     text-align: center;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    padding: 0 10px;
   }
 
-  /* Adjust Carousel for Touch */
+  .rent-btn {
+    padding: 10px 24px;
+    font-size: 0.9rem;
+  }
+
+  /* Adjust Carousel */
   .carousel-wrapper {
     gap: 10px;
+    padding-top: 15px;
   }
 
   .logo-item {
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
+    padding: 5px;
   }
 }

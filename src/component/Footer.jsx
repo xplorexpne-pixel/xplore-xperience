@@ -274,8 +274,8 @@ export default function Footer() {
             <div className="footer-col">
               <h4>Company</h4>
               <ul>
-                <li><a href="https://wa.me/917000000000">Join with us</a></li>
-                <li><a href="https://wa.me/917000000000">Partner with us</a></li>
+                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSd9shtva2loBtC2-MFympdCUbhiwUYm56GW8lBhjsP-Kxu9_Q/viewform?pli=1" target="_blank" rel="noopener noreferrer">Join with us</a></li>
+                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLSc_UEb1LO6tMlVWQAudaCtUDX_rzS_o5ViEmF5d-uqSYAYcHw/viewform?usp=send_form" target="_blank" rel="noopener noreferrer">Partner with us</a></li>
               </ul>
             </div>
 
@@ -283,8 +283,8 @@ export default function Footer() {
             <div className="footer-col">
               <h4>About</h4>
               <ul>
-                <Link to="/about"><li>Who we are</li></Link>
-                <Link to="/about"><li>Our mission</li></Link>
+                <Link to="/about#who-we-are"><li>Who we are</li></Link>
+                <Link to="/about#mission"><li>Our mission</li></Link>
               </ul>
             </div>
 

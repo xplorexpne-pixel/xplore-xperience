@@ -82,7 +82,7 @@ export default function Testimonials() {
 
         <div className="cta-buttons">
           <Link to="/packages" className="primary-btn">View All Packages</Link>
-          <a href="https://wa.me/9181317152?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20your%20packages." target="_blank" rel="noopener noreferrer" className="outline-btn">Contact an Expert</a>
+          <a href="https://wa.me/919181317151?text=Hello%2C%20I%20would%20like%20to%20know%20more%20about%20your%20packages." target="_blank" rel="noopener noreferrer" className="outline-btn">Contact an Expert</a>
         </div>
       </div>
     </section>

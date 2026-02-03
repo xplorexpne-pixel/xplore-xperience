@@ -5,6 +5,9 @@ import { Link } from "react-router-dom";
 export default function About() {
   const statsRef = useRef(null);
 
+
+  // Scroll logic moved to ScrollToTop.jsx
+
   // Counter animation
   useEffect(() => {
     const counters = document.querySelectorAll(".stat-number");
@@ -79,7 +82,7 @@ export default function About() {
       </div>
 
       {/* ================= WHO WE ARE ================= */}
-      <div className="who-section animate-fade-up">
+      <div id="who-we-are" className="who-section animate-fade-up">
         <div className="who-left">
           <h2>Who We Are</h2>
           <p>
@@ -161,7 +164,7 @@ export default function About() {
       </div>
 
       {/* ================= MISSION ================= */}
-      <div className="mission-section animate-fade-up">
+      <div id="mission" className="mission-section animate-fade-up">
         <h2>Our Mission</h2>
         <p>
           Our mission is to make travel meaningful. We aim to transform every
