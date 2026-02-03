@@ -461,7 +461,8 @@ export default function FeaturedPackage() {
                 onClick={() =>
                   window.open(
                     `https://wa.me/919181317151?text=I want to inquire about the popular destination: ${popularCards[index].title}`,
-                    "_blank"
+                    "_blank",
+                    "noopener,noreferrer"
                   )
                 }
               >
@@ -532,7 +533,8 @@ export default function FeaturedPackage() {
           onClick={() =>
             window.open(
               `https://wa.me/919181317151?text=I want to inquire about ${popularCards[index].title}`,
-              "_blank"
+              "_blank",
+              "noopener,noreferrer"
             )
           }
         >
@@ -605,7 +607,8 @@ Please share more details.`;
                       `https://wa.me/919181317151?text=${encodeURIComponent(
                         msg
                       )}`,
-                      "_blank"
+                      "_blank",
+                      "noopener,noreferrer"
                     );
                   }}
                 >
