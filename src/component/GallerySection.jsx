@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './GallerySection.css';
 import { ArrowRight } from 'lucide-react';
+import SmartImage from './SmartImage';
 
 // --- IMPORT YOUR LOCAL IMAGES HERE ---
 // Make sure the names match your actual file names in the assets folder
@@ -83,12 +84,11 @@ const GallerySection = () => {
           {/* Main Large Image */}
           <div className="main-image-wrapper">
             {galleryImages.map((image, index) => (
-              <img
+              <SmartImage
                 key={image.id}
                 src={image.url}
                 alt={image.alt}
                 className={`main-image ${index === currentIndex ? 'active' : ''}`}
-                loading="lazy"
               />
             ))}
 
@@ -105,7 +105,7 @@ const GallerySection = () => {
                 className={`thumbnail-btn ${index === currentIndex ? 'active' : ''}`}
                 onClick={() => setCurrentIndex(index)}
               >
-                <img src={image.url} alt={`Thumbnail ${index + 1}`} loading="lazy" />
+                <SmartImage src={image.url} alt={`Thumbnail ${index + 1}`} />
               </button>
             ))}
           </div>

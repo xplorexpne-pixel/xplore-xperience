@@ -2,16 +2,16 @@
 // import DestinationCard from "./DestinationCard ";
 import { destinations } from "../data/DestinationCardData";
 import { useState } from "react";
+import SmartImage from "./SmartImage";
 export function DestinationCard({ item }) {
   if (!item) return null;
 
   return (
     <div className="destination-card">
-      <img
+      <SmartImage
         src={item.image}
         alt={item.title}
         className="card-image"
-        loading="lazy"
       />
 
       {/* <div className="price-badge">
