@@ -11,7 +11,7 @@ const logFile = path.join(__dirname, 'error_log.txt');
 
 async function testOptimize() {
     try {
-        const buffer = await sharp(fileToProcess)
+        await sharp(fileToProcess)
             .resize({ width: 1920 })
             .jpeg({ quality: 80 })
             .toBuffer();
