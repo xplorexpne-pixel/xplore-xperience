@@ -47,10 +47,10 @@ const GallerySection = () => {
     if (isPaused) return;
 
     const interval = setInterval(() => {
-      setCurrentIndex((prevIndex) => 
+      setCurrentIndex((prevIndex) =>
         prevIndex === galleryImages.length - 1 ? 0 : prevIndex + 1
       );
-    }, 4000); 
+    }, 4000);
 
     return () => clearInterval(interval);
   }, [isPaused]);
@@ -58,7 +58,7 @@ const GallerySection = () => {
   return (
     <div className="gallery-section">
       <div className="gallery-container">
-        
+
         {/* Left: Text Content */}
         <div className="gallery-content">
           <h1 className="gallery-title">
@@ -66,7 +66,7 @@ const GallerySection = () => {
             <span className="text-highlight">Memories Gallery</span>
           </h1>
           <p className="gallery-description">
-            Explore a collection where art, design, and technology merge to shape what's next. 
+            Explore a collection where art, design, and technology merge to shape what's next.
             This gallery isn't just about visuals; it's about the feelings we curate for you.
           </p>
           {/* <button className="gallery-btn">
@@ -75,7 +75,7 @@ const GallerySection = () => {
         </div>
 
         {/* Right: Visuals */}
-        <div 
+        <div
           className="gallery-visuals"
           onMouseEnter={() => setIsPaused(true)}
           onMouseLeave={() => setIsPaused(false)}
@@ -88,9 +88,10 @@ const GallerySection = () => {
                 src={image.url}
                 alt={image.alt}
                 className={`main-image ${index === currentIndex ? 'active' : ''}`}
+                loading="lazy"
               />
             ))}
-            
+
             <div className="image-overlay">
               <span>{galleryImages[currentIndex].alt}</span>
             </div>
@@ -104,7 +105,7 @@ const GallerySection = () => {
                 className={`thumbnail-btn ${index === currentIndex ? 'active' : ''}`}
                 onClick={() => setCurrentIndex(index)}
               >
-                <img src={image.url} alt={`Thumbnail ${index + 1}`} />
+                <img src={image.url} alt={`Thumbnail ${index + 1}`} loading="lazy" />
               </button>
             ))}
           </div>

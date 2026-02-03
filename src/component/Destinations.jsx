@@ -3,7 +3,7 @@
 import { destinations } from "../data/DestinationCardData";
 import { useState } from "react";
 export function DestinationCard({ item }) {
-if (!item) return null;
+  if (!item) return null;
 
   return (
     <div className="destination-card">
@@ -11,6 +11,7 @@ if (!item) return null;
         src={item.image}
         alt={item.title}
         className="card-image"
+        loading="lazy"
       />
 
       {/* <div className="price-badge">
@@ -52,7 +53,7 @@ export default function Destinations() {
         <h2 className="section-title">Popular Destinations</h2>
 
         <div className="slider-container">
-        
+
 
           <div className="destination-panel">
             {visibleCards.map((item) => (
@@ -60,7 +61,7 @@ export default function Destinations() {
             ))}
           </div>
 
-         
+
         </div>
       </div>
     </section>

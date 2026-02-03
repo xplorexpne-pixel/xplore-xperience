@@ -105,7 +105,7 @@ export default function About() {
         </div>
 
         <div className="who-right">
-          <img src="/image/about.jpg" alt="Travel" />
+          <img src="/image/about.jpg" alt="Travel" loading="lazy" />
         </div>
       </div>
 

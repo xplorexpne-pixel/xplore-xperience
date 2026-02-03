@@ -1,6 +1,6 @@
 import { useState } from "react";
 import fuzzyMatch from "../utils/fuzzyMatch";
-const  WHATSAPP_NUMBER = "918134904755"; // Replace with actual number
+const WHATSAPP_NUMBER = "918134904755"; // Replace with actual number
 
 const DATA = [
   {
@@ -115,7 +115,7 @@ export default function Packages() {
   /Whatsapp/
   function openWhatsApp(pkg, state) {
     console.log("clicked:", pkg.title);
-  const message = `
+    const message = `
 Hi 
 
 I’m interested in the *${pkg.title}* package.
@@ -127,11 +127,11 @@ I’m interested in the *${pkg.title}* package.
 Please share itinerary, pricing and available dates.
 `;
 
-  const encodedMessage = encodeURIComponent(message);
-  const whatsappURL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+    const encodedMessage = encodeURIComponent(message);
+    const whatsappURL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 
-  window.open(whatsappURL, "_blank");
-}
+    window.open(whatsappURL, "_blank");
+  }
 
 
   function handleSearch(value) {
@@ -189,7 +189,7 @@ Please share itinerary, pricing and available dates.
 
                 {/* IMAGE */}
                 <div className="package-image">
-                  <img src={pkg.image} alt={pkg.title} />
+                  <img src={pkg.image} alt={pkg.title} loading="lazy" />
 
                   {/* BADGES */}
                   {pkg.badges && (
@@ -208,7 +208,7 @@ Please share itinerary, pricing and available dates.
 
                   {/* ✅ BUTTON ADDED HERE */}
                   <button className="package-btn"
-                  onClick={()=>openWhatsApp(pkg,section.state)}>
+                    onClick={() => openWhatsApp(pkg, section.state)}>
                     Enquire on Whatsapp
                   </button>
                 </div>
@@ -229,7 +229,7 @@ Please share itinerary, pricing and available dates.
           </div>
         ))}
       </section>
-        <div className="tc-mini"><a href="" className="tnc" >*terms and conditions apply*</a></div>
+      <div className="tc-mini"><a href="" className="tnc" >*terms and conditions apply*</a></div>
     </div>
   );
 }

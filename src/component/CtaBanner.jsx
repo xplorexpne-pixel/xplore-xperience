@@ -24,6 +24,7 @@ export default function CtaBanner() {
           <img
             src="/image/CtaBanner.jpg"
             alt="Travel group adventure"
+            loading="lazy"
           />
         </div>
 

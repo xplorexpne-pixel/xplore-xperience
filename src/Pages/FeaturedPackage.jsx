@@ -473,12 +473,12 @@ export default function FeaturedPackage() {
           {/* RIGHT CARDS */}
           <div className="popular-right fade">
             <div className="pop-card big fade">
-              <img src={popularCards[index].img} alt="" />
+              <img src={popularCards[index].img} alt="" loading="lazy" />
               <div className="card-title">{popularCards[index].title}</div>
             </div>
 
             <div className="pop-card small fade">
-              <img src={popularCards[(index + 1) % total].img} alt="" />
+              <img src={popularCards[(index + 1) % total].img} alt="" loading="lazy" />
               <div className="card-title small-title">
                 {popularCards[(index + 1) % total].title}
               </div>
@@ -517,7 +517,7 @@ export default function FeaturedPackage() {
 
         {/* MAIN CARD */}
         <div className="mobile-card fade">
-          <img src={popularCards[index].img} alt="" />
+          <img src={popularCards[index].img} alt="" loading="lazy" />
         </div>
 
         {/* TITLE */}

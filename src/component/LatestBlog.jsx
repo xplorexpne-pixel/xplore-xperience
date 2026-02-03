@@ -1,7 +1,7 @@
 export default function LatestBlogs() {
   return (
     <section className="blogs-section">
-      
+
       {/* HEADER */}
       <div className="blogs-header">
         <h2>Latest Blogs</h2>
@@ -14,19 +14,19 @@ export default function LatestBlogs() {
       {/* BLOG CARDS */}
       <div className="blogs-grid">
         <div className="blog-card">
-          <img src="/image/image1.jpg" alt="Blog 1" />
+          <img src="/image/image1.jpg" alt="Blog 1" loading="lazy" />
         </div>
 
         <div className="blog-card">
-          <img src="/image/image2.jpg" alt="Blog 2" />
+          <img src="/image/image2.jpg" alt="Blog 2" loading="lazy" />
         </div>
 
         <div className="blog-card">
-          <img src="/image/shikkim.jpg" alt="Blog 3" />
+          <img src="/image/shikkim.jpg" alt="Blog 3" loading="lazy" />
         </div>
 
         <div className="blog-card">
-          <img src="/image/dzuko.jpg" alt="Blog 4" />
+          <img src="/image/dzuko.jpg" alt="Blog 4" loading="lazy" />
         </div>
       </div>
 
