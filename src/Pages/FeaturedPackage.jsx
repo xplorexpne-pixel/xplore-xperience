@@ -231,6 +231,14 @@ const explorePackages = [
     image: "/image/senior.jpg",
   },
   {
+    id: 31,
+    title: "YouWe Trips",
+    duration: "Customizable",
+    region: "Northeast",
+    desc: "Specially curated pocket-friendly trips for students. Explore the Northeast with your friends at unbeatable prices.",
+    image: "/image/youwe_students.png",
+  },
+  {
     id: 29,
     title: "Trips Coming Soon",
     region: "Manipur",
@@ -569,7 +577,8 @@ export default function FeaturedPackage() {
                 activeRegion === "All Packages" ||
                 pkg.region === activeRegion ||
                 pkg.id === 27 ||
-                pkg.id === 28;
+                pkg.id === 28 ||
+                pkg.id === 31;
 
               const matchSearch =
                 searchQuery.trim() === "" ||
