@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import { useLocation } from 'react-router-dom'
 import Lenis from 'lenis'
 import 'lenis/dist/lenis.css'
 
 export default function SmoothScroll({ children }) {
-    const [lenis, setLenis] = useState(null)
+    const lenisRef = useRef(null)
     const { pathname, hash } = useLocation()
 
     useEffect(() => {
@@ -18,7 +18,7 @@ export default function SmoothScroll({ children }) {
             smoothTouch: false,
             touchMultiplier: 2,
         })
-        setLenis(newLenis)
+        lenisRef.current = newLenis
 
         function raf(time) {
             newLenis.raf(time)
@@ -29,13 +29,13 @@ export default function SmoothScroll({ children }) {
 
         return () => {
             newLenis.destroy()
-            setLenis(null)
+            lenisRef.current = null
         }
     }, [])
 
     // Handle Scroll to Top & Hash Navigation
     useEffect(() => {
-        if (!lenis) return;
+        if (!lenisRef.current) return;
 
         if (hash) {
             // Allow time for layout to settle if needed, or scroll immediately
@@ -44,13 +44,13 @@ export default function SmoothScroll({ children }) {
                 const id = hash.replace('#', '');
                 const element = document.getElementById(id);
                 if (element) {
-                    lenis.scrollTo(element, { offset: -100 })
+                    lenisRef.current.scrollTo(element, { offset: -100 })
                 }
             }, 100);
         } else {
-            lenis.scrollTo(0, { immediate: true })
+            lenisRef.current.scrollTo(0, { immediate: true })
         }
-    }, [pathname, hash, lenis])
+    }, [pathname, hash])
 
     return <>{children}</>
 }
