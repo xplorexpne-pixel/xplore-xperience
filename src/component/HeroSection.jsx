@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import './HeroSection.css';
 import { MapPin, Calendar, Search } from 'lucide-react';
