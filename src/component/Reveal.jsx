@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+/* eslint-disable no-unused-vars */
 import { motion, useInView } from "framer-motion";
 
 export const Reveal = ({ children, width = "100%", delay = 0.25 }) => {
