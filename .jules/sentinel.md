@@ -7,3 +7,8 @@
 **Vulnerability:** CI fails on any lint error, including false positives for JSX variables (e.g. `motion`).
 **Learning:** `no-unused-vars` is enabled but `eslint-plugin-react` is missing.
 **Prevention:** Use `/* eslint-disable no-unused-vars */` for files with `framer-motion` components if plugin cannot be added.
+
+## 2025-02-18 - Cloudflare Build Sensitivity
+**Vulnerability:** Cloudflare CI fails on filenames with trailing spaces (e.g. `File .jsx`), which local filesystems might tolerate.
+**Learning:** CI environments are stricter than local dev environments regarding file naming.
+**Prevention:** Sanitize filenames and avoid spaces, especially trailing ones.
