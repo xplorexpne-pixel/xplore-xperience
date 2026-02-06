@@ -1,4 +1,5 @@
 import { whyUsData } from "../data/whyUsData";
+/* eslint-disable no-unused-vars */
 import { motion } from "framer-motion";
 import { FaMapMarkedAlt, FaClipboardList, FaHeadset } from "react-icons/fa";
 
