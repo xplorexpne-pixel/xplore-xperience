@@ -12,3 +12,8 @@
 **Vulnerability:** Cloudflare CI fails on filenames with trailing spaces (e.g. `File .jsx`), which local filesystems might tolerate.
 **Learning:** CI environments are stricter than local dev environments regarding file naming.
 **Prevention:** Sanitize filenames and avoid spaces, especially trailing ones.
+
+## 2025-02-18 - Cloudflare Build Sensitivity (Update)
+**Vulnerability:** Filenames with trailing spaces are fatal to Cloudflare builds.
+**Learning:** Renaming such files (e.g. `mv 'A .jsx' 'A.jsx'`) might not be enough if git history is messy. Deleting unused files is safer.
+**Prevention:** Strictly validate filenames before commit.
