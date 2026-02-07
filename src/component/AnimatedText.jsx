@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 
 export default function AnimatedText({
+  // eslint-disable-next-line no-unused-vars
   as: Tag = "h1",
 
   children,

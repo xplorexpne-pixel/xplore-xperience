@@ -51,7 +51,7 @@ const handleContactClick = () => {
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
   // Open in a new tab
-  window.open(whatsappUrl, '_blank');
+  window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
 };
 
 const FAQSection = () => {

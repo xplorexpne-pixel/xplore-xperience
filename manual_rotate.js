@@ -7,7 +7,6 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 const ziroPath = path.join(__dirname, 'public/image/ziro2.jpg');
-const dzukuPath = path.join(__dirname, 'public/Northeast/Dzuku.jpg');
 
 async function rotateImage(filePath, angle) {
     if (!fs.existsSync(filePath)) {
