@@ -41,7 +41,7 @@ const PopularLocations = () => {
   const handleGetInTouch = () => {
     const message = `Hi, I want a customized trip to ${customName} and for duration ${customDays} days.`;
     const whatsappUrl = `https://wa.me/919181317151?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, "_blank");
+    window.open(whatsappUrl, "_blank", "noopener,noreferrer");
     closeModal();
   };
 
@@ -51,7 +51,7 @@ const PopularLocations = () => {
 
         {/* Header Text */}
         <div className="popular-header">
-          <span className="subtitle">TRAVELER'S FAVOURITE</span>
+          <span className="subtitle">TRAVELER&apos;S FAVOURITE</span>
           <h2 className="title">Explore All Popular <br /> Locations</h2>
           <p className="description">
             Plan, book, and embark on your dream adventure with our expert guidance and tailored experiences.

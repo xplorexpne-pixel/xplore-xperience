@@ -67,8 +67,8 @@ const GallerySection = () => {
             <span className="text-highlight">Memories Gallery</span>
           </h1>
           <p className="gallery-description">
-            Explore a collection where art, design, and technology merge to shape what's next.
-            This gallery isn't just about visuals; it's about the feelings we curate for you.
+            Explore a collection where art, design, and technology merge to shape what&apos;s next.
+            This gallery isn&apos;t just about visuals; it&apos;s about the feelings we curate for you.
           </p>
           {/* <button className="gallery-btn">
             Contact Sales <ArrowRight size={18} />

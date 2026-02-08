@@ -51,7 +51,7 @@ const handleContactClick = () => {
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
   // Open in a new tab
-  window.open(whatsappUrl, '_blank');
+  window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
 };
 
 const FAQSection = () => {
@@ -122,7 +122,7 @@ const FAQSection = () => {
           <div className="faq-footer">
             <div className="footer-text">
               <h4><Sparkles size={16} className="inline-icon" /> Still have a question?</h4>
-              <p>If you didn't find your answer, feel free to reach out.</p>
+              <p>If you didn&apos;t find your answer, feel free to reach out.</p>
             </div>
 
             {/* UPDATED BUTTON */}
