@@ -51,7 +51,7 @@ const PopularLocations = () => {
 
         {/* Header Text */}
         <div className="popular-header">
-          <span className="subtitle">TRAVELER'S FAVOURITE</span>
+          <span className="subtitle">TRAVELER&apos;S FAVOURITE</span>
           <h2 className="title">Explore All Popular <br /> Locations</h2>
           <p className="description">
             Plan, book, and embark on your dream adventure with our expert guidance and tailored experiences.
