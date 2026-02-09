@@ -18,7 +18,7 @@ const HeroSection = () => {
     const message = `Hi, I want a customized trip to ${customPlace} and for duration ${customDays} days.`;
     const phoneNumber = "919181317151";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
     setShowModal(false);
   };
 
