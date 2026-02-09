@@ -88,7 +88,7 @@
 .sort-dropdown-airbnb {
   position: absolute;
   top: calc(100% + 8px);
-  right: 0;
+  right: -20px;
   /* FIX — align under sort button */
   transform: translateY(0);
 

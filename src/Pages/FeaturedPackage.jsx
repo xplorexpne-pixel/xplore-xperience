@@ -86,22 +86,7 @@ const explorePackages = [
     desc: "Land of waterfalls, living root bridges and crystal-clear rivers. A refreshing getaway into nature’s most dramatic landscapes.",
     image: "/Northeast/Meghalaya.jpg",
   },
-  {
-    id: 11,
-    title: "Meghalaya",
-    region: "Meghalaya",
-    duration: "5D / 4N",
-    desc: "Land of waterfalls, living root bridges and crystal-clear rivers. A refreshing getaway into nature’s most dramatic landscapes.",
-    image: "/Northeast/Meghalaya.jpg",
-  },
-  {
-    id: 12,
-    title: "Meghalaya",
-    region: "Meghalaya",
-    duration: "6D / 5N",
-    desc: "Land of waterfalls, living root bridges and crystal-clear rivers. A refreshing getaway into nature’s most dramatic landscapes.",
-    image: "/Northeast/Meghalaya.jpg",
-  },
+
   {
     id: 13,
     title: "Sikkim",
@@ -110,14 +95,7 @@ const explorePackages = [
     desc: "Snow peaks, monasteries and pristine lakes define Sikkim’s charm. A perfect blend of adventure, calm and Himalayan beauty.",
     image: "/Northeast/Sikkim.jpg",
   },
-  {
-    id: 14,
-    title: "Sikkim",
-    region: "Sikkim",
-    duration: "6D / 5N",
-    desc: "Snow peaks, monasteries and pristine lakes define Sikkim’s charm. A perfect blend of adventure, calm and Himalayan beauty.",
-    image: "/Northeast/Sikkim.jpg",
-  },
+
   {
     id: 15,
     title: "Kohima",
@@ -224,11 +202,11 @@ const explorePackages = [
   },
   {
     id: 28,
-    title: "Senior citizen trip",
     duration: "Customizable",
+    title: "Senior citizen trip",
     region: "Northeast",
     desc: "A trip for all the senior citizens out there to explore the beauty of Northeast, with all the safety and comfort.",
-    image: "/image/senior.jpg",
+    image: "/image/senior.png",
   },
   {
     id: 31,
@@ -387,7 +365,12 @@ export default function FeaturedPackage() {
       if (sortType === "az") return a.title.localeCompare(b.title);
       if (sortType === "za") return b.title.localeCompare(a.title);
 
-      const getDays = (str) => parseInt(str.split("D")[0]);
+      const getDays = (str) => {
+        if (!str) return 0;
+        if (str.toLowerCase().includes("customizable")) return 100;
+        if (str.toLowerCase().includes("tbd")) return 101;
+        return parseInt(str.split("D")[0]) || 0;
+      };
       if (sortType === "short") return getDays(a.duration) - getDays(b.duration);
       if (sortType === "long") return getDays(b.duration) - getDays(a.duration);
 

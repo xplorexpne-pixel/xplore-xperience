@@ -6,7 +6,7 @@ const testimonials = [
     id: 1,
     name: "Motiwani R",
     country: "",
-    image: "https://randomuser.me/api/portraits/women/44.jpg",
+    image: "/image/motwani.jpg",
     rating: 5,
     text:
       "Meghalaya was fun! Navin bhai was always proactive and planned very amazing stays. My trip was very relaxing (without tension) and was planned according to whatever things we wanted.",
@@ -16,21 +16,21 @@ const testimonials = [
     id: 2,
     name: "Kanishk B",
     country: "",
-    image: "https://randomuser.me/api/portraits/men/46.jpg",
+    image: "/image/kanishk.jpg",
     rating: 5,
     text:
-      "It was an amazing trip. The stay was very comfortable and the food was delicious. I would definitely recommend this trip to my friends and family.",
-    visited: "Megahalya, Shillong",
+      "My wife and me had a wonderful experience on a recent trip to Meghalaya. You were very supportive in planning and executing each day itinerary. Correct places were chosen and the trip was safe and comfortable. We give it a 5 star rating and will recommend you to others especially when it comes to the North East. Thanks for the support",
+    visited: "Meghalaya, Shillong",
   },
   {
     id: 3,
-    name: "Pawar H",
+    name: "Keshav S",
     country: "",
-    image: "https://randomuser.me/api/portraits/women/65.jpg",
+    image: "https://randomuser.me/api/portraits/men/32.jpg",
     rating: 5,
     text:
-      "It was an amazing trip. The stay was very comfortable and the food was delicious. I would definitely recommend this trip to my friends and family.",
-    visited: "Tawang, Arunachal Pradesh",
+      "We had an amazing experience traveling to Meghalaya with xplorexp. The trip was completely customised to our preferences, and every detail was thoughtfully planned. The locations chosen were stunning, including some beautiful detours just for scenic views that made the journey even more special. Hotels were comfortable adding to the overall experience. A special mention to the driver service, truly top quality. He was professional, friendly, and took great care of us throughout the trip, making us feel safe and relaxed at all times. Overall, it was a smooth, memorable, and well-managed trip. Highly recommended for anyone looking for a personalised and hassle-free travel experience in Meghalaya.",
+    visited: "Meghalaya",
   },
 ];
 
@@ -52,7 +52,7 @@ export default function Testimonials() {
         {testimonials.map((item) => (
           <div key={item.id} className="testimonial-card">
             <div className="profile">
-              {/* <img src={item.image} alt={item.name} /> */}
+              <img src={item.image} alt={item.name} className="profile-img" />
               <div>
                 <h4>{item.name}</h4>
                 <span>{item.country}</span>

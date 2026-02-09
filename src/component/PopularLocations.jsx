@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import './PopularLocations.css';
 
 const locations = [
@@ -11,7 +10,7 @@ const locations = [
   },
   {
     id: 2,
-    name: "Tawang ",
+    name: "Tawang",
     image: "/image/tawang.jpg",
     className: "location-card wide"
   },

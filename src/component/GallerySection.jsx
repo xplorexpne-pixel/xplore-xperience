@@ -5,36 +5,32 @@ import SmartImage from './SmartImage';
 
 // --- IMPORT YOUR LOCAL IMAGES HERE ---
 // Make sure the names match your actual file names in the assets folder
-import img1 from '/image/meghalaya.jpg';
-import img2 from '/image/image1.jpg';
-import img3 from '/image/image2.jpg';
-import img4 from '/image/dzuko.jpg';
-import img5 from '/image/sikkim.jpg';
 
 const galleryImages = [
   {
     id: 1,
-    url: img1, // Use the imported variable name (no quotes)
+    url: "/image/meghalaya.jpg", // Use the imported variable name (no quotes)
     alt: ""
   },
   {
     id: 2,
-    url: img2,
+    url: "/image/image1.jpg",
     alt: "Mountain Lake"
   },
   {
     id: 3,
-    url: img3,
-    alt: "Alpine Village"
+    url: "/image/image2.jpg",
+    alt: "Alpine Village",
+    rotate: true
   },
   {
     id: 4,
-    url: img4,
+    url: "/image/dzuko.jpg",
     alt: "Cityscape"
   },
   {
     id: 5,
-    url: img5,
+    url: "/image/sikkim.jpg",
     alt: "Desert Road"
   }
 ];
@@ -88,7 +84,7 @@ const GallerySection = () => {
                 key={image.id}
                 src={image.url}
                 alt={image.alt}
-                className={`main-image ${index === currentIndex ? 'active' : ''}`}
+                className={`main-image ${index === currentIndex ? 'active' : ''} ${image.rotate ? 'rotate-fix' : ''}`}
               />
             ))}
 
@@ -105,7 +101,11 @@ const GallerySection = () => {
                 className={`thumbnail-btn ${index === currentIndex ? 'active' : ''}`}
                 onClick={() => setCurrentIndex(index)}
               >
-                <SmartImage src={image.url} alt={`Thumbnail ${index + 1}`} />
+                <SmartImage
+                  src={image.url}
+                  alt={`Thumbnail ${index + 1}`}
+                  className={image.rotate ? 'rotate-fix' : ''}
+                />
               </button>
             ))}
           </div>

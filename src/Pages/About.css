@@ -45,11 +45,15 @@
 .hero-containers::before {
   content: "";
   position: absolute;
-  inset: 0;
+  top: 50%;
+  left: 50%;
+  width: 600px;
+  height: 100vw;
   background: url("/about.jpg") center/cover no-repeat;
   filter: brightness(1.4);
   /* Significantly brighter background image */
   z-index: 0;
+  transform: translate(-50%, -50%) rotate(90deg);
 }
 
 .hero-containers>* {

@@ -1,7 +1,7 @@
 /* Variables */
 :root {
-  --primary-blue: #2563EB;
-  --bg-gray:#FAFAFA;
+  --primary-blue: #20A229;
+  --bg-gray: #FAFAFA;
   --text-dark: #111827;
   --text-muted: #6B7280;
   --border-color: #E5E7EB;
@@ -23,7 +23,7 @@
 }
 
 .badge {
-  background-color: #EFF6FF;
+  background-color: rgba(32, 162, 41, 0.1);
   color: var(--primary-blue);
   padding: 6px 16px;
   border-radius: 20px;
@@ -51,8 +51,17 @@
   opacity: 0.8;
 }
 
-.icon-top-left { top: 0; left: 15%; transform: rotate(-10deg); }
-.icon-top-right { top: -10px; right: 15%; transform: rotate(15deg); }
+.icon-top-left {
+  top: 0;
+  left: 15%;
+  transform: rotate(-10deg);
+}
+
+.icon-top-right {
+  top: -10px;
+  right: 15%;
+  transform: rotate(15deg);
+}
 
 /* Layout Grid */
 .faq-container {
@@ -138,7 +147,8 @@
 }
 
 .question-item.open .answer-body {
-  max-height: 500px; /* Arbitrary large number for animation */
+  max-height: 500px;
+  /* Arbitrary large number for animation */
   padding-bottom: 24px;
 }
 
@@ -204,7 +214,7 @@
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
-  
+
   /* 1. Reset the grid to a single column stack */
   .faq-container {
     grid-template-columns: 1fr;
@@ -217,10 +227,11 @@
   .faq-wrapper {
     padding: 20px 15px;
   }
-  
+
   .faq-header {
     margin-bottom: 30px;
-    text-align: left; /* Optional: Align header text left on mobile if preferred */
+    text-align: left;
+    /* Optional: Align header text left on mobile if preferred */
   }
 
   /* 3. Transform Sidebar into Horizontal Tabs */
@@ -230,7 +241,8 @@
     top: 0;
     background: white;
     z-index: 10;
-    padding-top: 10px; /* Breathing room if sticky */
+    padding-top: 10px;
+    /* Breathing room if sticky */
   }
 
   /* Hide the "Categories" title on mobile to save space */
@@ -240,42 +252,50 @@
 
   .category-list {
     display: flex;
-    overflow-x: auto; /* Enables horizontal scrolling */
-    white-space: nowrap; /* Prevents text from wrapping */
+    overflow-x: auto;
+    /* Enables horizontal scrolling */
+    white-space: nowrap;
+    /* Prevents text from wrapping */
     border-bottom: 1px solid var(--border-color);
     padding-bottom: 0;
-    
+
     /* Hide scrollbar for cleaner look (Chrome/Safari/Opera) */
-    -webkit-overflow-scrolling: touch; 
-    scrollbar-width: none; /* Firefox */
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    /* Firefox */
   }
-  
+
   .category-list::-webkit-scrollbar {
-    display: none; /* Hide scrollbar for Chrome/Safari */
+    display: none;
+    /* Hide scrollbar for Chrome/Safari */
   }
 
   /* 4. Tab Styling (Matches your screenshot) */
   .category-list li {
     padding: 12px 16px;
-    border-left: none; /* Remove desktop left-border */
-    border-bottom: 3px solid transparent; /* Prepare for active underline */
+    border-left: none;
+    /* Remove desktop left-border */
+    border-bottom: 3px solid transparent;
+    /* Prepare for active underline */
     color: var(--text-muted);
     font-size: 0.95rem;
-    margin-bottom: -1px; /* Overlap border for clean look */
+    margin-bottom: -1px;
+    /* Overlap border for clean look */
   }
 
   .category-list li.active {
     color: var(--text-dark);
     font-weight: 600;
     border-left: none;
-    border-bottom-color: var(--primary-blue); /* The Blue Underline */
+    border-bottom-color: var(--primary-blue);
+    /* The Blue Underline */
   }
 
   /* 5. Adjust Content Spacing */
   .questions-list {
     gap: 12px;
   }
-  
+
   .question-header {
     padding: 16px;
     font-size: 1rem;
@@ -289,9 +309,13 @@
   }
 
   .footer-deco {
-    display: none; /* Hide decorative icon on small screens */
+    display: none;
+    /* Hide decorative icon on small screens */
   }
-  .icon-top-left, .icon-top-right {
-    display: none; /* Hide decorative icons on small screens */
+
+  .icon-top-left,
+  .icon-top-right {
+    display: none;
+    /* Hide decorative icons on small screens */
   }
 }

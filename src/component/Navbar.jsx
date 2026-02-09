@@ -1,7 +1,8 @@
 import { NavLink } from "react-router-dom";
 import { useState } from "react";
 import MotionButton from "./MotionButton";
-import logo from "/image/logo.png"; // adjust path if needed
+// import logo from "/image/logo.png"; // adjust path if needed
+import "./Navbar.css";
 import "./Navbar.css";
 
 export default function Navbar() {
@@ -29,7 +30,7 @@ export default function Navbar() {
             <nav className="navbar">
 
                 <NavLink to="/" className="logo" onClick={closeMenu}>
-                    <img src={logo} alt="Xplore Xperience Logo" />
+                    <img src="/image/logo.png" alt="Xplore Xperience Logo" />
                     <span>Xplore Xperience</span>
                 </NavLink>
 

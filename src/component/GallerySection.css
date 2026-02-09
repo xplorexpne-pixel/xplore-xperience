@@ -16,7 +16,8 @@
   max-width: 1200px;
   width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Split 50/50 */
+  grid-template-columns: 1fr 1fr;
+  /* Split 50/50 */
   gap: 60px;
   align-items: center;
 }
@@ -67,7 +68,7 @@
 
 .gallery-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* --- Right Side: Visuals --- */
@@ -82,10 +83,11 @@
 .main-image-wrapper {
   position: relative;
   width: 100%;
-  aspect-ratio: 4 / 3; /* Keeps the rectangle shape */
+  aspect-ratio: 4 / 3;
+  /* Keeps the rectangle shape */
   border-radius: 30px;
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
   background-color: #e5e7eb;
 }
 
@@ -98,13 +100,15 @@
   height: 100%;
   object-fit: cover;
   opacity: 0;
-  transition: opacity 0.8s ease-in-out, transform 6s ease; /* Infinite zoom effect */
+  transition: opacity 0.8s ease-in-out, transform 6s ease;
+  /* Infinite zoom effect */
   transform: scale(1.05);
 }
 
 .main-image.active {
   opacity: 1;
-  transform: scale(1); /* Subtle zoom out when active */
+  transform: scale(1);
+  /* Subtle zoom out when active */
   z-index: 2;
 }
 
@@ -115,10 +119,13 @@
   gap: 12px;
   overflow-x: auto;
   padding: 4px;
-  scrollbar-width: none; /* Hide scrollbar Firefox */
+  scrollbar-width: none;
+  /* Hide scrollbar Firefox */
 }
+
 .thumbnail-strip::-webkit-scrollbar {
-  display: none; /* Hide scrollbar Chrome */
+  display: none;
+  /* Hide scrollbar Chrome */
 }
 
 .thumbnail-btn {
@@ -149,20 +156,24 @@
 .thumbnail-btn.active {
   opacity: 1;
   transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-  border: 2px solid white; /* Optional border for active state */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border: 2px solid white;
+  /* Optional border for active state */
 }
 
 /* --- Responsive Design --- */
 @media (max-width: 728px) {
   .gallery-section {
-    padding: 40px 20px; /* Reduce padding */
+    padding: 40px 20px;
+    /* Reduce padding */
   }
-  
+
   .gallery-container {
-    grid-template-columns: 1fr; /* Stack vertically */
+    grid-template-columns: 1fr;
+    /* Stack vertically */
     gap: 40px;
-    text-align: center; /* Center text on mobile */
+    text-align: center;
+    /* Center text on mobile */
   }
 
   /* Text Adjustments */
@@ -171,22 +182,25 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Center the button */
+    align-items: center;
+    /* Center the button */
   }
 
   .gallery-title {
-    font-size: 2.25rem; /* Smaller font for mobile */
+    font-size: 2.25rem;
+    /* Smaller font for mobile */
     margin-bottom: 16px;
   }
-  
+
   .gallery-description {
     font-size: 1rem;
     margin-bottom: 24px;
   }
-   
+
   /* Image Adjustments */
   .main-image-wrapper {
-    aspect-ratio: 16 / 9  ; /*
+    aspect-ratio: 16 / 9;
+    /*
     d Wider, cinematic look on mobile */
     border-radius: 20px;
   }
@@ -199,15 +213,19 @@
 
   /* Ensure thumbnails are easy to tap */
   .thumbnail-strip {
-    justify-content: flex-start; /* Align left to suggest scrolling */
-    padding-bottom: 10px; /* Space for touch scroll */
+    justify-content: flex-start;
+    /* Align left to suggest scrolling */
+    padding-bottom: 10px;
+    /* Space for touch scroll */
   }
-  
+
   .thumbnail-btn {
-    width: 70px; /* Slightly smaller thumbnails */
+    width: 70px;
+    /* Slightly smaller thumbnails */
     height: 50px;
   }
 }
+
 @media (max-width: 480px) {
 
   .gallery-section {
@@ -229,7 +247,8 @@
   }
 
   .gallery-title {
-    font-size: 1.8rem; /* Smaller for phone */
+    font-size: 1.8rem;
+    /* Smaller for phone */
     margin-bottom: 12px;
   }
 
@@ -242,7 +261,8 @@
   /* Image */
   .main-image-wrapper {
     width: 100%;
-    aspect-ratio: 3 / 2; /* More suitable for phones */
+    aspect-ratio: 3 / 2;
+    /* More suitable for phones */
     border-radius: 16px;
   }
 
@@ -260,8 +280,14 @@
   }
 
   .thumbnail-btn {
-    width: 60px;    /* Smaller thumbnails for phone */
+    width: 60px;
+    /* Smaller thumbnails for phone */
     height: 40px;
     border-radius: 8px;
   }
+}
+
+/* Fix for rotated images */
+.rotate-fix .smart-image {
+  transform: rotate(90deg) scale(1.4);
 }
