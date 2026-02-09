@@ -1,25 +1,27 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './HeroSection.css';
-import { MapPin, Calendar, Search } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const HeroSection = () => {
-  const [destination, setDestination] = useState('');
-  const [date, setDate] = useState('');
+  const navigate = useNavigate();
 
-  const handleSearch = () => {
-    // REPLACE with your actual business phone number
-    const phoneNumber = "1234567890";
+  const [showModal, setShowModal] = useState(false);
+  const [customPlace, setCustomPlace] = useState("");
+  const [customDays, setCustomDays] = useState("");
 
-    let message = "Hi, I am interested in booking a trip with Averra.";
+  const handleCustomizeTrip = () => {
+    setShowModal(true);
+  };
 
-    if (destination || date) {
-      message = `Hi, I am interested in a trip to ${destination || 'a destination'} on ${date || 'a specific date'}.`;
-    }
-
+  const handleGetInTouch = () => {
+    const message = `Hi, I want a customized trip to ${customPlace} and for duration ${customDays} days.`;
+    const phoneNumber = "919181317151";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     window.open(whatsappUrl, '_blank');
+    setShowModal(false);
   };
+
 
   return (
     <div className="hero-container">
@@ -51,46 +53,55 @@ const HeroSection = () => {
           effortless and unforgettable.
         </motion.p>
 
-        {/* --- Search Bar --- */}
-        <div className="search-bar">
-          <div className="search-input-group border-right">
-            <div className="input-label">Where</div>
-            <div className="input-field">
-              <MapPin size={14} className="input-icon" />
-              <input
-                type="text"
-                placeholder="Enter destination"
-                value={destination}
-                onChange={(e) => setDestination(e.target.value)}
-              />
-            </div>
-          </div>
-
-          <div className="search-input-group">
-            <div className="input-label">Date</div>
-            <div className="input-field">
-              <Calendar size={14} className="input-icon" />
-
-              {/* UPDATED INPUT: Pop-up Calendar on click */}
-              <input
-                type="text"
-                placeholder="12th March, 2025"
-                value={date}
-                onChange={(e) => setDate(e.target.value)}
-                onFocus={(e) => (e.target.type = "date")}
-                onBlur={(e) => {
-                  if (!e.target.value) e.target.type = "text";
-                }}
-              />
-
-            </div>
-          </div>
-
-          <button className="search-btn-circle" onClick={handleSearch}>
-            <Search size={20} color="white" />
+        <motion.div
+          className="hero-buttons"
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+        >
+          <button className="hero-btn btn-primary" onClick={handleCustomizeTrip}>
+            Customize Trip
           </button>
-        </div>
+          <button className="hero-btn btn-outline" onClick={() => navigate('/packages')}>
+            View Packages
+          </button>
+        </motion.div>
+
+
       </div>
+
+      {/* Customize Trip Modal */}
+      {showModal && (
+        <div className="hero-modal-overlay" onClick={() => setShowModal(false)}>
+          <div className="hero-modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="hero-modal-close-btn" onClick={() => setShowModal(false)}>×</button>
+            <h3>Customize Your Trip</h3>
+
+            <div className="hero-modal-form-group">
+              <label>Destination</label>
+              <input
+                type="text"
+                value={customPlace}
+                onChange={(e) => setCustomPlace(e.target.value)}
+              />
+            </div>
+
+            <div className="hero-modal-form-group">
+              <label>Duration (Days)</label>
+              <input
+                type="number"
+                value={customDays}
+                onChange={(e) => setCustomDays(e.target.value)}
+                placeholder="Ex: 5"
+              />
+            </div>
+
+            <button className="hero-modal-submit-btn" onClick={handleGetInTouch}>
+              Get in Touch
+            </button>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

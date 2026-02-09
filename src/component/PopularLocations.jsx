@@ -79,12 +79,7 @@ const PopularLocations = () => {
           ))}
         </div>
 
-        {/* Mobile View All Button */}
-        <div className="mobile-cta-container">
-          <Link to="/packages" className="mobile-view-all-btn">
-            View All Packages
-          </Link>
-        </div>
+
 
       </div>
       {/* Customize Trip Modal */}
