@@ -40,7 +40,7 @@ const testimonials = [
     image: "/jaaz.jpeg",
     rating: 5,
     text:
-      "I Had an amazing experience in Meghalaya with xplorexp. The trip was completely customised. The locations chosen were stunning, including some beautiful detours just for scenic views that made the journey more special. The hotels were comfortable and well-selected. A special mention to the driver service, truly top quality. The driver was professional, friendly, and took great care of us throughout the trip. Overall, it was a smooth, memorable, and well-managed. Highly recommended for anyone looking for a hassle-free travel experience with xplorexp.",
+      " Had an amazing experience in Meghalaya with xplorexp. The trip was completely customised. The locations chosen were stunning, including some beautiful detours just for scenic views that made the journey more special. The hotels were comfortable and well-selected. A special mention to the driver service, truly top quality. The driver was professional, friendly, and took great care of us throughout the trip. Overall, it was a smooth, memorable, and well-managed. Highly recommended for anyone looking for a hassle-free travel experience with xplorexp.",
     visited: "Tawang, Arunachal",
   },
 ];
