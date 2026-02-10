@@ -17,7 +17,8 @@
     /* Use 90% or calc(100% - 32px) to prevent touching edges on mobile */
     max-width: 1200px;
     /* Stops it from getting too big on huge screens */
-    height: 55px;
+    height: auto;
+    /* Changed from 55px to auto to fit content with padding */
 
     /* --- Styling --- */
     background: transparent;
@@ -29,9 +30,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 24px;
+    padding: 10px 24px;
     /* Cleaned up padding */
     gap: 40px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
 }
 
 .logo {

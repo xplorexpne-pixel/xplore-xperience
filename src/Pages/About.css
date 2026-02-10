@@ -47,11 +47,13 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 600px;
-  height: 100vw;
+  width: 550px;
+  /* Becomes visual height */
+  height: 120vw;
+  /* Becomes visual width */
   background: url("/about.jpg") center/cover no-repeat;
-  filter: brightness(1.4);
-  /* Significantly brighter background image */
+  filter: brightness(1.15);
+  /* Brighter background image */
   z-index: 0;
   transform: translate(-50%, -50%) rotate(90deg);
 }
