@@ -48,7 +48,7 @@ const BikeRentalSection = () => {
     const message = `Hi, I am interested in renting the ${currentBike.name}. Is it available?`;
 
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
   };
 
 
