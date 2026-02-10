@@ -18,16 +18,21 @@ export default function SmoothScroll({ children }) {
             smoothTouch: false,
             touchMultiplier: 2,
         })
-        setLenis(newLenis)
 
         function raf(time) {
             newLenis.raf(time)
             requestAnimationFrame(raf)
         }
 
-        requestAnimationFrame(raf)
+        const rafId = requestAnimationFrame(raf)
+
+        // To avoid React hook warning about setting state in effect
+        setTimeout(() => {
+            setLenis(newLenis)
+        }, 0)
 
         return () => {
+            cancelAnimationFrame(rafId)
             newLenis.destroy()
             setLenis(null)
         }

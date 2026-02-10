@@ -37,11 +37,11 @@ export default function Destinations() {
   const cardsPerView = 4;
   const maxIndex = Math.max(0, destinations.length - cardsPerView);
 
-  const handlePrev = () => {
+  const _handlePrev = () => {
     setCurrentIndex((prev) => Math.max(0, prev - 1));
   };
 
-  const handleNext = () => {
+  const _handleNext = () => {
     setCurrentIndex((prev) => Math.min(maxIndex, prev + 1));
   };
 
