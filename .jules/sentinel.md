@@ -1,0 +1,4 @@
+## 2026-02-10 - Reverse Tabnabbing via window.open
+**Vulnerability:** External links (specifically WhatsApp integrations) were using `window.open(url, '_blank')` without specifying window features. This exposes the application to Reverse Tabnabbing attacks where the malicious or compromised target page can manipulate the original page using `window.opener`.
+**Learning:** While modern browsers often imply `noopener` for `target="_blank"` in anchor tags, `window.open` behavior can be less consistent regarding `noreferrer`. Explicitly adding `'noopener,noreferrer'` as the third argument is the only way to guarantee protection across all contexts.
+**Prevention:** Enforce a rule that all instances of `window.open` targeting a new window must include `'noopener,noreferrer'` as the feature string.
