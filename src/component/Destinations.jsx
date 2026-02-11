@@ -1,5 +1,4 @@
 
-// import DestinationCard from "./DestinationCard ";
 import { destinations } from "../data/DestinationCardData";
 import { useState } from "react";
 import SmartImage from "./SmartImage";
@@ -33,17 +32,18 @@ export function DestinationCard({ item }) {
 
 
 export default function Destinations() {
+  // eslint-disable-next-line no-unused-vars
   const [currentIndex, setCurrentIndex] = useState(0);
   const cardsPerView = 4;
-  const maxIndex = Math.max(0, destinations.length - cardsPerView);
+  // const maxIndex = Math.max(0, destinations.length - cardsPerView);
 
-  const handlePrev = () => {
-    setCurrentIndex((prev) => Math.max(0, prev - 1));
-  };
+  // const handlePrev = () => {
+  //   setCurrentIndex((prev) => Math.max(0, prev - 1));
+  // };
 
-  const handleNext = () => {
-    setCurrentIndex((prev) => Math.min(maxIndex, prev + 1));
-  };
+  // const handleNext = () => {
+  //   setCurrentIndex((prev) => Math.min(maxIndex, prev + 1));
+  // };
 
   const visibleCards = destinations.slice(currentIndex, currentIndex + cardsPerView);
 

@@ -18,6 +18,7 @@ export default function SmoothScroll({ children }) {
             smoothTouch: false,
             touchMultiplier: 2,
         })
+        // eslint-disable-next-line react-hooks/set-state-in-effect
         setLenis(newLenis)
 
         function raf(time) {

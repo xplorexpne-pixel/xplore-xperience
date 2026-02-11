@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './HeroSection.css';
@@ -18,7 +19,7 @@ const HeroSection = () => {
     const message = `Hi, I want a customized trip to ${customPlace} and for duration ${customDays} days.`;
     const phoneNumber = "919181317151";
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-    window.open(whatsappUrl, '_blank');
+    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
     setShowModal(false);
   };
 
