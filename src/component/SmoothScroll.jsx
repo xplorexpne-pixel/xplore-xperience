@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef } from 'react'
 import { useLocation } from 'react-router-dom'
 import Lenis from 'lenis'
 import 'lenis/dist/lenis.css'
 
 export default function SmoothScroll({ children }) {
-    const [lenis, setLenis] = useState(null)
+    const lenisRef = useRef(null)
     const { pathname, hash } = useLocation()
 
     useEffect(() => {
@@ -18,23 +18,25 @@ export default function SmoothScroll({ children }) {
             smoothTouch: false,
             touchMultiplier: 2,
         })
-        setLenis(newLenis)
+        lenisRef.current = newLenis
 
         function raf(time) {
             newLenis.raf(time)
             requestAnimationFrame(raf)
         }
 
-        requestAnimationFrame(raf)
+        const animId = requestAnimationFrame(raf)
 
         return () => {
             newLenis.destroy()
-            setLenis(null)
+            lenisRef.current = null
+            cancelAnimationFrame(animId)
         }
     }, [])
 
     // Handle Scroll to Top & Hash Navigation
     useEffect(() => {
+        const lenis = lenisRef.current
         if (!lenis) return;
 
         if (hash) {
@@ -50,7 +52,7 @@ export default function SmoothScroll({ children }) {
         } else {
             lenis.scrollTo(0, { immediate: true })
         }
-    }, [pathname, hash, lenis])
+    }, [pathname, hash])
 
     return <>{children}</>
 }
