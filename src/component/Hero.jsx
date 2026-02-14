@@ -1,8 +1,8 @@
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 
 export default function Hero() {
   return (
-    <motion.section
+    <Motion.section
       className="hero"
       initial={{ opacity: 0, y: 40 }}
       animate={{ opacity: 1, y: 0 }}
@@ -23,6 +23,6 @@ export default function Hero() {
           View Packages
         </button>
       </div>
-    </motion.section>
+    </Motion.section>
   );
 }
