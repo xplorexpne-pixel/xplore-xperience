@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion as Motion, useInView } from "framer-motion";
 
 export const Reveal = ({ children, width = "100%", delay = 0.25 }) => {
     const ref = useRef(null);
@@ -7,7 +7,7 @@ export const Reveal = ({ children, width = "100%", delay = 0.25 }) => {
 
     return (
         <div ref={ref} style={{ position: "relative", width, overflow: "visible" }}>
-            <motion.div
+            <Motion.div
                 variants={{
                     hidden: { opacity: 0, y: 75 },
                     visible: { opacity: 1, y: 0 },
@@ -17,7 +17,7 @@ export const Reveal = ({ children, width = "100%", delay = 0.25 }) => {
                 transition={{ duration: 0.8, delay: delay, ease: "easeOut" }}
             >
                 {children}
-            </motion.div>
+            </Motion.div>
         </div>
     );
 };
