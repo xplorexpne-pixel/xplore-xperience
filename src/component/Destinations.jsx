@@ -1,5 +1,5 @@
 
-// import DestinationCard from "./DestinationCard ";
+// import DestinationCard from "./DestinationCard";
 import { destinations } from "../data/DestinationCardData";
 import { useState } from "react";
 import SmartImage from "./SmartImage";
