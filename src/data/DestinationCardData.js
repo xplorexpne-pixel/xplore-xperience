@@ -1,4 +1,4 @@
-import { image } from "framer-motion/m";
+// import { image } from "framer-motion/m";
 
 export const destinations = [
 
