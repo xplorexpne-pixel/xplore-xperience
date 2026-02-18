@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import './HeroSection.css';
-import { motion } from 'framer-motion';
+import { motion as Motion } from 'framer-motion';
 
 const HeroSection = () => {
   const navigate = useNavigate();
@@ -31,7 +31,7 @@ const HeroSection = () => {
       <div className="hero-content">
         {/* <div className="hero-badge">Explore Beyond the Expected</div> */}
 
-        <motion.h1
+        <Motion.h1
           className="hero-title"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -40,9 +40,9 @@ const HeroSection = () => {
           Journeys Designed <br />
           to Match the Way <br />
           You Travel
-        </motion.h1>
+        </Motion.h1>
 
-        <motion.p
+        <Motion.p
           className="hero-description"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -51,9 +51,9 @@ const HeroSection = () => {
           From iconic destinations to hidden escapes, Averra curates meaningful travel
           experiences tailored to your interests, pace, and comfort — so every journey feels
           effortless and unforgettable.
-        </motion.p>
+        </Motion.p>
 
-        <motion.div
+        <Motion.div
           className="hero-buttons"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -65,7 +65,7 @@ const HeroSection = () => {
           <button className="hero-btn btn-outline" onClick={() => navigate('/packages')}>
             View Packages
           </button>
-        </motion.div>
+        </Motion.div>
 
 
       </div>

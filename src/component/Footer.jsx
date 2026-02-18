@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
 export default function Footer() {
@@ -7,11 +7,19 @@ export default function Footer() {
 
   // LOCK BACKGROUND SCROLL WHEN POPUP IS OPEN
   const overlayActive = showTerms || showCarry;
-  if (overlayActive) {
-    document.body.style.overflow = "hidden";
-  } else {
-    document.body.style.overflow = "auto";
-  }
+
+  useEffect(() => {
+    if (overlayActive) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    // Cleanup function to reset overflow when component unmounts
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [overlayActive]);
 
   return (
     <>
