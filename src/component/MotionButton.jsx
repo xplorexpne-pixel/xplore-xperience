@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 import "./MotionButton.css";
 
 export default function MotionButton({
@@ -8,7 +8,7 @@ export default function MotionButton({
   type = "button",
 }) {
   return (
-    <motion.button
+    <Motion.button
       type={type}
       className={`motion-btn ${className}`}
       onClick={onClick}
@@ -25,6 +25,6 @@ export default function MotionButton({
       }}
     >
       {children}
-    </motion.button>
+    </Motion.button>
   );
 }
