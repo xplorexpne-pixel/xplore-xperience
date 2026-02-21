@@ -16,7 +16,7 @@ const DATA = [
       {
         title: "Tawang & Sangti Valley",
         desc: "Snow landscapes and black-necked cranes",
-        image: "/images/sangti.jpg",
+        image: "/Northeast/Sangti-Valley.jpg",
         badges: ["5D/4N"],
       },
       {
@@ -40,7 +40,7 @@ const DATA = [
       {
         title: "Kibithu & Dong",
         desc: "India’s first sunrise point",
-        image: "/images/kibithu.jpg",
+        image: "/Northeast/Dong-Valley.jpeg",
         badges: ["New"],
       },
     ],
