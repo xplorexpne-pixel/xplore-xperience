@@ -1,0 +1,4 @@
+## 2025-02-19 - [Reverse Tabnabbing Protection]
+**Vulnerability:** Found multiple instances of `window.open(url, '_blank')` without `noopener,noreferrer` in React components (Navbar, FAQ, BikeRentalSection, HeroSection, PopularLocations) and Pages (FeaturedPackage, Package). This exposes the application to Reverse Tabnabbing attacks, where a malicious page opened in a new tab can manipulate the original page via `window.opener`.
+**Learning:** Even in modern frameworks like React, basic DOM API vulnerabilities persist. `window.open` defaults to unsafe behavior in older browsers and some contexts. It's crucial to explicitly secure cross-origin navigation.
+**Prevention:** Always include `noopener,noreferrer` when using `window.open(url, '_blank')`. For anchor tags, use `rel="noopener noreferrer"`.
