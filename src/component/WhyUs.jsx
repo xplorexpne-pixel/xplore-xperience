@@ -1,5 +1,5 @@
 import { whyUsData } from "../data/whyUsData";
-import { motion } from "framer-motion";
+import { motion as Motion } from "framer-motion";
 import { FaMapMarkedAlt, FaClipboardList, FaHeadset } from "react-icons/fa";
 
 export default function WhyUs() {
@@ -28,7 +28,7 @@ export default function WhyUs() {
                     const Icon = item.icon;
 
                     return (
-                        <motion.div
+                        <Motion.div
                             key={index}
                             className="why-card"
                             initial={{ opacity: 0, x: 60 }}
@@ -44,7 +44,7 @@ export default function WhyUs() {
                                 <h4>{item.title}</h4>
                                 <p>{item.desc}</p>
                             </div>
-                        </motion.div>
+                        </Motion.div>
                     );
                 })}
             </div>

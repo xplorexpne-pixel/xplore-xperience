@@ -127,7 +127,7 @@ I’m interested in the *${pkg.title}* package.
 Please share itinerary, pricing and available dates.
 `;
 
-    const encodedMessage = encodeURIComponent(message);
+    // const encodedMessage = encodeURIComponent(message);
     const whatsappURL = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
 
     window.open(whatsappURL, "_blank", "noopener,noreferrer");
