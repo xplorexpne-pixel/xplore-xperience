@@ -31,7 +31,7 @@ const PopularLocations = React.lazy(() => import("./component/PopularLocations")
         <SmoothScroll>
           <Navbar />
 
-          <Suspense fallback={<div>Loading...</div>}>
+          <Suspense fallback={<></>}>
             <Routes>
               <Route
                 path="/"
