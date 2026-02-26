@@ -1,7 +1,7 @@
 
 // import DestinationCard from "./DestinationCard ";
 import { destinations } from "../data/DestinationCardData";
-import { useState } from "react";
+// import { useState } from "react";
 import SmartImage from "./SmartImage";
 export function DestinationCard({ item }) {
   if (!item) return null;
@@ -33,19 +33,20 @@ export function DestinationCard({ item }) {
 
 
 export default function Destinations() {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const cardsPerView = 4;
-  const maxIndex = Math.max(0, destinations.length - cardsPerView);
+  // const [currentIndex, setCurrentIndex] = useState(0);
+  // const cardsPerView = 4;
+  // const maxIndex = Math.max(0, destinations.length - cardsPerView);
 
-  const handlePrev = () => {
-    setCurrentIndex((prev) => Math.max(0, prev - 1));
-  };
+  // const handlePrev = () => {
+  //   setCurrentIndex((prev) => Math.max(0, prev - 1));
+  // };
 
-  const handleNext = () => {
-    setCurrentIndex((prev) => Math.min(maxIndex, prev + 1));
-  };
+  // const handleNext = () => {
+  //   setCurrentIndex((prev) => Math.min(maxIndex, prev + 1));
+  // };
 
-  const visibleCards = destinations.slice(currentIndex, currentIndex + cardsPerView);
+  // const visibleCards = destinations.slice(currentIndex, currentIndex + cardsPerView);
+  const visibleCards = destinations.slice(0, 4);
 
   return (
     <section className="destination-section">
