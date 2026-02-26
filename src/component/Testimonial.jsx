@@ -31,7 +31,7 @@ const testimonials = [
     rating: 5,
     text:
       "We had an amazing experience traveling to Meghalaya with xplorexp. The trip was completely customised to our preferences, and every detail was thoughtfully planned. The locations chosen were stunning, including some beautiful detours just for scenic views that made the journey even more special. Hotels were comfortable adding to the overall experience. A special mention to the driver service, truly top quality. He was professional, friendly, and took great care of us throughout the trip, making us feel safe and relaxed at all times. Overall, it was a smooth, memorable, and well-managed trip. Highly recommended for anyone looking for a personalised and hassle-free travel experience in Meghalaya.",
-    visited: "Tawang, Arunachal",
+    visited: "Meghalaya, Shillong",
   },
   {
     id: 4,
@@ -40,7 +40,8 @@ const testimonials = [
     image: "/jaaz.jpeg",
     rating: 5,
     text:
-      " This was my first trip to Northeast India and it was truly amazing. A friend recommended Xplorexp, and I’m so thankful because everything was well-organized and smooth. Navin was very kind and accommodating, making sure we enjoyed every moment—from the beautiful waterfalls, peaceful monasteries, and stunning lakes to the breathtaking high-altitude passes. I will definitely visit India again and highly recommend Xplorexp! 😊"
+      " This was my first trip to Northeast India and it was truly amazing. A friend recommended Xplorexp, and I’m so thankful because everything was well-organized and smooth. Navin was very kind and accommodating, making sure we enjoyed every moment—from the beautiful waterfalls, peaceful monasteries, and stunning lakes to the breathtaking high-altitude passes. I will definitely visit India again and highly recommend Xplorexp! 😊",
+    visited: "Tawang, Arunachal",
   },
 ];
 
