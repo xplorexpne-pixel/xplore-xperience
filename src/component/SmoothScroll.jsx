@@ -18,7 +18,9 @@ export default function SmoothScroll({ children }) {
             smoothTouch: false,
             touchMultiplier: 2,
         })
-        setLenis(newLenis)
+
+        // Wrap state update to avoid synchronous update warning
+        setTimeout(() => setLenis(newLenis), 0);
 
         function raf(time) {
             newLenis.raf(time)
