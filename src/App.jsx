@@ -1,36 +1,29 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React, { Suspense } from 'react';
 import ScrollToTop from "./component/ScrollToTop";
 import SmoothScroll from "./component/SmoothScroll";
 import Reveal from "./component/Reveal";
 
 import Hero from "./component/Hero";
 import Navbar from "./component/Navbar";
-import Packages from "./Pages/Package";
-import About from "./Pages/About";
-
-
-
-import Footer from "./component/Footer";
-import WhyUs from "./component/WhyUs";
-
-import Destinations from "./component/Destinations";
-import TourPackages from "./component/TourPackages";
-import HowItWorks from "./component/HowItWorks";
-import CtaBanner from "./component/CtaBanner";
-import LatestBlogs from "./component/LatestBlog";
-import FAQ from "./component/FAQ";
-import HeroParallax from "./component/HeroParallax";
-import FeaturedPackage from "./Pages/FeaturedPackage";
-import Testimonials from "./component/Testimonial";
-import GallerySection from "./component/GallerySection";
-import BikeRentalSection from "./component/BikeRentalSection";
-import PopularLocations from "./component/PopularLocations";
 import HeroSection from "./component/HeroSection";
 
-
-
-
-function App() {
+const Packages = React.lazy(() => import("./Pages/Package"));
+const About = React.lazy(() => import("./Pages/About"));
+const Footer = React.lazy(() => import("./component/Footer"));
+const WhyUs = React.lazy(() => import("./component/WhyUs"));
+const Destinations = React.lazy(() => import("./component/Destinations"));
+const TourPackages = React.lazy(() => import("./component/TourPackages"));
+const HowItWorks = React.lazy(() => import("./component/HowItWorks"));
+const CtaBanner = React.lazy(() => import("./component/CtaBanner"));
+const LatestBlogs = React.lazy(() => import("./component/LatestBlog"));
+const FAQ = React.lazy(() => import("./component/FAQ"));
+const HeroParallax = React.lazy(() => import("./component/HeroParallax"));
+const FeaturedPackage = React.lazy(() => import("./Pages/FeaturedPackage"));
+const Testimonials = React.lazy(() => import("./component/Testimonial"));
+const GallerySection = React.lazy(() => import("./component/GallerySection"));
+const BikeRentalSection = React.lazy(() => import("./component/BikeRentalSection"));
+const PopularLocations = React.lazy(() => import("./component/PopularLocations")); function App() {
   return (
     <div>
       <BrowserRouter>
@@ -38,59 +31,61 @@ function App() {
         <SmoothScroll>
           <Navbar />
 
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <>
-                  {/* <Hero /> */}
-                  {/* <HeroParallax /> */}
-                  <HeroSection />
+          <Suspense fallback={<div>Loading...</div>}>
+            <Routes>
+              <Route
+                path="/"
+                element={
+                  <>
+                    {/* <Hero /> */}
+                    {/* <HeroParallax /> */}
+                    <HeroSection />
 
-                  <Reveal>
-                    <PopularLocations />
-                  </Reveal>
+                    <Reveal>
+                      <PopularLocations />
+                    </Reveal>
 
-                  {/* <Destinations /> */}
+                    {/* <Destinations /> */}
 
-                  <Reveal>
-                    <WhyUs />
-                  </Reveal>
+                    <Reveal>
+                      <WhyUs />
+                    </Reveal>
 
-                  <Reveal>
-                    <BikeRentalSection />
-                  </Reveal>
+                    <Reveal>
+                      <BikeRentalSection />
+                    </Reveal>
 
-                  {/* <TourPackages /> */}
+                    {/* <TourPackages /> */}
 
-                  <Reveal>
-                    <HowItWorks />
-                  </Reveal>
+                    <Reveal>
+                      <HowItWorks />
+                    </Reveal>
 
-                  {/* <CtaBanner /> */}
+                    {/* <CtaBanner /> */}
 
-                  <Reveal>
-                    <FAQ />
-                  </Reveal>
+                    <Reveal>
+                      <FAQ />
+                    </Reveal>
 
-                  <Reveal>
-                    <GallerySection />
-                  </Reveal>
+                    <Reveal>
+                      <GallerySection />
+                    </Reveal>
 
-                  <Reveal>
-                    <Testimonials />
-                  </Reveal>
+                    <Reveal>
+                      <Testimonials />
+                    </Reveal>
 
-                </>
-              }
-            />
+                  </>
+                }
+              />
 
-            <Route path="/packages" element={<FeaturedPackage />} />
-            <Route path="/about" element={<About />} />
-            {/* <Route path="/bike-rentals" element={<BikeRentals />} /> */}
-          </Routes>
+              <Route path="/packages" element={<FeaturedPackage />} />
+              <Route path="/about" element={<About />} />
+              {/* <Route path="/bike-rentals" element={<BikeRentals />} /> */}
+            </Routes>
 
-          <Footer />
+            <Footer />
+          </Suspense>
         </SmoothScroll>
       </BrowserRouter>
     </div >

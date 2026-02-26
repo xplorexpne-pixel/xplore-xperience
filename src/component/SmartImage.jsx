@@ -34,6 +34,12 @@ const SmartImage = ({ src, alt, className, style, ...props }) => {
         };
     }, []);
 
+    useEffect(() => {
+        if (imgRef.current && imgRef.current.complete) {
+            handleLoad();
+        }
+    }, [isInView]);
+
     const handleLoad = () => {
         setIsLoaded(true);
     };
@@ -43,6 +49,7 @@ const SmartImage = ({ src, alt, className, style, ...props }) => {
             ref={containerRef}
             className={`smart-image-container ${className || ''}`}
             style={style}
+            data-inview={isInView}
         >
             {!isLoaded && <div className="smart-image-placeholder" />}
 
@@ -53,6 +60,7 @@ const SmartImage = ({ src, alt, className, style, ...props }) => {
                     alt={alt}
                     className={`smart-image ${isLoaded ? 'loaded' : ''}`}
                     onLoad={handleLoad}
+                    onError={handleLoad} // Prevent it from being stuck loading
                     {...props}
                 />
             )}

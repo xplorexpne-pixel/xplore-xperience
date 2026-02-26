@@ -93,7 +93,7 @@
 
 /* The stacking logic for Fade Effect */
 .main-image {
-  position: absolute;
+  position: absolute !important;
   top: 0;
   left: 0;
   width: 100%;
