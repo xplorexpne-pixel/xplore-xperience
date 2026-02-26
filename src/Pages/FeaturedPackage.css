@@ -202,22 +202,23 @@
     box-shadow: none !important;
   }
 
-  /* Make input + search button sit in the same row */
+  /* Make input take full width on its own row */
   .search-input {
-    flex: 1 1 auto;
+    flex: 1 1 100%;
     min-width: 0;
+    border-radius: 12px;
   }
 
+  /* Place Search and Sort buttons side-by-side */
   .search-btn {
-    flex: 0 0 auto;
+    flex: 1 1 45%;
     white-space: nowrap;
     padding: 12px 18px;
     border-radius: 12px;
   }
 
-  /* Sort button below in full width */
   .sort-box {
-    width: 100%;
+    flex: 1 1 45%;
   }
 
   .sort-btn {
