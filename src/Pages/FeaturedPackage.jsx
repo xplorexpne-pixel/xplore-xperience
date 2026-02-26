@@ -72,11 +72,11 @@ const explorePackages = [
   },
   {
     id: 9,
-    title: "Dima Hasao",
-    region: "Assam",
-    duration: "6D / 5N",
-    desc: "A scenic hill district known for pine forests, waterfalls and peaceful villages. Ideal for slow travel and nature escapes.",
-    image: "/Northeast/dimahasao.jpg",
+    title: "Ziro ",
+    region: "Arunachal",
+    duration: "4D / 3N",
+    desc: "A charming valley of rice fields, Apatani culture and cool pine forests. Ziro offers calm landscapes and authentic village life.",
+    image: "/image/ziro2.jpg", // You don't have a Ziro.jpg
   },
   {
     id: 10,
@@ -146,7 +146,7 @@ const explorePackages = [
   },
   {
     id: 21,
-    title: "Ziro",
+    title: "Ziro Festival",
     region: "Arunachal",
     duration: "4D / 3N",
     desc: "A charming valley of rice fields, Apatani culture and cool pine forests. Ziro offers calm landscapes and authentic village life.",
@@ -173,19 +173,11 @@ const explorePackages = [
     title: "Eastern Arunachal",
     region: "Arunachal",
     duration: "6D / 5N",
-    desc: "A circuit covering Parshuramkund, Namsai, Roing and Dambuk. A blend of monasteries, riverside beauty and jungle landscapes.",
+    desc: "A circuit covering Parshuramkund, Namsai, Roing , Dambuk , Pasighat and Mayodia Pass*. A blend of monasteries, riverside beauty and jungle landscapes.",
     image: "/Northeast/Mechuka.jpg",
   },
   {
     id: 25,
-    title: "Parshuramkund",
-    region: "Arunachal",
-    duration: "6D / 5N",
-    desc: "A sacred riverside pilgrimage spot surrounded by hills and forests. Ideal for spiritual seekers and scenic travellers.",
-    image: "/Northeast/Kibithu.jpg",
-  },
-  {
-    id: 26,
     title: "Meghalaya",
     region: "Meghalaya",
     duration: "8D / 7N",
@@ -193,7 +185,7 @@ const explorePackages = [
     image: "/Northeast/Meghalaya.jpg",
   },
   {
-    id: 27,
+    id: 26,
     duration: "Customizable",
     title: "All Girls Trip",
     region: "Northeast",
@@ -201,7 +193,7 @@ const explorePackages = [
     image: "/image/girls.jpg",
   },
   {
-    id: 28,
+    id: 27,
     duration: "Customizable",
     title: "Senior citizen trip",
     region: "Northeast",
@@ -209,7 +201,7 @@ const explorePackages = [
     image: "/image/senior.png",
   },
   {
-    id: 31,
+    id: 28,
     title: "YouWe Trips",
     duration: "Customizable",
     region: "Northeast",
