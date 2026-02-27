@@ -25,7 +25,7 @@ const HeroSection = () => {
 
   return (
     <div className="hero-container">
-      <img src="/image/hero5.jpg" alt="Hero Background" className="hero-bg-img" />
+      <img src="/image/hero3.jpg" alt="Hero Background" className="hero-bg-img" />
       <div className="hero-overlay"></div>
 
       <div className="hero-content">
