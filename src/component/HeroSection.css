@@ -14,7 +14,7 @@ body {
 .hero-container {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  min-height: 80vh;
   /* Mountain Nature Scene */
   /* Mountain Nature Scene - Moved to JSX > img */
   /* background-image: url("/image/hero5.jpg"); */
